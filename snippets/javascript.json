@@ -1,27 +1,17 @@
 {
   "Anonymous Function": {
     "prefix": "anonymous function",
-    "body": [
-      "(${1:params}) => {",
-      "\t$TM_SELECTED_TEXT$0",
-      "}"
-    ],
+    "body": ["(${1:params}) => {", "\t$TM_SELECTED_TEXT$0", "}"],
     "description": "Creates an anonymous function"
   },
   "Anonymous One Line": {
     "prefix": "anonymous one line",
-    "body": [
-      "(${1:params}) => { $TM_SELECTED_TEXT$0}"
-    ],
+    "body": ["(${1:params}) => { $TM_SELECTED_TEXT$0 }"],
     "description": "Creates an anonymous function in one line"
   },
   "IIFE": {
     "prefix": "iife",
-    "body": [
-      "((${1:params}) => {",
-      "\t$TM_SELECTED_TEXT$0",
-      "})();"
-    ],
+    "body": ["((${1:params}) => {", "\t$TM_SELECTED_TEXT$0", "})();"],
     "description": "Creates an IIFE function"
   }
 }
