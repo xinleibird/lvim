@@ -1,10 +1,13 @@
+-- For NeoVim options
 reload("user.autocmds")
 reload("user.gs")
 reload("user.keymaps")
 reload("user.lvims")
 reload("user.opts")
 reload("user.plugins")
-
+-- For NeoVide
+reload("user.neovide.config")
+-- For LunarVim builtin plugins
 reload("user.builtin.alpha")
 reload("user.builtin.bufferline")
 reload("user.builtin.cmp")

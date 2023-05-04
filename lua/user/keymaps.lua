@@ -7,5 +7,6 @@ lvim.lsp.buffer_mappings.normal_mode['<f2>'] = { vim.lsp.buf.rename, "Rename all
 
 -- Find files like ctrl+p
 lvim.keys.normal_mode["<M-p>"] = ":Telescope find_files<CR>"
+lvim.keys.normal_mode["<D-p>"] = ":Telescope find_files<CR>"
 
 lvim.builtin.terminal.open_mapping = "<c-`>"
