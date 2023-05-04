@@ -2,7 +2,12 @@
 lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
-  { "unblevable/quick-scope" },
+  {
+    "unblevable/quick-scope",
+    init = function()
+      vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
+    end,
+  },
   {
     "windwp/nvim-ts-autotag",
     config = function()
