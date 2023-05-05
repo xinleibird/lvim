@@ -9,6 +9,6 @@ lvim.builtin.nvimtree.setup.update_focused_file     = {
   update_root = false
 }
 lvim.builtin.nvimtree.setup.filters.custom          = { ".DS_Store", "Icon[^M]", ".AppleDouble", ".CFUserTextEncoding",
-  "._*", ".DocumentRevisions-V100", ".fseventsd", ".Spotlight-V100", ".TemporaryItems", ".Trashes", ".VolumeIcon.icns",
+  ".DocumentRevisions-V100", ".fseventsd", ".Spotlight-V100", ".TemporaryItems", ".Trashes", ".VolumeIcon.icns",
   ".com.apple.timemachine.donotpresent", ".AppleDB", ".AppleDesktop", "Network Trash Folder", "Temporary Items",
   ".apdisk", }
