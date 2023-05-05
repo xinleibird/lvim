@@ -56,18 +56,4 @@ lvim.autocommands = {
       command = "set guicursor= | call chansend(v:stderr, \"\x1b[ q\")"
     }
   },
-  {
-    "ColorScheme",
-    {
-      pattern = "*",
-      command = "highlight QuickScopePrimary guifg='#e3f5ff' gui=underline ctermfg=155 cterm=underline"
-    }
-  },
-  {
-    "ColorScheme",
-    {
-      pattern = "*",
-      command = "highlight QuickScopeSecondary guifg='#6b7575' gui=underline ctermfg=81 cterm=underline"
-    }
-  },
 }

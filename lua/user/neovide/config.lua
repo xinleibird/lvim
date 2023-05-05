@@ -1,7 +1,17 @@
 if vim.g.neovide then
   -- <ENVIRONMENTS>
   -- when open vide, pwd is "/", so jump to $HOME
-  vim.fn.chdir("$HOME")
+  if vim.fn.getcwd() == "/" then
+    -- vim.fn.chdir("$HOME")
+    if vim.v.vim_did_enter then
+      vim.api.nvim_set_current_dir("$HOME")
+    else
+      vim.api.nvim_create_autocmd({ "UIEnter" }, {
+        pattern = "*",
+        command = "chdir $HOME"
+      })
+    end
+  end
   -- set $LANG variable for no login environment
   vim.fn.setenv("LANG", "en_US.UTF-8")
 

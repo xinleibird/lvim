@@ -9,7 +9,7 @@ export LUNARVIM_CACHE_DIR="$HOME/.cache/nvim"
 export LUNARVIM_BASE_DIR="$HOME/.local/share/nvim/lvim"
 ```
 
-Logout OS and relogin, now you can run script.
+Logout OS and relogin, now you can run install script.
 
 ## Why?
 

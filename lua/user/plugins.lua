@@ -6,6 +6,13 @@ lvim.plugins = {
     "unblevable/quick-scope",
     init = function()
       vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
+      vim.api.nvim_create_autocmd({ "ColorScheme" }, {
+        pattern = "*",
+        callback = function()
+          vim.cmd("highlight QuickScopePrimary guifg='#e3f5ff' gui=underline ctermfg=155 cterm=underline")
+          vim.cmd("highlight QuickScopeSecondary guifg='#6b' gui=underline ctermfg=81 cterm=underline")
+        end,
+      })
     end,
   },
   {

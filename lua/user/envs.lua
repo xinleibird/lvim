@@ -1,3 +1,0 @@
--- if vim.g.neovide then
---   vim.env.XDG_STATE_HOME = "~/.local/state"
--- end

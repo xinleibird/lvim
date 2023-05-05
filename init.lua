@@ -3,6 +3,6 @@ if vim.g.vscode then
   vim.cmd.runtime("vscode.vim")
 else
   -- Initialize LunarVim
-  local lvim = os.getenv("LUNARVIM_BASE_DIR") .. "/init.lua"
-  dofile(lvim)
+  local lvim_runtime = os.getenv("LUNARVIM_BASE_DIR") .. "/init.lua"
+  dofile(lvim_runtime)
 end
