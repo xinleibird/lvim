@@ -1,7 +1,4 @@
---- disable automatic installation of servers
--- lvim.lsp.installer.setup.automatic_installation = false
-
--- linters <https://www.lunarvim.org/docs/languages#lintingformatting>
+-- Formater
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup {
   -- { name = "black" },
@@ -10,13 +7,14 @@ formatters.setup {
   { name = "fixjson",  filetypes = { "json" } },
 }
 
--- Formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
+-- Formatters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup {
   { command = "jsonlint",   filetypes = { "json" } },
   { command = "eslint",     filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" } },
   { command = "shellcheck", args = { "--severity", "warning" }, },
 }
+
 
 ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
 ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`

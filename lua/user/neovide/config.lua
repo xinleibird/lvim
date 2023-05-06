@@ -27,8 +27,8 @@ if vim.g.neovide then
 
   -- <WINDOW>
   -- padding
-  vim.g.neovide_padding_top                 = 20
-  vim.g.neovide_padding_bottom              = 20
+  vim.g.neovide_padding_top                 = 10
+  vim.g.neovide_padding_bottom              = 30
   vim.g.neovide_padding_right               = 0
   vim.g.neovide_padding_left                = 0
   -- Helper function for transparency formatting
