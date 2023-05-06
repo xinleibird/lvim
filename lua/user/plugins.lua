@@ -3,6 +3,12 @@ lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
   {
+    "tiagovla/scope.nvim",
+    config = function()
+      require("scope").setup()
+    end
+  },
+  {
     "simrat39/symbols-outline.nvim",
     config = function()
       require('symbols-outline').setup()

@@ -9,6 +9,10 @@ lvim.builtin.which_key.mappings.s.P = {
 lvim.builtin.which_key.mappings.s.p = { "<cmd>Telescope projects<cr>", "Projects" }
 
 
+lvim.builtin.which_key.mappings.s.B = { "<cmd>Telescope git_branches<cr>", "Checkout branch" }
+lvim.builtin.which_key.mappings.s.b = { "<cmd>Telescope scope buffers<cr>", "Show all buffers" }
+
+
 -- Set default Yank to use unnamed clipboard.(like vim original)
 lvim.builtin.which_key.mappings.y  = { '"+y', "Yank to clipboard" }
 lvim.builtin.which_key.mappings.P  = { '"+P', "Paste from clipboard" }
