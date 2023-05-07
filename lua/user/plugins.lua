@@ -25,12 +25,6 @@ lvim.plugins = {
     end
   },
   {
-    "simrat39/symbols-outline.nvim",
-    config = function()
-      require('symbols-outline').setup()
-    end
-  },
-  {
     "unblevable/quick-scope",
     init = function()
       vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
@@ -66,7 +60,10 @@ lvim.plugins = {
   {
     "simrat39/symbols-outline.nvim",
     config = function()
-      require('symbols-outline').setup()
+      require('symbols-outline').setup({
+        width = 20,
+        auto_close = true,
+      })
     end
   },
   {
