@@ -1,26 +1,3 @@
--- Formatters
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup {
-  -- { name = "black" },
-  -- { command = "stylua" },
-  { name = "prettier", },
-  { name = "fixjson",  filetypes = { "json" } },
-}
-
--- Linters
-local linters = require("lvim.lsp.null-ls.linters")
-linters.setup {
-  { command = "jsonlint",   filetypes = { "json" } },
-  { command = "eslint",     filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact" } },
-  { command = "shellcheck", args = { "--severity", "warning" }, },
-  {
-    command = "vint",
-    args = { "--style-problem", "--json" },
-    filetypes = { "vim" },
-  },
-}
-
-
 ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
 ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
@@ -48,19 +25,57 @@ linters.setup {
 -- -- local lspconfig = require('lspconfig')
 -- -- local configs = require('lspconfig/configs')
 -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 -- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- capabilities.textDocument.completion.completionItem.resolveSupport = {
+--   properties = {
+--     "documentation",
+--     "detail",
+--     "additionalTextEdits",
+--   },
+-- }
+
+
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.completion.completionItem.snippetSupport = true
+-- local util = require 'lspconfig/util'
 
 -- require("lvim.lsp.manager").setup("emmet_ls", {
---   -- on_attach = on_attach,
---   capabilities = capabilities,
---   filetypes = { "css", "eruby", "html", "javascript", "javascriptreact", "less", "sass", "scss", "svelte", "pug",
---     "typescriptreact", "vue" },
+--   default_config = {
+--     cmd = { 'emmet-language-server', '--stdio' },
+--     filetypes = {
+--       'html', 'typescriptreact', 'javascriptreact', 'javascript',
+--       'typescript', 'javascript.jsx', 'typescript.tsx', 'css'
+--     },
+
+--     root_dir = util.root_pattern("package.json", ".git"),
+--     settings = {},
+--   },
+-- })
+
+-- require("lvim.lsp.manager").setup("emmet_ls", { capabilities = capabilities, })
+
+
+-- require("lvim.lsp.manager").setup("html", {
+--   cmd = { "vscode-html-language-server", "--stdio" },
+--   filetypes = { "html" },
 --   init_options = {
 --     html = {
 --       options = {
---         -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
---         ["bem.enabled"] = true,
+--         configurationSection = { "html", "css", "javascript" },
+--         embeddedLanguages = {
+--           css = true,
+--           javascript = true
+--         },
+--         provideFormatter = true
 --       },
 --     },
+--   },
+--   single_file_support = true
+-- })
+
+-- require('cmp').setup({
+--   sources = {
+--     { name = 'emmet' }
 --   }
 -- })

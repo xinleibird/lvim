@@ -2,6 +2,16 @@
 lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
+  { "chrisbra/NrrwRgn" },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require "lsp_signature".on_attach() end,
+  },
+  {
+    "xinleibird/cmp-emmet",
+    build = "npm run release",
+  },
   {
     "tiagovla/scope.nvim",
     config = function()
@@ -48,17 +58,10 @@ lvim.plugins = {
     end,
   },
   {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require "lsp_signature".on_attach() end,
-    -- lazy = true
-  },
-  {
-    "xinleibird/vim-vsc-snippets",
+    "simrat39/symbols-outline.nvim",
     config = function()
-      local path = require("lvim.utils").join_paths(get_runtime_dir(), "site", "pack", "lazy", "opt", "vim-vsc-snippets")
-      require("luasnip.loaders.from_vscode").lazy_load({ paths = path })
-    end,
+      require('symbols-outline').setup()
+    end
   },
   {
     "mxsdev/nvim-dap-vscode-js",

@@ -1,5 +1,5 @@
 -- Disable friendly_snippets
-lvim.builtin.luasnip.sources.friendly_snippets = false
+-- lvim.builtin.luasnip.sources.friendly_snippets = false
 
 -- for $TM_SELECTED_TEXT, use **SELECT-MODE** and use snippets wrap selected contents
 --
