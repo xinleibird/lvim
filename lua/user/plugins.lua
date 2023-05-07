@@ -6,11 +6,17 @@ lvim.plugins = {
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function() require "lsp_signature".on_attach() end,
   },
   {
     "xinleibird/cmp-emmet",
     build = "npm run release",
+  },
+  {
+    "xinleibird/vim-vsc-snippets",
+    config = function()
+      local paths = require("lvim.utils").join_paths(get_runtime_dir(), "site", "pack", "lazy", "opt", "vim-vsc-snippets")
+      require("luasnip.loaders.from_vscode").lazy_load({ paths = paths })
+    end,
   },
   {
     "tiagovla/scope.nvim",

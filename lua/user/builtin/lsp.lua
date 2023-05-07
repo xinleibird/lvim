@@ -22,60 +22,8 @@
 --   return server ~= "emmet_ls"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
--- -- local lspconfig = require('lspconfig')
--- -- local configs = require('lspconfig/configs')
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
 
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
--- capabilities.textDocument.completion.completionItem.resolveSupport = {
---   properties = {
---     "documentation",
---     "detail",
---     "additionalTextEdits",
---   },
--- }
-
-
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- capabilities.textDocument.completion.completionItem.snippetSupport = true
--- local util = require 'lspconfig/util'
-
--- require("lvim.lsp.manager").setup("emmet_ls", {
---   default_config = {
---     cmd = { 'emmet-language-server', '--stdio' },
---     filetypes = {
---       'html', 'typescriptreact', 'javascriptreact', 'javascript',
---       'typescript', 'javascript.jsx', 'typescript.tsx', 'css'
---     },
-
---     root_dir = util.root_pattern("package.json", ".git"),
---     settings = {},
---   },
--- })
-
--- require("lvim.lsp.manager").setup("emmet_ls", { capabilities = capabilities, })
-
-
--- require("lvim.lsp.manager").setup("html", {
---   cmd = { "vscode-html-language-server", "--stdio" },
---   filetypes = { "html" },
---   init_options = {
---     html = {
---       options = {
---         configurationSection = { "html", "css", "javascript" },
---         embeddedLanguages = {
---           css = true,
---           javascript = true
---         },
---         provideFormatter = true
---       },
---     },
---   },
---   single_file_support = true
--- })
-
--- require('cmp').setup({
---   sources = {
---     { name = 'emmet' }
---   }
--- })
+-- Lsp_signature attach
+lvim.lsp.on_attach_callback = function()
+  require("lsp_signature").on_attach()
+end
