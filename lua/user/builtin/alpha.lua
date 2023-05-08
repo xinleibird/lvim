@@ -1,9 +1,8 @@
--- Enable dashboard
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode   = "dashboard"
+-- enable dashboard
+lvim.builtin.alpha.active                       = true
+lvim.builtin.alpha.mode                         = "dashboard"
 
-
--- Custom dashboard banner
+-- custom dashboard banner
 lvim.builtin.alpha.dashboard.section.header.val = require("user.plugin.banner").dashboard()
 lvim.builtin.alpha.dashboard.section.footer.val = require("lvim.interface.text").align_center(
   { width = 0 },

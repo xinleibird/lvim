@@ -1,4 +1,3 @@
--- Create autocmd (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- let treesitter use bash highlight for zsh files as well
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "zsh",
@@ -7,7 +6,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- AutoQuite nvim-tree and symbols-outline
+-- autoQuite nvim-tree and symbols-outline
 vim.api.nvim_create_autocmd("QuitPre", {
   callback = function()
     local invalid_win = {}
@@ -25,7 +24,7 @@ vim.api.nvim_create_autocmd("QuitPre", {
   end
 })
 
--- Run vim original autocmd
+-- vim native autocmd
 lvim.autocommands = {
   -- leave lvim restore cursor style
   {

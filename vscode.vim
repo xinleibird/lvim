@@ -1,5 +1,4 @@
-" This only set for [VSCode-Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
-
+" only set for [VSCode-Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
 if exists('g:vscode')
   call plug#begin()
   Plug 'tpope/vim-surround'

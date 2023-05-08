@@ -1,5 +1,4 @@
--- Set Tokyonight colorscheme
--- lvim.builtin.theme.tokyonight.options
+-- set Tokyonight colorscheme
 local tokyonight = require("tokyonight")
 tokyonight.setup({
   -- your configuration comes here
