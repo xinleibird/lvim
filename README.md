@@ -14,3 +14,7 @@ Logout OS and relogin, now you can run install script.
 ## Why?
 
 GUI application in Linux/macOS just can read non-interactive environment variable, `.zshenv` and `.zprofile` are non-login environment, they are non-interactive.
+
+## Font
+
+The best font for me is [**JetBrains Mono**](https://www.jetbrains.com/lp/mono/), use modified third-part version [JetBrainsMono Nerd Font Mono](https://www.nerdfonts.com/font-downloads).

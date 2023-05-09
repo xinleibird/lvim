@@ -20,6 +20,7 @@ if vim.g.neovide then
   --+<FONT>+--
   -- font family
   vim.opt.guifont            = "JetBrainsMono_Nerd_Font_Mono:h13:#e-antialias:#h-none"
+  -- vim.opt.guifont            = "Cascadia_Mono_PL_Light:h14:#e-antialias:#h-full"
 
   -- linespace
   vim.opt.linespace          = 0
@@ -30,8 +31,8 @@ if vim.g.neovide then
 
   --+<WINDOW>+--
   -- padding
-  vim.g.neovide_padding_top                 = 20
-  vim.g.neovide_padding_bottom              = 20
+  vim.g.neovide_padding_top                 = 10
+  vim.g.neovide_padding_bottom              = 30
   vim.g.neovide_padding_right               = 0
   vim.g.neovide_padding_left                = 0
 
