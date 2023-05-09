@@ -8,5 +8,5 @@ lvim.format_on_save     = {
 }
 
 -- change theme
-lvim.colorscheme        = "kanagawa" -- tokyonight | kanagawa
+lvim.colorscheme        = "kanagawa" -- tokyonight | kanagawa | catppuccin
 lvim.transparent_window = true
