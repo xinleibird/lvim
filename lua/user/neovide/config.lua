@@ -16,11 +16,9 @@ if vim.g.neovide then
   -- set $LANG variable for no login environment
   vim.fn.setenv("LANG", "en_US.UTF-8")
 
-
   --+<FONT>+--
   -- font family
   vim.opt.guifont            = "JetBrainsMono_Nerd_Font_Mono:h13:#e-antialias:#h-none"
-  -- vim.opt.guifont            = "Cascadia_Mono_PL_Light:h14:#e-antialias:#h-full"
 
   -- linespace
   vim.opt.linespace          = 0

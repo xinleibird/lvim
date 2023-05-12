@@ -3,6 +3,41 @@ lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
   {
+    "onsails/lspkind.nvim",
+    config = function()
+      require('lspkind').init({
+        preset = 'default',
+        symbol_map = {
+          Text = '',
+          Method = '',
+          Function = '',
+          Constructor = '',
+          Field = '',
+          Variable = '',
+          Class = '',
+          Interface = '',
+          Module = '',
+          Property = '',
+          Unit = '',
+          Value = '',
+          Enum = '',
+          Keyword = '',
+          Snippet = '',
+          Color = '',
+          File = '',
+          Reference = '',
+          Folder = '',
+          EnumMember = '',
+          Constant = '',
+          Struct = '',
+          Event = '',
+          Operator = '',
+          TypeParameter = '',
+        },
+      })
+    end
+  },
+  {
     "folke/tokyonight.nvim",
     config = function()
       require("tokyonight").setup({
