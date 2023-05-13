@@ -6,9 +6,11 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- autoQuite nvim-tree and symbols-outline
+-- autoQuite nvim-tree and symbols and external windows
 vim.api.nvim_create_autocmd("QuitPre", {
   callback = function()
+    vim.cmd("cclose")
+    vim.cmd("lclose")
     local invalid_win = {}
     local wins = vim.api.nvim_list_wins()
     for _, w in ipairs(wins) do
