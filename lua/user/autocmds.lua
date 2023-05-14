@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd("QuitPre", {
   callback = function()
     vim.cmd.cclose()
     vim.cmd.lclose()
+    require("dapui").close()
     local invalid_win = {}
     local wins = vim.api.nvim_list_wins()
     for _, w in ipairs(wins) do

@@ -248,7 +248,6 @@ lvim.plugins = {
     "mxsdev/nvim-dap-vscode-js",
     event = "VeryLazy",
     dependencies = {
-      "mfussenegger/nvim-dap",
       {
         "microsoft/vscode-js-debug",
         module = true,
