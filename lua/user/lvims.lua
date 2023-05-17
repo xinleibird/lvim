@@ -1,12 +1,12 @@
--- general
+-- General
 lvim.log.level          = "info"
 
--- format on save
+-- Format on save
 lvim.format_on_save     = {
   enabled = true,
   timeout = 500,
 }
 
--- change theme
+-- Change theme
 lvim.colorscheme        = "kanagawa" -- tokyonight | kanagawa | catppuccin
 lvim.transparent_window = true

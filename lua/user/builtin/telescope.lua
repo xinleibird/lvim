@@ -1,4 +1,4 @@
--- add Telescope ignore patterns
+-- Add Telescope ignore patterns
 lvim.builtin.telescope.defaults.file_ignore_patterns = { "^%.DS_Store", "^Icon$", "%.git/", "lock%.json",
   "^%.zsh_sessions/", "^%.cache/", "^%.vscode/", "^%.vscode-cli/", "^%.zcompdump", "^%.npm/", "^%.nvm/",
   "^%.oh%-my%-zsh/", "^Applications/", "^Movies/", "^Music/", "^%Pictures/", "^Library/", "^Public/", "^Documents/",

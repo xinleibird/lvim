@@ -1,10 +1,10 @@
----configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
+---Configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
 ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local options = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", options)
 
--- you can set a custom on_attach function that will be used for all the language servers
+-- You can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
 -- lvim.lsp.on_attach_callback                         = function(client, bufnr)
 --   local function buf_set_option(...)
@@ -14,7 +14,7 @@
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
----remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
+---Remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
 ---`:LvimInfo` lists which server(s) are skipped for the current filetype
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 --   return server ~= "emmet_ls"

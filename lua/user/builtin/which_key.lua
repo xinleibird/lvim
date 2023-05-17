@@ -1,4 +1,4 @@
--- add leader key batch
+-- Add leader key batch
 lvim.builtin.which_key.mappings["W"]  = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 lvim.builtin.which_key.mappings["dT"] = { "<cmd>DapTerminate<cr>", "Terminiate current Dap session" }
 
@@ -13,5 +13,5 @@ lvim.builtin.which_key.mappings.s.B   = { "<cmd>Telescope git_branches<cr>", "Ch
 lvim.builtin.which_key.mappings.s.b   = { "<cmd>Telescope scope buffers<cr>", "Show all buffers" }
 
 
--- set outline hotkey
+-- Set outline hotkey
 lvim.builtin.which_key.mappings.o = { ":SymbolsOutline<CR>", "Outline" }

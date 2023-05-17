@@ -1,11 +1,11 @@
--- formatters
+-- Formatters
 local formatters = require("lvim.lsp.null-ls.formatters")
 formatters.setup {
   -- { command = "stylua" },
   { name = "prettier", },
 }
 
--- linters
+-- Linters
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup {
   { command = "jsonlint",   filetypes = { "json" } },

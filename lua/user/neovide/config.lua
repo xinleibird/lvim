@@ -1,6 +1,6 @@
 if vim.g.neovide then
   --+<ENVIRONMENTS>+--
-  -- when open vide, pwd is "/", so jump to $HOME
+  -- When open vide, pwd is "/", so jump to $HOME
   if vim.fn.getcwd() == "/" then
     -- vim.fn.chdir("$HOME")
     if vim.v.vim_did_enter then
@@ -13,28 +13,28 @@ if vim.g.neovide then
     end
   end
 
-  -- set $LANG variable for no login environment
+  -- Set $LANG variable for no login environment
   vim.fn.setenv("LANG", "en_US.UTF-8")
 
   --+<FONT>+--
-  -- font family
+  -- Font family
   vim.opt.guifont            = "JetBrainsMono_Nerd_Font_Mono:h13:#e-antialias:#h-none"
 
-  -- linespace
+  -- Linespace
   vim.opt.linespace          = 0
 
-  -- scaling font without font size vim.g.neovide_scale_factor = 1.0
+  -- Scaling font without font size vim.g.neovide_scale_factor = 1.0
   vim.g.neovide_scale_factor = 1.0
 
 
   --+<WINDOW>+--
-  -- padding
+  -- Padding
   vim.g.neovide_padding_top                 = 10
   vim.g.neovide_padding_bottom              = 30
   vim.g.neovide_padding_right               = 0
   vim.g.neovide_padding_left                = 0
 
-  -- helper function for transparency formatting
+  -- Helper function for transparency formatting
   local alpha                               = function()
     return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
   end
@@ -44,33 +44,33 @@ if vim.g.neovide then
   vim.g.transparency                        = 1.0
   vim.g.neovide_background_color            = "#1b1b25" .. alpha()
 
-  -- blur
+  -- Blur
   vim.g.neovide_floating_blur_amount_x      = 2.0
   vim.g.neovide_floating_blur_amount_y      = 2.0
 
-  -- scrool animation duration
+  -- Scrool animation duration
   vim.g.neovide_scroll_animation_length     = 0.3
 
-  -- hide mouse when typing
+  -- Hide mouse when typing
   vim.g.neovide_hide_mouse_when_typing      = true
 
-  -- scaling 'underline' character automatic
+  -- Scaling 'underline' character automatic
   vim.g.neovide_underline_automatic_scaling = false
 
-  -- refresh rate when vide Foreground or Background
+  -- Refresh rate when vide Foreground or Background
   vim.g.neovide_refresh_rate                = 60
   vim.g.neovide_refresh_rate_idle           = 5
 
-  -- force stop idle: always 60 fps
+  -- Force stop idle: always 60 fps
   vim.g.neovide_no_idle                     = false
 
-  -- quite confirm, but no effect now
-  -- vim.g.neovide_confirm_quit = true
+  -- Quite confirm, but no effect now
+  -- Vim.g.neovide_confirm_quit = true
 
-  -- fullscreen
+  -- Fullscreen
   vim.g.neovide_fullscreen                  = true
 
-  -- remember window size
+  -- Remember window size
   vim.g.neovide_remember_window_size        = true
 
   -- 'profiler' is a indentifier to show FPS in window etc
@@ -78,17 +78,17 @@ if vim.g.neovide then
 
 
   --+<INPUT>+--
-  -- keyboard Super Command Option key, macOs default true
+  -- Keyboard Super Command Option key, macOs default true
   vim.g.neovide_input_use_logo          = true -- true on macOS
   vim.g.neovide_input_macos_alt_is_meta = true
 
-  -- touchpad
+  -- Touchpad
   vim.g.neovide_touch_deadzone          = 6.0
   vim.g.neovide_touch_drag_timeout      = 0.17
 
 
   --+<ANIMATION>+--
-  -- cursor animation duration and style
+  -- Cursor animation duration and style
   vim.g.neovide_cursor_animation_length        = 0.06
   vim.g.neovide_cursor_trail_size              = 0.4
   vim.g.neovide_cursor_antialiasing            = true
@@ -96,7 +96,7 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animate_command_line    = true
   vim.g.neovide_cursor_unfocused_outline_width = 0.125
 
-  -- cursor vfx mode: "railgun", "torpedo","pixiedust", "sonicboom", "wireframe", "ripple", default is blank: ""
+  -- Cursor vfx mode: "railgun", "torpedo","pixiedust", "sonicboom", "wireframe", "ripple", default is blank: ""
   vim.g.neovide_cursor_vfx_mode                = "ripple"
   vim.g.neovide_cursor_vfx_opacity             = 200.0
   vim.g.neovide_cursor_vfx_particle_lifetime   = 1.2

@@ -1,7 +1,7 @@
--- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
+  { "nvim-treesitter/nvim-treesitter", commit = "d2b7832" },
   {
     "onsails/lspkind.nvim",
     config = function()
@@ -252,38 +252,69 @@ lvim.plugins = {
         "microsoft/vscode-js-debug",
         module = true,
         build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
-      }
+      },
+      {
+        "firefox-devtools/vscode-firefox-debug",
+        module = true,
+        build = "npm install && npm run build"
+      },
     },
     config = function()
+      local dap = require("dap")
       local dap_vscode_js = require("dap-vscode-js")
       -- vscode-js configuration for debugging support
-      local debug_path = require("lvim.utils").join_paths(get_runtime_dir(), "site", "pack", "lazy", "opt",
-        "vscode-js-debug")
+      local opt_path = require("lvim.utils").join_paths(get_runtime_dir(), "site", "pack", "lazy", "opt")
+
       dap_vscode_js.setup({
         node_path = "node",
-        debugger_path = debug_path,
+        debugger_path = opt_path .. "/vscode-js-debug",
         adapters = { "pwa-node", "node-terminal", "pwa-chrome", "pwa-msedge" },
       })
-      for _, language in ipairs { "typescript", "javascript" } do
-        require("dap").configurations[language] = {
-          {
-            type = "pwa-chrome",
-            name = "attach - attach remote debugging",
-            request = "attach",
-            program = "${file}",
-            cwd = vim.fn.getcwd(),
-            sourcemaps = true,
-            protocol = "inspector",
-            port = 9222,
-            webroot = "${workspacefolder}",
+
+      dap.adapters.firefox = {
+        type = 'executable',
+        command = 'node',
+        args = { opt_path .. '/vscode-firefox-debug/dist/adapter.bundle.js' },
+      }
+
+      dap.configurations.javascript = {
+        {
+          type = "pwa-node",
+          request = "launch",
+          name = "Launch file with Node",
+          program = "${file}",
+          cwd = "${workspaceFolder}",
+        },
+      }
+
+      dap.configurations.typescript = {
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = "Launch file with Deno",
+          runtimeExecutable = "deno",
+          runtimeArgs = {
+            "run",
+            "--inspect-wait",
+            "--allow-all"
           },
+          program = "${file}",
+          cwd = "${workspaceFolder}",
+          attachSimplePort = 9229,
+        },
+      }
+
+      for _, lang in pairs({ "javascript", "typescript", "javascriptreact", "typescriptreact" }) do
+        dap.configurations[lang] = {
           {
-            type = "pwa-chrome",
-            name = "Launch - Launch Chrome Process",
-            request = "launch",
-            url = "http://localhost:8080",
-            browserLaunchLocation = "workspace",
-          },
+            name = 'Debug with Firefox',
+            type = 'firefox',
+            request = 'launch',
+            reAttach = true,
+            url = 'http://localhost:8080',
+            webRoot = '${workspaceFolder}',
+            firefoxExecutable = '/Applications/Firefox.app/Contents/MacOS/firefox'
+          }
         }
       end
     end
