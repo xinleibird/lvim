@@ -1,7 +1,7 @@
 lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
-  { "nvim-treesitter/nvim-treesitter", commit = "d2b7832" },
+  -- { "nvim-treesitter/nvim-treesitter", commit = "HEAD" },
   {
     "onsails/lspkind.nvim",
     config = function()
@@ -253,11 +253,6 @@ lvim.plugins = {
         module = true,
         build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out"
       },
-      {
-        "firefox-devtools/vscode-firefox-debug",
-        module = true,
-        build = "npm install && npm run build"
-      },
     },
     config = function()
       local dap = require("dap")
@@ -271,11 +266,6 @@ lvim.plugins = {
         adapters = { "pwa-node", "node-terminal", "pwa-chrome", "pwa-msedge" },
       })
 
-      dap.adapters.firefox = {
-        type = 'executable',
-        command = 'node',
-        args = { opt_path .. '/vscode-firefox-debug/dist/adapter.bundle.js' },
-      }
 
       dap.configurations.javascript = {
         {
@@ -284,6 +274,14 @@ lvim.plugins = {
           name = "Launch file with Node",
           program = "${file}",
           cwd = "${workspaceFolder}",
+        },
+        {
+          name = "Launch Chrome",
+          type = "pwa-chrome",
+          request = "launch",
+          reAttach = true,
+          url = 'http://localhost:8080',
+          webRoot = '${workspaceFolder}',
         },
       }
 
@@ -302,19 +300,26 @@ lvim.plugins = {
           cwd = "${workspaceFolder}",
           attachSimplePort = 9229,
         },
+        {
+          name = "Launch Chrome",
+          type = "pwa-chrome",
+          request = "launch",
+          reAttach = true,
+          url = 'http://localhost:8080',
+          webRoot = '${workspaceFolder}',
+        },
       }
 
-      for _, lang in pairs({ "javascript", "typescript", "javascriptreact", "typescriptreact" }) do
+      for _, lang in pairs({ "javascriptreact", "typescriptreact" }) do
         dap.configurations[lang] = {
           {
-            name = 'Debug with Firefox',
-            type = 'firefox',
-            request = 'launch',
+            name = "Launch Chrome",
+            type = "pwa-chrome",
+            request = "launch",
             reAttach = true,
             url = 'http://localhost:8080',
             webRoot = '${workspaceFolder}',
-            firefoxExecutable = '/Applications/Firefox.app/Contents/MacOS/firefox'
-          }
+          },
         }
       end
     end
