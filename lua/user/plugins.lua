@@ -1,7 +1,6 @@
 lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
-  -- { "nvim-treesitter/nvim-treesitter", commit = "HEAD" },
   {
     "onsails/lspkind.nvim",
     config = function()

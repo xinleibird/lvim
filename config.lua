@@ -11,6 +11,7 @@ reload("user.lvims")
 -- LunarVim builtin plugins
 reload("user.builtin.alpha")
 reload("user.builtin.bufferline")
+reload("user.builtin.indentlines")
 reload("user.builtin.cmp")
 reload("user.builtin.lsp")
 reload("user.builtin.lualine")
