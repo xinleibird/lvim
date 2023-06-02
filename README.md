@@ -13,7 +13,7 @@ Logout OS and relogin, now you can run install script.
 
 ## Why?
 
-GUI application in Linux/macOS just can read non-interactive environment variable, `.zshenv` and `.zprofile` are non-login environment, they are non-interactive.
+GUI application in Linux/macOS as [**Neovide**](https://neovide.dev/) just can read non-interactive environment variable, `.zshenv` and `.zprofile` are non-login environment, they are non-interactive.
 
 ## Font
 
