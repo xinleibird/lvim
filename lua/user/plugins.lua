@@ -251,7 +251,7 @@ lvim.plugins = {
       {
         "microsoft/vscode-js-debug",
         module = true,
-        build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+        build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && rm -rf out && mv dist out",
       },
     },
     config = function()
