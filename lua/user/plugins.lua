@@ -185,10 +185,6 @@ lvim.plugins = {
     end,
   },
   {
-    "xinleibird/cmp-emmet",
-    build = "npm run release",
-  },
-  {
     "xinleibird/vim-vsc-snippets",
     config = function()
       local paths =
