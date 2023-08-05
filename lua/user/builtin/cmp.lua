@@ -8,8 +8,8 @@ lvim.builtin.cmp.formatting = {
     maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
     ellipsis_char = "", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 
-    -- before = function(_, vim_item)
+    -- before = function(entry, vim_item)
     --   return vim_item
-    -- end
+    -- end,
   },
 }
