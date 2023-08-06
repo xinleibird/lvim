@@ -2,14 +2,22 @@
 lvim.builtin.cmp.completion.completeopt = "menu,menuone"
 lvim.builtin.cmp.completion.keyword_length = 1
 
-lvim.builtin.cmp.formatting = {
-  format = require("lspkind").cmp_format {
-    mode = "symbol", -- show only symbol annotations
-    maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-    ellipsis_char = "", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-
-    -- before = function(entry, vim_item)
-    --   return vim_item
-    -- end,
+lvim.builtin.cmp.window = {
+  completion = {
+    winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+    col_offset = -3,
+    side_padding = 0,
   },
+}
+
+lvim.builtin.cmp.formatting = {
+  fields = { "kind", "abbr", "menu" },
+  format = function(entry, vim_item)
+    local kind = require("lspkind").cmp_format { mode = "symbol_text", maxwidth = 50 }(entry, vim_item)
+    local strings = vim.split(kind.kind, "%s", { trimempty = true })
+    kind.kind = " " .. (strings[1] or "") .. " "
+    kind.menu = "   "
+
+    return kind
+  end,
 }
