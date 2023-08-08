@@ -18,7 +18,7 @@ if vim.g.neovide then
 
   --+<FONT>+--
   -- Font family
-  vim.opt.guifont = "JetBrainsMono_Nerd_Font_Mono:h13:#e-antialias:#h-none"
+  vim.opt.guifont = "JetBrains_Mono,JetBrainsMono_Nerd_Font_Mono:h13:#e-antialias:#h-none"
 
   -- Linespace
   vim.opt.linespace = 0
@@ -28,20 +28,21 @@ if vim.g.neovide then
 
   --+<WINDOW>+--
   -- Padding
-  vim.g.neovide_padding_top = 10
-  vim.g.neovide_padding_bottom = 30
+  vim.g.neovide_padding_top = 0
+  vim.g.neovide_padding_bottom = 0
   vim.g.neovide_padding_right = 0
   vim.g.neovide_padding_left = 0
 
   -- Helper function for transparency formatting
   local alpha = function()
-    return string.format("%x", math.floor(255 * (vim.g.transparency or 0.8)))
+    return string.format("%x", math.floor((255 * vim.g.neovide_transparency_point) or 0.8))
   end
 
   -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
   vim.g.neovide_transparency = 0.0
-  vim.g.transparency = 1.0
+  vim.g.neovide_transparency_point = 1.0
   vim.g.neovide_background_color = "#1b1b25" .. alpha()
+  vim.g.neovide_theme = "auto"
 
   -- Blur
   vim.g.neovide_floating_blur_amount_x = 2.0
@@ -64,7 +65,7 @@ if vim.g.neovide then
   vim.g.neovide_no_idle = false
 
   -- Quite confirm, but no effect now
-  -- Vim.g.neovide_confirm_quit = true
+  vim.g.neovide_confirm_quit = true
 
   -- Fullscreen
   vim.g.neovide_fullscreen = true

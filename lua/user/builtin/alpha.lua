@@ -9,3 +9,4 @@ lvim.builtin.alpha.dashboard.section.footer.val = require("lvim.interface.text")
   { "", "", "", "PRESS START", "LunarVim" },
   0.5
 )
+lvim.builtin.alpha.dashboard.opts.autostart = false

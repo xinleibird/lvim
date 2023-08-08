@@ -39,4 +39,12 @@ lvim.autocommands = {
       command = 'set guicursor= | call chansend(v:stderr, "\x1b[ q")',
     },
   },
+  -- delay start Alpha.nvim
+  {
+    "VimEnter",
+    {
+      pattern = "*",
+      command = "call timer_start(200, { tid -> execute('Alpha')})",
+    },
+  },
 }
