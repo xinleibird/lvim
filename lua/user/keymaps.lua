@@ -10,7 +10,7 @@ lvim.keys.normal_mode["<D-p>"] = ":Telescope find_files<CR>"
 lvim.keys.normal_mode["<D-o>"] = ":SymbolsOutline<CR>"
 
 -- Paste hotkey
-lvim.keys.insert_mode["<D-v>"] = "<C-r>+"
+vim.api.nvim_set_keymap("i", "<D-v>", "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>", { noremap = true })
 vim.api.nvim_set_keymap("c", "<D-v>", "<C-r>+", { noremap = true })
 
 -- Toggle terminal mapping
