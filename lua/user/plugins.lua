@@ -37,46 +37,6 @@ lvim.plugins = {
     end,
   },
   {
-    "folke/tokyonight.nvim",
-    config = function()
-      require("tokyonight").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-        light_style = "day", -- The theme is used when the background is set to light
-        transparent = true, -- Enable this to disable setting the background color
-        terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
-        styles = {
-          -- Style to be applied to different syntax groups
-          -- Value is any valid attr-list value for `:help nvim_set_hl`
-          comments = { italic = true },
-          keywords = { italic = true },
-          functions = { italic = false },
-          variables = { italic = false },
-          -- Background styles. Can be "dark", "transparent" or "normal"
-          sidebars = "transparent", -- style for sidebars, see below
-          floats = "transparent", -- style for floating windows
-        },
-        sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-        day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
-        hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-        dim_inactive = false, -- dims inactive windows
-        lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
-        -- Set some keyword like "function" and some attributes as italic
-        on_highlights = function(hl, c)
-          hl["@keyword.function"] = {
-            fg = c.magenta,
-            italic = true,
-          }
-          hl["@tag.attribute.html"] = {
-            fg = c.green1,
-            italic = true,
-          }
-        end,
-      }
-    end,
-  },
-  {
     "catppuccin/nvim",
     name = "catppuccin",
     config = function()
@@ -136,7 +96,7 @@ lvim.plugins = {
         keywordStyle = { italic = true },
         statementStyle = { bold = true },
         typeStyle = {},
-        -- transparent = true, -- do not set background color
+        transparent = false,
         dimInactive = false, -- dim inactive window `:h hl-NormalNC`
         terminalColors = true, -- define vim.g.terminal_color_{0,17}
         colors = {
@@ -205,8 +165,8 @@ lvim.plugins = {
       vim.api.nvim_create_autocmd({ "ColorScheme" }, {
         pattern = "*",
         callback = function()
-          vim.cmd "highlight QuickScopePrimary guifg='#e3f5ff' gui=underline ctermfg=155 cterm=underline"
-          vim.cmd "highlight QuickScopeSecondary guifg='#6b' gui=underline ctermfg=81 cterm=underline"
+          vim.cmd "highlight QuickScopePrimary guifg='#fdfefe' gui=underline ctermfg=155 cterm=underline"
+          vim.cmd "highlight QuickScopeSecondary guifg='#707b7c' gui=underline ctermfg=81 cterm=underline"
         end,
       })
     end,

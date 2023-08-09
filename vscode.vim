@@ -7,8 +7,8 @@ call plug#end()
 let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 let mapleader=' '
 
-highlight QuickScopePrimary guifg='#e3f5ff' gui=underline ctermfg=231 cterm=underline
-highlight QuickScopeSecondary guifg='#6b7575' gui=underline ctermfg=252 cterm=underline
+highlight QuickScopePrimary guifg='#fdfefe' gui=underline ctermfg=231 cterm=underline
+highlight QuickScopeSecondary guifg='#707b7c' gui=underline ctermfg=252 cterm=underline
 
 xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
