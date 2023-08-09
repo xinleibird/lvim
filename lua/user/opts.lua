@@ -6,7 +6,7 @@ vim.opt.relativenumber = false
 vim.opt.langmenu = "en_US.UTF-8"
 vim.opt.clipboard = ""
 vim.opt.guicursor = "n-v-sm:block,c-i-ci-ve:ver25,r-cr-o:hor25"
--- vim.opt.wrap           = true
+-- vim.opt.wrap = true
 
 -- Remove paste pattern for comment
 vim.opt.formatoptions:remove { "c", "r" }
