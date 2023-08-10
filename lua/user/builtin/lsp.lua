@@ -21,3 +21,10 @@
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 require("lvim.lsp.manager").setup "emmet_language_server"
+
+require("lvim.lsp.manager").setup("taplo", {
+  cmd = { "taplo", "lsp", "stdio" },
+  filetype = { "toml" },
+  root_dir = require("lspconfig/util").root_pattern("*.toml", ".git"),
+  single_file_support = true,
+})

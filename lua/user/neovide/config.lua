@@ -42,7 +42,15 @@ if vim.g.neovide then
   -- vim.g.neovide_transparency = 0.9
   -- vim.g.neovide_transparency_point = 0.9
   -- vim.g.neovide_background_color = "#1b1b25" .. alpha()
-  vim.g.neovide_theme = "auto"
+
+  -- --+Auto dark mode just for neovide+--
+  -- local auto_dark = function()
+  --   vim.g.neovide_theme = "auto"
+  --   local cmd = "defaults read -g AppleInterfaceStyle 2>/dev/null || echo Light"
+  --   local mode = vim.fn.system(cmd):gsub("\n", ""):lower()
+  --   vim.opt.background = mode
+  -- end
+  -- auto_dark()
 
   -- Blur
   vim.g.neovide_floating_blur_amount_x = 2.0

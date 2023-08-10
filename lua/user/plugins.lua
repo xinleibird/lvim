@@ -1,6 +1,7 @@
 lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
+  { "vimpostor/vim-lumen" },
   {
     "onsails/lspkind.nvim",
     config = function()
