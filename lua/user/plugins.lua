@@ -40,9 +40,10 @@ lvim.plugins = {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    priority = 1000,
     config = function()
       require("catppuccin").setup {
-        flavour = "mocha", -- latte, frappe, macchiato, mocha
+        -- flavour = "mocha", -- latte, frappe, macchiato, mocha
         background = {
           -- :h background
           light = "latte",
@@ -88,6 +89,7 @@ lvim.plugins = {
   },
   {
     "rebelot/kanagawa.nvim",
+    priority = 2000,
     config = function()
       require("kanagawa").setup {
         compile = false, -- enable compiling the colorscheme

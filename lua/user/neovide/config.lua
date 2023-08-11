@@ -43,6 +43,7 @@ if vim.g.neovide then
   -- vim.g.neovide_transparency_point = 0.9
   -- vim.g.neovide_background_color = "#1b1b25" .. alpha()
 
+  vim.g.neovide_theme = ""
   -- --+Auto dark mode just for neovide+--
   -- local auto_dark = function()
   --   vim.g.neovide_theme = "auto"
