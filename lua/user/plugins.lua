@@ -89,7 +89,7 @@ lvim.plugins = {
   },
   {
     "rebelot/kanagawa.nvim",
-    priority = 2000,
+    priority = 1000,
     config = function()
       require("kanagawa").setup {
         compile = false, -- enable compiling the colorscheme

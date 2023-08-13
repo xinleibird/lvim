@@ -8,4 +8,4 @@ lvim.format_on_save = {
 }
 
 -- Change theme
-lvim.colorscheme = "catppuccin" -- tokyonight | kanagawa | catppuccin
+lvim.colorscheme = "kanagawa" -- tokyonight | kanagawa | catppuccin
