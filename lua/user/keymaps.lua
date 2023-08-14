@@ -18,6 +18,3 @@ lvim.builtin.terminal.open_mapping = "<c-`>"
 
 -- Command mode move cursor to line head
 vim.api.nvim_set_keymap("c", "<C-a>", "<C-b>", { noremap = true })
-
--- Fullscreen toggle for neovide
-lvim.keys.normal_mode["<D-C-f>"] = "<cmd>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen<cr>"
