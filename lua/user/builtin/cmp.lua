@@ -4,17 +4,17 @@ lvim.builtin.cmp.completion.keyword_length = 1
 
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
-  nvim_lsp = "[ LSP]",
-  emoji = "[Emoj]",
-  path = "[Path]",
-  calc = "[Calc]",
-  cmp_tabnine = "[Tabn]",
-  vsnip = "[Snip]",
-  luasnip = "[Snip]",
-  buffer = "[Buff]",
-  tmux = "[Tmux]",
-  copilot = "[Copi]",
-  treesitter = "[Tree]",
+  nvim_lsp = "[󰿘 LSP ]",
+  emoji = "[󰱵 Emoj]",
+  path = "[ Path]",
+  calc = "[󱖦 Calc]",
+  cmp_tabnine = "[󰲰 TabN]",
+  vsnip = "[󱛞 Snip]",
+  luasnip = "[󱛞 Snip]",
+  buffer = "[󱎸 Buff]",
+  tmux = "[ TMUX]",
+  copilot = "[ Copi]",
+  treesitter = "[ Tree]",
 }
 
 lvim.builtin.cmp.formatting.format = function(entry, vim_item)
@@ -58,7 +58,7 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
   vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
 
   if entry.source:get_debug_name() == "nvim_lsp:emmet_language_server" then
-    vim_item.menu = "[Emme]"
+    vim_item.menu = "[ Emme]"
   end
 
   vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
