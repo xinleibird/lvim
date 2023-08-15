@@ -4,7 +4,7 @@ lvim.builtin.cmp.completion.keyword_length = 1
 
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
-  nvim_lsp = "[󰿘 LSP ]",
+  nvim_lsp = "[󰿘 ┈LSP]",
   emoji = "[󰱵 Emoj]",
   path = "[ Path]",
   calc = "[󱖦 Calc]",
