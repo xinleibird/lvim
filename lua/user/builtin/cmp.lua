@@ -51,7 +51,7 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
     end
 
     if entry.source:get_debug_name() == "nvim_lsp:emmet_language_server" then
-      vim_item.kind = lvim.icons.kind.Snippet
+      vim_item.kind = ""
       vim_item.kind_hl_group = "CmpItemKindEmoji"
     end
   end
