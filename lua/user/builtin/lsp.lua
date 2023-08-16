@@ -23,3 +23,7 @@
 require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "vale-ls"
+require("lvim.lsp.manager").setup("bashls", {
+  cmd = { "bash-language-server", "start" },
+  filetypes = { "sh", "bash", "zsh" },
+})

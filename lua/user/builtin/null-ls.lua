@@ -2,6 +2,10 @@
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
+    command = "shfmt",
+    filetypes = { "sh", "bash", "zsh" },
+  },
+  {
     command = "stylua",
     condition = function(utils)
       return utils.root_has_file { "stylua.toml", ".stylua.toml" }
