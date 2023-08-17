@@ -127,13 +127,31 @@ lvim.plugins = {
     end,
   },
   {
-    "xinleibird/vim-vsc-snippets",
+    "L3MON4D3/LuaSnip",
     config = function()
-      local paths =
-        require("lvim.utils").join_paths(get_runtime_dir(), "site", "pack", "lazy", "opt", "vim-vsc-snippets")
-      require("luasnip.loaders.from_vscode").lazy_load { paths = paths }
+      local utils = require "lvim.utils"
+      local paths = {}
+      if lvim.builtin.luasnip.sources.friendly_snippets then
+        paths[#paths + 1] = utils.join_paths(get_runtime_dir(), "site", "pack", "lazy", "opt", "vim-vsc-snippets")
+      end
+      local user_snippets = utils.join_paths(get_config_dir(), "snippets")
+      if utils.is_directory(user_snippets) then
+        paths[#paths + 1] = user_snippets
+      end
+      require("luasnip.loaders.from_lua").lazy_load()
+      require("luasnip.loaders.from_vscode").lazy_load {
+        paths = paths,
+        exclude = { "all" },
+      }
+      require("luasnip.loaders.from_snipmate").lazy_load()
     end,
+    event = "InsertEnter",
+    dependencies = {
+      "vim-vsc-snippets",
+    },
   },
+  { "xinleibird/vim-vsc-snippets", lazy = true },
+  { "rafamadriz/friendly-snippets", lazy = true },
   {
     "tiagovla/scope.nvim",
     config = function()

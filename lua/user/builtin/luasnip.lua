@@ -1,6 +1,3 @@
--- Disable friendly_snippets
-lvim.builtin.luasnip.sources.friendly_snippets = false
-
 -- For $TM_SELECTED_TEXT, use **SELECT-MODE** and use snippets wrap selected contents
 -- help:
 --    h:v_CTRL-G
