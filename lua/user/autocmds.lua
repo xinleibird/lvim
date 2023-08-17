@@ -29,14 +29,8 @@ vim.api.nvim_create_autocmd("QuitPre", {
   end,
 })
 
--- Vim native autocmd
-lvim.autocommands = {
-  -- leave lvim restore cursor style
-  {
-    "VimLeave",
-    {
-      pattern = "*",
-      command = 'set guicursor= | call chansend(v:stderr, "\x1b[ q")',
-    },
-  },
-}
+-- Leave lvim restore cursor style
+vim.api.nvim_create_autocmd("VimLeave", {
+  pattern = "*",
+  command = 'set guicursor= | call chansend(v:stderr, "\x1b[ q")',
+})
