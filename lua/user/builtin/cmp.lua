@@ -62,6 +62,6 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
   end
 
   vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
-      or lvim.builtin.cmp.formatting.duplicates_default
+    or lvim.builtin.cmp.formatting.duplicates_default
   return vim_item
 end
