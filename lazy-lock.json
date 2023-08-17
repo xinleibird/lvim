@@ -49,7 +49,7 @@
   "toggleterm.nvim": { "branch": "main", "commit": "12cba0a1967b4f3f31903484dec72a6100dcf515" },
   "tokyonight.nvim": { "branch": "main", "commit": "1ee11019f8a81dac989ae1db1a013e3d582e2033" },
   "vim-illuminate": { "branch": "master", "commit": "5ed17582a8e97bf0a0c617c3cf762e98f87b9859" },
-  "vim-lumen": { "branch": "master", "commit": "b11795113455ca6f99e408ee4ba46d2f628e7b71" },
+  "vim-lumen": { "branch": "master", "commit": "1e3f9c81ae04498dd5f9b38915b88c47485904f1" },
   "vim-repeat": { "branch": "master", "commit": "24afe922e6a05891756ecf331f39a1f6743d3d5a" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-vsc-snippets": { "branch": "main", "commit": "e25adfdce80f730cb87b4b24d5718d151b609f53" },

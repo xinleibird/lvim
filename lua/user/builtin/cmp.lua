@@ -4,7 +4,7 @@ lvim.builtin.cmp.completion.keyword_length = 1
 
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
-  nvim_lsp = "[󰿘 ┈LSP]",
+  nvim_lsp = "[ …LSP]",
   emoji = "[󰱵 Emoj]",
   path = "[ Path]",
   calc = "[󱖦 Calc]",
@@ -62,6 +62,6 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
   end
 
   vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
-    or lvim.builtin.cmp.formatting.duplicates_default
+      or lvim.builtin.cmp.formatting.duplicates_default
   return vim_item
 end
