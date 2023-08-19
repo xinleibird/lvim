@@ -1,14 +1,10 @@
-call plug#begin()
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'unblevable/quick-scope'
-call plug#end()
-
-let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
 let mapleader=' '
+let g:qs_highlight_on_keys=['f', 'F', 't', 'T']
+let g:qs_hi_priority = 2
 
-highlight QuickScopePrimary guifg='#fdfefe' gui=underline ctermfg=231 cterm=underline
-highlight QuickScopeSecondary guifg='#707b7c' gui=underline ctermfg=252 cterm=underline
+highlight QuickScopePrimary guifg='#EC1424' gui=underline ctermfg=196 cterm=underline
+highlight QuickScopeSecondary guifg='#6F0008' gui=underline ctermfg=52 cterm=underline
+
 
 xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
@@ -22,3 +18,4 @@ nmap <silent> <leader>lj <Cmd>call VSCodeNotify('editor.action.marker.nextInFile
 nmap <silent> <leader>lk <Cmd>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
 
 nmap <leader>e <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
+

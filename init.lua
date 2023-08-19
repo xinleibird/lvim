@@ -1,4 +1,6 @@
 if vim.g.vscode then
+  -- Enable vim-plugin
+  vim.cmd.runtime "plug.vim"
   -- Just for VSCode-Neovim
   vim.cmd.runtime "vscode.vim"
 else

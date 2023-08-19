@@ -2,6 +2,7 @@ lvim.plugins = {
   { "tpope/vim-surround" },
   { "tpope/vim-repeat" },
   { "vimpostor/vim-lumen" },
+  { "HiPhish/rainbow-delimiters.nvim" },
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -61,7 +62,10 @@ lvim.plugins = {
           nvimtree = true,
           telescope = true,
           notify = false,
-          mini = false, -- https://github.com/catppuccin/nvim#integrations
+          mini = false, -- https://github.com/catppuccin/nvim#integrations,
+          mason = true,
+          which_key = true,
+          symbols_outline = true,
         },
       }
     end,
@@ -165,8 +169,8 @@ lvim.plugins = {
       vim.api.nvim_create_autocmd({ "ColorScheme" }, {
         pattern = "*",
         callback = function()
-          vim.cmd "highlight QuickScopePrimary guifg='#fdfefe' gui=underline ctermfg=155 cterm=underline"
-          vim.cmd "highlight QuickScopeSecondary guifg='#707b7c' gui=underline ctermfg=81 cterm=underline"
+          vim.cmd "highlight QuickScopePrimary guifg='#EC1424' gui=underline ctermfg=196 cterm=underline"
+          vim.cmd "highlight QuickScopeSecondary guifg='#6F0008' gui=underline ctermfg=52 cterm=underline"
         end,
       })
     end,
