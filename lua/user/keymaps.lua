@@ -14,3 +14,29 @@ lvim.builtin.terminal.open_mapping = "<c-`>"
 
 -- Command mode move cursor to line head
 vim.api.nvim_set_keymap("c", "<C-a>", "<C-b>", { noremap = true })
+
+-- Toggle end of line semi and coma
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-,>",
+  ":lua require('user.plugin.togglesemi').toggle(',')<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<C-;>",
+  ":lua require('user.plugin.togglesemi').toggle(';')<CR>",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "i",
+  "<C-,>",
+  "<Esc>:lua require('user.plugin.togglesemi').toggle(',')<CR>a",
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "i",
+  "<C-;>",
+  "<Esc>:lua require('user.plugin.togglesemi').toggle(';')<CR>a",
+  { noremap = true, silent = true }
+)
