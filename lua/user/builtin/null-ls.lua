@@ -48,6 +48,7 @@ linters.setup {
         ".eslintrc.yml",
         ".eslintrc.yaml",
         ".eslintrc.json",
+        ".eslintrc",
       }
     end,
   },
