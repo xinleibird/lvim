@@ -5,8 +5,31 @@ formatters.setup {
     command = "shfmt",
     filetypes = { "sh", "bash", "zsh" },
   },
-  { command = "stylua" },
-  { name = "prettier" },
+  {
+    command = "stylua",
+    condition = function(utils)
+      return utils.root_has_file { "stylua.toml", ".stylua.toml" }
+    end,
+  },
+  {
+    name = "prettier",
+    condition = function(utils)
+      return utils.root_has_file {
+        ".prettierrc",
+        ".prettierrc.json",
+        ".prettierrc.yml",
+        ".prettierrc.yaml",
+        ".prettierrc.json5",
+        ".prettierrc.js",
+        "prettier.config.js",
+        ".prettierrc.mjs",
+        "prettier.config.mjs",
+        ".prettierrc.cjs",
+        "prettier.config.cjs",
+        ".prettierrc.toml",
+      }
+    end,
+  },
 }
 
 -- Linters
