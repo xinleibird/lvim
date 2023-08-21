@@ -27,3 +27,15 @@ require("lvim.lsp.manager").setup("bashls", {
   cmd = { "bash-language-server", "start" },
   filetypes = { "sh", "bash", "zsh" },
 })
+
+require("lvim.lsp.manager").setup("tsserver", {
+  on_attach = function(client, _)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
+
+require("lvim.lsp.manager").setup("lua_ls", {
+  on_attach = function(client, _)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
