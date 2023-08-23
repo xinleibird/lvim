@@ -31,11 +31,13 @@ require("lvim.lsp.manager").setup("bashls", {
 require("lvim.lsp.manager").setup("tsserver", {
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
   end,
 })
 
 require("lvim.lsp.manager").setup("lua_ls", {
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
   end,
 })

@@ -4,24 +4,27 @@ lvim.builtin.cmp.completion.keyword_length = 1
 
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
-  nvim_lsp = "‹…LSP›",
-  emoji = "‹Emoj›",
-  path = "‹Path›",
-  calc = "‹Calc›",
-  cmp_tabnine = "‹TabN›",
-  vsnip = "‹Snip›",
-  luasnip = "‹Snip›",
-  buffer = "‹Buff›",
-  tmux = "‹Tmux›",
-  copilot = "‹Copi›",
-  treesitter = "‹Tree›",
+  nvim_lsp = " 󰅭  LSP",
+  emoji = " 󰇷 Emoj",
+  path = " 󰇐 Path",
+  calc = " 󰪚 Calc",
+  cmp_tabnine = " 󰲰 TabN",
+  vsnip = " 󰆘 Snip",
+  luasnip = " 󰆘 Snip",
+  buffer = "  Buff",
+  tmux = " 󰐯 Tmux",
+  copilot = "  Copi",
+  treesitter = " 󰺔 Tree",
 }
 
 lvim.builtin.cmp.formatting.format = function(entry, vim_item)
+  vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
+
   local max_width = lvim.builtin.cmp.formatting.max_width
   if max_width ~= 0 and #vim_item.abbr > max_width then
     vim_item.abbr = string.sub(vim_item.abbr, 1, max_width - 1) .. lvim.icons.ui.Ellipsis
   end
+
   if lvim.use_icons then
     vim_item.kind = lvim.builtin.cmp.formatting.kind_icons[vim_item.kind]
 
@@ -52,16 +55,28 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
 
     if entry.source:get_debug_name() == "nvim_lsp:emmet_language_server" then
       vim_item.kind = ""
-      vim_item.kind_hl_group = "CmpItemKindEmoji"
+      vim_item.menu = " 󱢍 Emme"
     end
-  end
-  vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
 
-  if entry.source:get_debug_name() == "nvim_lsp:emmet_language_server" then
-    vim_item.menu = "‹Emme›"
+    if entry.source:get_debug_name() == "nvim_lsp:tsserver" then
+      vim_item.menu = "   TSS"
+    end
+
+    if entry.source:get_debug_name() == "nvim_lsp:html" then
+      vim_item.menu = "   HTM"
+    end
+
+    if entry.source:get_debug_name() == "nvim_lsp:cssls" then
+      vim_item.menu = "   CSS"
+    end
+
+    if entry.source:get_debug_name() == "nvim_lsp:lua_ls" then
+      vim_item.menu = "   LUA"
+    end
   end
 
   vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]
     or lvim.builtin.cmp.formatting.duplicates_default
+
   return vim_item
 end

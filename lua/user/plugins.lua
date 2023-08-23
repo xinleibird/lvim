@@ -4,6 +4,24 @@ lvim.plugins = {
   { "vimpostor/vim-lumen" },
   { "HiPhish/rainbow-delimiters.nvim" },
   {
+    "filipdutescu/renamer.nvim",
+    branch = "master",
+    dependencies = { { "nvim-lua/plenary.nvim" } },
+    config = function()
+      require("renamer").setup()
+    end,
+  },
+  {
+    "nacro90/numb.nvim",
+    event = "BufRead",
+    config = function()
+      require("numb").setup {
+        show_numbers = true, -- Enable 'number' for the window while peeking
+        show_cursorline = true, -- Enable 'cursorline' for the window while peeking
+      }
+    end,
+  },
+  {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({ "css", "scss", "html", "javascript" }, {

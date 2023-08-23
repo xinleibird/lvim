@@ -3,7 +3,7 @@
 -- lvim.lsp.buffer_mappings.normal_mode['gH']   = { vim.lsp.buf.hover, "Show hover" }
 
 -- Add new Map to <f2>
-lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
+-- lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
 
 -- Paste hotkey
 vim.api.nvim_set_keymap("i", "<D-v>", "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>", { noremap = true })
@@ -40,3 +40,7 @@ vim.api.nvim_set_keymap(
   "<Esc>:lua require('user.plugin.togglesemi').toggle(';')<CR>a",
   { noremap = true, silent = true }
 )
+
+vim.api.nvim_set_keymap("n", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<F2>", '<cmd>lua require("renamer").rename()<cr>', { noremap = true, silent = true })

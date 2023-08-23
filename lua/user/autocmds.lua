@@ -6,23 +6,31 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- AutoQuite nvim-tree and symbols and external windows
 vim.api.nvim_create_autocmd("QuitPre", {
   callback = function()
     vim.cmd.cclose()
     vim.cmd.lclose()
     require("dapui").close()
-    local invalid_win = {}
+    local tree_wins = {}
+    local floating_wins = {}
     local wins = vim.api.nvim_list_wins()
+
     for _, w in ipairs(wins) do
       local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
       if bufname:match "NvimTree_" ~= nil or bufname:match "OUTLINE" ~= nil then
-        table.insert(invalid_win, w)
+        table.insert(tree_wins, w)
+      end
+      if bufname:match "qf" ~= nil then
+        require("symbols-outline").close_outline()
+      end
+      if vim.api.nvim_win_get_config(w).relative ~= "" then
+        table.insert(floating_wins, w)
       end
     end
-    if #invalid_win == #wins - 1 then
+
+    if 1 == #wins - #floating_wins - #tree_wins then
       -- Should quit, so we close all invalid windows.
-      for _, w in ipairs(invalid_win) do
+      for _, w in ipairs(tree_wins) do
         vim.api.nvim_win_close(w, true)
       end
     end
