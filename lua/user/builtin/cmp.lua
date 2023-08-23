@@ -73,6 +73,14 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
     if entry.source:get_debug_name() == "nvim_lsp:lua_ls" then
       vim_item.menu = "   LUA"
     end
+
+    if entry.source:get_debug_name() == "nvim_lsp:intelephense" then
+      vim_item.menu = "   PHP"
+    end
+
+    if entry.source:get_debug_name() == "nvim_lsp:vimls" then
+      vim_item.menu = "   VIM"
+    end
   end
 
   vim_item.dup = lvim.builtin.cmp.formatting.duplicates[entry.source.name]

@@ -6,7 +6,7 @@ formatters.setup {
     filetypes = { "sh", "bash", "zsh" },
   },
   { name = "stylua" },
-  { name = "prettier" },
+  { name = "prettierd" },
 }
 
 -- Linters
