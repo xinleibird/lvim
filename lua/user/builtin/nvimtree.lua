@@ -10,6 +10,7 @@ lvim.builtin.nvimtree.setup.update_focused_file = {
   update_root = false,
 }
 lvim.builtin.nvimtree.setup.filters.custom = {
+  ".git",
   ".DS_Store",
   "Icon[^M]",
   ".AppleDouble",

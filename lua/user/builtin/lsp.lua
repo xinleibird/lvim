@@ -23,6 +23,7 @@
 require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "vale-ls"
+require("lvim.lsp.manager").setup "intelephense"
 require("lvim.lsp.manager").setup("bashls", {
   cmd = { "bash-language-server", "start" },
   filetypes = { "sh", "bash", "zsh" },
@@ -31,13 +32,47 @@ require("lvim.lsp.manager").setup("bashls", {
 require("lvim.lsp.manager").setup("tsserver", {
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
   end,
 })
 
 require("lvim.lsp.manager").setup("lua_ls", {
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false
-    client.server_capabilities.documentRangeFormattingProvider = false
   end,
 })
+
+require("lvim.lsp.manager").setup("html", {
+  on_attach = function(client, _)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
+--
+-- if you want to set up formatting on save, you can use this as a callback
+-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+-- local lsp_formatting = function(bufnr)
+--   vim.lsp.buf.format {
+--     filter = function(client)
+--       -- apply whatever logic you want (in this example, we'll only use null-ls)
+--       return client.name == "null-ls"
+--     end,
+--     bufnr = bufnr,
+--   }
+-- end
+
+-- local on_attach = function(client, bufnr)
+--   if client.supports_method "textDocument/formatting" then
+--     vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       group = augroup,
+--       buffer = bufnr,
+--       callback = function()
+--         lsp_formatting(bufnr)
+--       end,
+--     })
+--   end
+-- end
+
+-- require("lvim.lsp.manager").setup("tsserver", { on_attach = on_attach })
+-- require("lvim.lsp.manager").setup("lua_ls", { on_attach = on_attach })
+-- require("lvim.lsp.manager").setup("html", { on_attach = on_attach })

@@ -16,3 +16,10 @@ linters.setup {
   { name = "shellcheck", args = { "--severity", "warning" } },
   { name = "eslint_d" },
 }
+
+-- Actions e.g. fix issues
+-- local code_actions = require "lvim.lsp.null-ls.code_actions"
+-- code_actions.setup {
+--   { name = "shellcheck" },
+--   { name = "eslint_d" },
+-- }
