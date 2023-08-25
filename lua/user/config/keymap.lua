@@ -40,3 +40,6 @@ vim.api.nvim_set_keymap(
   "<Esc>:lua require('user.plugin.togglesemi').toggle(';')<CR>a",
   { noremap = true, silent = true }
 )
+
+-- Toggle Buffer Quickfix
+vim.api.nvim_set_keymap("n", "<C-q>", ":lua vim.diagnostic.setloclist()<CR>", { noremap = true, silent = true })

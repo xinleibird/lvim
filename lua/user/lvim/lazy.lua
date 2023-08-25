@@ -37,7 +37,7 @@ lvim.plugins = {
         background = {
           -- :h background
           light = "latte",
-          dark = "mocha",
+          dark = "frappe",
         },
         transparent_background = false,
         show_end_of_buffer = false, -- show the '~' characters after the end of buffers
@@ -63,7 +63,11 @@ lvim.plugins = {
           types = {},
           operators = {},
         },
-        color_overrides = {},
+        color_overrides = {
+          frappe = {
+            base = "#313445",
+          },
+        },
         custom_highlights = {},
         integrations = {
           alpha = true,

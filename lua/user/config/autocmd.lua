@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("QuitPre", {
+  pattern = "*",
   callback = function()
     vim.cmd.cclose()
     vim.cmd.lclose()
