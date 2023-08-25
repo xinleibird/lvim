@@ -203,7 +203,7 @@ lvim.plugins = {
     config = function()
       require("symbols-outline").setup {
         width = 20,
-        auto_close = true,
+        auto_close = false,
       }
     end,
   },

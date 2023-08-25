@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("QuitPre", {
   callback = function()
     vim.cmd.cclose()
     vim.cmd.lclose()
-    require("dapui").close()
+    require("dapui").close() -- Close DAP first
     local tree_wins = {}
     local floating_wins = {}
     local wins = vim.api.nvim_list_wins()
