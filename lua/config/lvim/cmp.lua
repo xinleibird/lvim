@@ -2,6 +2,10 @@
 lvim.builtin.cmp.completion.completeopt = "menu,menuone"
 lvim.builtin.cmp.completion.keyword_length = 1
 
+-- Disable cmp completion border
+lvim.builtin.cmp.window.completion.border = nil
+lvim.builtin.cmp.window.documentation.border = nil
+
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
   nvim_lsp = " 󰅭  LSP",

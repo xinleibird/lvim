@@ -5,7 +5,7 @@ lvim.builtin.lualine.options.component_separators = { left = "", right = "
 local function selectionCount()
   local isVisualMode = vim.fn.mode():find "[Vv]"
   if not isVisualMode then
-    return "%P │ %L"
+    return "%P  %L"
   end
   local starts = vim.fn.line "v"
   local ends = vim.fn.line "."
