@@ -1,6 +1,9 @@
 local M = {}
 
 M.generate = function(name)
+  if name == nil then
+    name = os.getenv "USER"
+  end
   local tableTime = os.date "*t"
   local datetime = os.date " %Y-%m-%d   %H:%M:%S"
   local hour = tableTime.hour
