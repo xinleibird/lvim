@@ -18,7 +18,7 @@ if vim.g.neovide then
 
   --+<FONT>+--
   -- Font family
-  vim.opt.guifont = "JetBrainsMono_Nerd_Font_Mono:h13:#e-antialias:#h-none"
+  vim.opt.guifont = "JetBrains_Mono,JetBrainsMono_Nerd_Font_Mono:h13:#e-antialias:#h-none"
 
   -- Linespace
   vim.opt.linespace = 0

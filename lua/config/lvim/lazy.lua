@@ -4,6 +4,15 @@ lvim.plugins = {
   { "vimpostor/vim-lumen" },
   { "HiPhish/rainbow-delimiters.nvim" },
   {
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("telescope").load_extension "lazygit"
+    end,
+  },
+  {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
@@ -110,7 +119,7 @@ lvim.plugins = {
           gitsigns = true,
           nvimtree = true,
           telescope = true,
-          notify = false,
+          notify = true,
           mini = false, -- https://github.com/catppuccin/nvim#integrations,
           mason = true,
           which_key = true,
