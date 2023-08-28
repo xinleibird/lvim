@@ -20,6 +20,10 @@
 --   return server ~= "emmet_ls"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
+-- Add new Map to <f2>
+lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
+lvim.lsp.buffer_mappings.insert_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
+
 require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "vale-ls"

@@ -8,17 +8,17 @@ lvim.builtin.cmp.completion.keyword_length = 1
 
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
-  nvim_lsp = " 󰅭  LSP",
-  emoji = " 󰇷 Emoj",
-  path = " 󰙁 Path",
-  calc = " 󰪚 Calc",
-  cmp_tabnine = " 󰲰 TabN",
-  vsnip = " 󰆘 Snip",
-  luasnip = " 󰆘 Snip",
-  buffer = "  Buff",
-  tmux = " 󰐯 Tmux",
-  copilot = "  Copi",
-  treesitter = " 󰺔 Tree",
+  nvim_lsp = " 󰅭 LSP",
+  emoji = " 󰇷 Emo",
+  path = "  Dir",
+  calc = " 󰪚 Cal",
+  cmp_tabnine = " 󰲰 Tab",
+  vsnip = " 󰆘 Snp",
+  luasnip = " 󰆘 Snp",
+  buffer = "  Buf",
+  tmux = " 󰐯 Tmx",
+  copilot = "  Cop",
+  treesitter = " 󰺔 Tre",
 }
 
 lvim.builtin.cmp.formatting.format = function(entry, vim_item)
@@ -59,31 +59,31 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
 
     if entry.source:get_debug_name() == "nvim_lsp:emmet_language_server" then
       vim_item.kind = lvim.icons.kind.Operator
-      vim_item.menu = " 󱢍 Emme"
+      vim_item.menu = " 󱢍 EMM"
     end
 
     if entry.source:get_debug_name() == "nvim_lsp:tsserver" then
-      vim_item.menu = "   TSS"
+      vim_item.menu = "  TSS"
     end
 
     if entry.source:get_debug_name() == "nvim_lsp:html" then
-      vim_item.menu = "   HTM"
+      vim_item.menu = "  HTM"
     end
 
     if entry.source:get_debug_name() == "nvim_lsp:cssls" then
-      vim_item.menu = "   CSS"
+      vim_item.menu = "  CSS"
     end
 
     if entry.source:get_debug_name() == "nvim_lsp:lua_ls" then
-      vim_item.menu = "   LUA"
+      vim_item.menu = "  LUA"
     end
 
     if entry.source:get_debug_name() == "nvim_lsp:intelephense" then
-      vim_item.menu = "   PHP"
+      vim_item.menu = "  PHP"
     end
 
     if entry.source:get_debug_name() == "nvim_lsp:vimls" then
-      vim_item.menu = "   VIM"
+      vim_item.menu = "  VIM"
     end
   end
 
