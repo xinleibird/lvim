@@ -15,8 +15,5 @@ lvim.builtin.which_key.mappings.s.b = { "<cmd>Telescope scope buffers<CR>", "Sho
 -- Outline Toggle
 lvim.builtin.which_key.mappings.o = { ":SymbolsOutline<CR>", "Outline" }
 
--- LazyGit hotkey
-lvim.builtin.which_key.mappings.g.g = { ":LazyGit<CR>", "LazyGit" }
-
 -- Show all notifies
 lvim.builtin.which_key.mappings.s.n = { "<cmd>Telescope notify<CR>", "Show notifies" }

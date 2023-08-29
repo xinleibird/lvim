@@ -11,12 +11,11 @@ lvim.plugins = {
     end,
   },
   {
-    "kdheepak/lazygit.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
+    "gitui",
+    dir = get_config_dir() .. "/plugins/gitui",
+    event = "VeryLazy",
     config = function()
-      require("telescope").load_extension "lazygit"
+      require("gitui").setup()
     end,
   },
   {
