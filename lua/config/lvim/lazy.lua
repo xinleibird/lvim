@@ -34,7 +34,27 @@ lvim.plugins = {
       "rcarriga/nvim-notify",
     },
     config = function()
+      require("notify").setup {
+        render = "default",
+        timeout = 1000,
+        stages = "static",
+      }
       require("noice").setup {
+        -- routes = {
+        --   {
+        --     filter = {
+        --       event = "msg_show",
+        --       any = {
+        --         { find = "%d+L, %d+B" },
+        --         { find = "; after #%d+" },
+        --         { find = "; before #%d+" },
+        --         { find = "%d fewer lines" },
+        --         { find = "%d more lines" },
+        --       },
+        --     },
+        --     opts = { skip = true },
+        --   },
+        -- },
         lsp = {
           -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
           override = {
