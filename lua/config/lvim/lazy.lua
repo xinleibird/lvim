@@ -34,12 +34,8 @@ lvim.plugins = {
       "rcarriga/nvim-notify",
     },
     config = function()
-      require("notify").setup {
-        render = "default",
-        timeout = 1000,
-        stages = "static",
-      }
       require("noice").setup {
+        -- ignore file save notify
         -- routes = {
         --   {
         --     filter = {
