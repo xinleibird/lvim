@@ -4,11 +4,14 @@ lvim.plugins = {
   { "vimpostor/vim-lumen" },
   { "HiPhish/rainbow-delimiters.nvim" },
   {
-    "gitui",
-    dir = get_config_dir() .. "/plugins/gitui",
-    event = "VeryLazy",
+    "gitlazy",
+    dir = get_config_dir() .. "/plugins/gitlazy",
+    dependencies = {
+      "vimpostor/vim-lumen",
+    },
     config = function()
-      require("gitui").setup()
+      require("gitlazy").setup()
+      lvim.builtin.which_key.mappings.g.g = { "<CMD>lua require 'gitlazy'.toggle()<CR>", "Lazygit" }
     end,
   },
   {
@@ -20,16 +23,8 @@ lvim.plugins = {
   },
   {
     "folke/noice.nvim",
-    -- event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
       {
         "rcarriga/nvim-notify",
         config = function()
@@ -42,7 +37,7 @@ lvim.plugins = {
       -- Basis columns set notify position
       vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
         callback = function()
-          local columns = vim.api.nvim_win_get_width(0)
+          local columns = vim.o.columns
           if columns < 83 then
             require("notify").setup {
               render = "default",
@@ -63,9 +58,10 @@ lvim.plugins = {
 
       require("noice").setup {
         views = {
+          -- system message position and fade time
           mini = {
             timeout = 1000,
-            reverse = false,
+            align = "message-left",
             position = {
               col = 0,
               row = -1,
@@ -164,7 +160,7 @@ lvim.plugins = {
           nvimtree = true,
           telescope = true,
           notify = true,
-          mini = false, -- https://github.com/catppuccin/nvim#integrations,
+          mini = true, -- https://github.com/catppuccin/nvim#integrations,
           mason = true,
           which_key = true,
           symbols_outline = true,
