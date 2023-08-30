@@ -13,7 +13,7 @@ M.setup = function(opt)
     end
   end
 
-  local mode = vim.split(vim.cmd "set background" or "background=dark", "=")[1]
+  local mode = vim.split(vim.cmd "silent set background" or "background=dark", "=")[1]
 
   if mode == "dark" then
     vim.g.gitui_color_mode = dark_theme
@@ -39,6 +39,9 @@ M.setup = function(opt)
 end
 
 M.toggle = function()
+  local columns = vim.api.nvim_win_get_width(0)
+  local rows = vim.api.nvim_win_get_height(0)
+
   local Terminal = require("toggleterm.terminal").Terminal
   local gitui = Terminal:new {
     cmd = "gitui -t " .. vim.g.gitui_color_mode .. ".ron",
@@ -46,8 +49,8 @@ M.toggle = function()
     direction = "float",
     float_opts = {
       border = "none",
-      width = 100000,
-      height = 100000,
+      width = columns,
+      height = rows,
     },
     on_open = function(_)
       vim.cmd "startinsert!"

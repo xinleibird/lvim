@@ -12,5 +12,5 @@ lvim.builtin.which_key.mappings.s.p = { "<CMD>Telescope find_files<CR>", "Find F
 lvim.builtin.which_key.mappings.s.B = { "<CMD>Telescope git_branches<CR>", "Checkout branch" }
 lvim.builtin.which_key.mappings.s.b = { "<CMD>Telescope scope buffers<CR>", "Show all buffers" }
 
--- Disable builtin lazy keymap
+-- Disable builtin lazygit keymap
 lvim.builtin.which_key.mappings.g.g = nil

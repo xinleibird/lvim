@@ -4,20 +4,17 @@ lvim.plugins = {
   { "vimpostor/vim-lumen" },
   { "HiPhish/rainbow-delimiters.nvim" },
   {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim", -- required
-      "nvim-telescope/telescope.nvim", -- optional
-      "sindrets/diffview.nvim", -- optional
-      "ibhagwan/fzf-lua", -- optional
-    },
-    config = true,
+    "gitui",
+    dir = get_config_dir() .. "/plugins/gitui",
+    event = "VeryLazy",
+    config = function()
+      require("gitui").setup()
+    end,
   },
   {
     "togglesemi",
     dir = get_config_dir() .. "/plugins/togglesemi",
     config = function()
-      lvim.builtin.which_key.mappings.g.g = { "<CMD>Neogit<CR>", "Checkout branch" }
       require("togglesemi").setup()
     end,
   },
