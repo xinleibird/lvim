@@ -5,4 +5,4 @@ require "config.neovide"
 require "config.lvim"
 
 -- NeoVim options
-require "config.user"
+require "config.nvim"
