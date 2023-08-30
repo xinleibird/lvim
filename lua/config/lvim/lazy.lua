@@ -4,17 +4,21 @@ lvim.plugins = {
   { "vimpostor/vim-lumen" },
   { "HiPhish/rainbow-delimiters.nvim" },
   {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim", -- optional
+      "ibhagwan/fzf-lua", -- optional
+    },
+    config = true,
+  },
+  {
     "togglesemi",
     dir = get_config_dir() .. "/plugins/togglesemi",
     config = function()
+      lvim.builtin.which_key.mappings.g.g = { "<CMD>Neogit<CR>", "Checkout branch" }
       require("togglesemi").setup()
-    end,
-  },
-  {
-    "gitui",
-    dir = get_config_dir() .. "/plugins/gitui",
-    config = function()
-      require("gitui").setup { dark_theme = "frappe", light_theme = "latte" }
     end,
   },
   {
@@ -38,23 +42,39 @@ lvim.plugins = {
       },
     },
     config = function()
+      -- Basis columns set notify position
+      vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
+        callback = function()
+          local columns = vim.api.nvim_win_get_width(0)
+          if columns < 83 then
+            require("notify").setup {
+              render = "default",
+              timeout = 1000,
+              stages = "static",
+              top_down = false,
+            }
+          else
+            require("notify").setup {
+              render = "default",
+              timeout = 1000,
+              stages = "static",
+              top_down = true,
+            }
+          end
+        end,
+      })
+
       require("noice").setup {
-        -- ignore file save notify
-        -- routes = {
-        --   {
-        --     filter = {
-        --       event = "msg_show",
-        --       any = {
-        --         { find = "%d+L, %d+B" },
-        --         { find = "; after #%d+" },
-        --         { find = "; before #%d+" },
-        --         { find = "%d fewer lines" },
-        --         { find = "%d more lines" },
-        --       },
-        --     },
-        --     opts = { skip = true },
-        --   },
-        -- },
+        views = {
+          mini = {
+            timeout = 1000,
+            reverse = false,
+            position = {
+              col = 0,
+              row = -1,
+            },
+          },
+        },
         lsp = {
           -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
           override = {
@@ -266,6 +286,8 @@ lvim.plugins = {
   {
     "simrat39/symbols-outline.nvim",
     config = function()
+      -- Outline Toggle
+      lvim.builtin.which_key.mappings.o = { ":SymbolsOutline<CR>", "Outline" }
       require("symbols-outline").setup {
         width = 20,
         auto_close = false,

@@ -12,8 +12,5 @@ lvim.builtin.which_key.mappings.s.p = { "<CMD>Telescope find_files<CR>", "Find F
 lvim.builtin.which_key.mappings.s.B = { "<CMD>Telescope git_branches<CR>", "Checkout branch" }
 lvim.builtin.which_key.mappings.s.b = { "<CMD>Telescope scope buffers<CR>", "Show all buffers" }
 
--- Outline Toggle
-lvim.builtin.which_key.mappings.o = { ":SymbolsOutline<CR>", "Outline" }
-
 -- Disable builtin lazy keymap
 lvim.builtin.which_key.mappings.g.g = nil
