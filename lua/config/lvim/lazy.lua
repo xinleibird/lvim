@@ -13,14 +13,13 @@ lvim.plugins = {
   {
     "gitui",
     dir = get_config_dir() .. "/plugins/gitui",
-    event = "VeryLazy",
     config = function()
-      require("gitui").setup()
+      require("gitui").setup { dark_theme = "frappe", light_theme = "latte" }
     end,
   },
   {
     "folke/noice.nvim",
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     opts = {
       -- add any options here
     },
@@ -30,7 +29,13 @@ lvim.plugins = {
       -- OPTIONAL:
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
-      "rcarriga/nvim-notify",
+      {
+        "rcarriga/nvim-notify",
+        config = function()
+          lvim.builtin.which_key.mappings.s.n =
+            { "<CMD>lua require('telescope').extensions.notify.notify()<CR>", "Open Notifies" }
+        end,
+      },
     },
     config = function()
       require("noice").setup {

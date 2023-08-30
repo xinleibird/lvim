@@ -11,10 +11,10 @@ nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary
 nmap gcc <Plug>VSCodeCommentaryLine
 
-nnoremap <silent> ? <Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
-nnoremap <silent> z= <Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
+nnoremap <silent> ? <CMD>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
+nnoremap <silent> z= <CMD>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>
 
-nmap <silent> <leader>lj <Cmd>call VSCodeNotify('editor.action.marker.nextInFiles')<CR>
-nmap <silent> <leader>lk <Cmd>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
+nmap <silent> <leader>lj <CMD>call VSCodeNotify('editor.action.marker.nextInFiles')<CR>
+nmap <silent> <leader>lk <CMD>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
 
-nmap <leader>e <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
+nmap <leader>e <CMD>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
