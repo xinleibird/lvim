@@ -18,3 +18,4 @@ nmap <silent> <leader>lj <CMD>call VSCodeNotify('editor.action.marker.nextInFile
 nmap <silent> <leader>lk <CMD>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
 
 nmap <leader>e <CMD>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
+
