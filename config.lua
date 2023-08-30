@@ -1,8 +1,8 @@
 -- NeoVide options
-require "config.neovide"
+require "local.neovide"
 
 -- LunarVim builtin plugin options
-require "config.lvim"
+require "local.lvim"
 
 -- NeoVim options
-require "config.nvim"
+require "local.nvim"
