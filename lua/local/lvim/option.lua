@@ -4,7 +4,7 @@ lvim.log.level = "info"
 -- Format on save
 lvim.format_on_save = {
   enabled = true,
-  timeout = 500,
+  timeout = 5000,
 }
 
 -- Change theme

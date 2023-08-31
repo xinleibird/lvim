@@ -24,6 +24,15 @@
 lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
 lvim.lsp.buffer_mappings.insert_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
 
+-- local function filter_commonjs_diagnostics(diagnostic)
+--   if diagnostic.severity == 4 and diagnostic.code ~= 6133 then
+--     return true
+--   end
+
+--   return false
+-- end
+
+require("lvim.lsp.manager").setup "jsonls"
 require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "vale-ls"

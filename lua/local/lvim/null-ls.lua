@@ -1,25 +1,22 @@
 -- Formatters
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
+require("lvim.lsp.null-ls.formatters").setup {
   {
     name = "shfmt",
     filetypes = { "sh", "bash", "zsh" },
   },
   { name = "stylua" },
-  { name = "prettierd" },
+  { name = "prettierd", timeout_ms = 5000 },
 }
 
 -- Linters
-local linters = require "lvim.lsp.null-ls.linters"
-linters.setup {
-  { name = "jsonlint", filetypes = { "json" } },
+require("lvim.lsp.null-ls.linters").setup {
+  { name = "jsonlint" },
   { name = "shellcheck", args = { "--severity", "warning" } },
   { name = "eslint_d" },
 }
 
 -- Actions e.g. fix issues
--- local code_actions = require "lvim.lsp.null-ls.code_actions"
--- code_actions.setup {
---   { name = "shellcheck" },
---   { name = "eslint_d" },
--- }
+require("lvim.lsp.null-ls.code_actions").setup {
+  { name = "shellcheck" },
+  { name = "eslint_d" },
+}
