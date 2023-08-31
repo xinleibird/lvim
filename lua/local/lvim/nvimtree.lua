@@ -20,10 +20,10 @@ lvim.builtin.nvimtree.setup.update_focused_file = {
   update_root = false,
 }
 lvim.builtin.nvimtree.setup.filters.custom = {
-  "^\\.git",
-  "^\\.DS_Store",
-  "^Icon[^M]",
+  "^\\.apdisk",
   "^\\.AppleDouble",
+  "^\\.DS_Store",
+  "^\\.git",
   "^\\.CFUserTextEncoding",
   "^\\.DocumentRevisions-V100",
   "^\\.fseventsd",
@@ -34,7 +34,9 @@ lvim.builtin.nvimtree.setup.filters.custom = {
   "^\\.com.apple.timemachine.donotpresent",
   "^\\.AppleDB",
   "^\\.AppleDesktop",
+  "^\\.vscode",
+  "^Icon[^M]",
   "^Network Trash Folder",
   "^Temporary Items",
-  "^\\.apdisk",
+  "^node_modules",
 }
