@@ -6,7 +6,6 @@ require("lvim.lsp.null-ls.formatters").setup {
   },
   { name = "stylua" },
   { name = "prettierd", timeout_ms = 5000 },
-  { name = "phpcs-cs-fixer" },
   { name = "goimports" },
 }
 
@@ -15,7 +14,6 @@ require("lvim.lsp.null-ls.linters").setup {
   { name = "jsonlint" },
   { name = "shellcheck", args = { "--severity", "warning" } },
   { name = "eslint_d" },
-  { name = "phpcs" },
 }
 
 -- Actions e.g. fix issues
