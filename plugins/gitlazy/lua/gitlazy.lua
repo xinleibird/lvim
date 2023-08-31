@@ -12,7 +12,6 @@ M.setup = function(opt)
     end
   end
 
-  -- local mode = vim.split(vim.cmd "silent set background" or "background=dark", "=")[1]
   local mode = vim.o.background
 
   if mode == "dark" then
@@ -40,9 +39,11 @@ M.toggle = function()
   local columns = vim.o.columns
   local lines = vim.o.lines
 
+  local color_dir = get_config_dir() .. "/repository/lazygitcolors/"
+
   local Terminal = require("toggleterm.terminal").Terminal
   local lazygit = Terminal:new {
-    cmd = "lazygit -ucf " .. "~/.config/lazygit/" .. vim.g.gitlazy_color_mode .. ".yml",
+    cmd = "lazygit -ucf " .. color_dir .. vim.g.gitlazy_color_mode .. ".yml",
     hidden = true,
     direction = "float",
     float_opts = {

@@ -1,5 +1,5 @@
 -- Set save without formatting
-lvim.builtin.which_key.mappings["W"] = { "<CMD>noautoCMD w<CR>", "Save without formatting" }
+lvim.builtin.which_key.mappings["W"] = { "<CMD>noautocmd w<CR>", "Save without formatting" }
 
 -- Terminiate session
 lvim.builtin.which_key.mappings.d.T = { "<CMD>DapTerminate<CR>", "Terminiate current Dap session" }

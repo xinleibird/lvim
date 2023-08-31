@@ -119,7 +119,6 @@ lvim.plugins = {
       require("catppuccin").setup {
         -- flavour = "mocha", -- latte, frappe, macchiato, mocha
         background = {
-          -- :h background
           light = "latte",
           dark = "frappe",
         },
@@ -129,7 +128,7 @@ lvim.plugins = {
         dim_inactive = {
           enabled = false,
           shade = "dark",
-          percentage = 0.15,
+          percentage = 0.62,
         },
         no_italic = false, -- Force no italic
         no_bold = false, -- Force no bold
@@ -164,46 +163,6 @@ lvim.plugins = {
           mason = true,
           which_key = true,
           symbols_outline = true,
-        },
-      }
-    end,
-  },
-  {
-    "rebelot/kanagawa.nvim",
-    priority = 1000,
-    config = function()
-      require("kanagawa").setup {
-        compile = false, -- enable compiling the colorscheme
-        undercurl = false, -- enable undercurls
-        commentStyle = { italic = true },
-        functionStyle = {},
-        keywordStyle = { italic = true },
-        statementStyle = { bold = true },
-        typeStyle = {},
-        transparent = false,
-        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-        terminalColors = true, -- define vim.g.terminal_color_{0,17}
-        colors = {
-          -- add/modify theme and palette colors
-          palette = {},
-          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-        },
-        overrides = function(colors) -- add/modify highlights
-          return {
-            ["@tag.attribute.html"] = {
-              fg = colors.palette.dragonYellow,
-              bold = false,
-              italic = true,
-            },
-            ["@lsp.typemod.variable.local"] = { link = "@variable" },
-            ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
-          }
-        end,
-        theme = "dragon", -- Load "wave" theme when 'background' option is not set
-        background = {
-          -- map the value of 'background' option to a theme
-          dark = "dragon", -- try "dragon" !
-          light = "lotus",
         },
       }
     end,

@@ -11,7 +11,7 @@ local function selectionCount()
   local ends = vim.fn.line "."
   local lines = starts <= ends and ends - starts + 1 or starts - ends + 1
   return string.format("%03d", tostring(lines))
-    .. " 󰆊 "
+    .. " 󰫙 "
     .. string.format("%04d", tostring(vim.fn.wordcount().visual_chars))
 end
 
