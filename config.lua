@@ -1,8 +1,1 @@
--- NeoVide options
-require "local.neovide"
-
--- LunarVim builtin plugin options
-require "local.lvim"
-
--- NeoVim options
-require "local.nvim"
+vim.cmd "runtime! lua/config/**/*.lua"

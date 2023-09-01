@@ -10,4 +10,7 @@
 -- reference:
 --    <https://github.com/L3MON4D3/LuaSnip/blob/a46ab6f8bce6bbddd8ce3e287e1a517c1f5e348e/DOC.md#variables>
 
-require("luasnip").config.setup { store_selection_keys = "<Tab>" }
+local ok, luasnip = pcall(require, "luasnip")
+if ok then
+  luasnip.config.setup { store_selection_keys = "<Tab>" }
+end

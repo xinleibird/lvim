@@ -33,6 +33,8 @@ M.setup = function(opt)
       vim.g.gitlazy_color_mode = light_theme
     end,
   })
+
+  lvim.builtin.which_key.mappings.g.g = { "<CMD>lua require 'gitlazy'.toggle()<CR>", "Lazygit" }
 end
 
 M.toggle = function()
@@ -41,23 +43,26 @@ M.toggle = function()
 
   local color_dir = get_config_dir() .. "/repository/lazygitcolors/"
 
-  local Terminal = require("toggleterm.terminal").Terminal
-  local lazygit = Terminal:new {
-    cmd = "lazygit -ucf " .. color_dir .. vim.g.gitlazy_color_mode .. ".yml",
-    hidden = true,
-    direction = "float",
-    float_opts = {
-      border = "none",
-      width = columns,
-      height = lines,
-    },
-    on_open = function(_)
-      vim.cmd "startinsert!"
-    end,
-    on_close = function(_) end,
-    count = 99,
-  }
-  lazygit:toggle()
+  local ok, term = pcall(require, "toggleterm.terminal")
+  if ok then
+    local Terminal = term.Terminal
+    local lazygit = Terminal:new {
+      cmd = "lazygit -ucf " .. color_dir .. vim.g.gitlazy_color_mode .. ".yml",
+      hidden = true,
+      direction = "float",
+      float_opts = {
+        border = "none",
+        width = columns,
+        height = lines,
+      },
+      on_open = function(_)
+        vim.cmd "startinsert!"
+      end,
+      on_close = function(_) end,
+      count = 99,
+    }
+    lazygit:toggle()
+  end
 end
 
 return M

@@ -2,14 +2,20 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "zsh",
   callback = function()
-    require("nvim-treesitter.highlight").attach(0, "bash")
+    local ok, highlight = pcall(require, "nvim-treesitter.highlight")
+    if ok then
+      highlight.attach(0, "bash")
+    end
   end,
 })
 
 vim.api.nvim_create_autocmd("QuitPre", {
   pattern = "*",
   callback = function()
-    require("dapui").close() -- Close DAP first
+    local ok, dapui = pcall(require, "dapui")
+    if ok then
+      dapui.close() -- Close DAP first
+    end
     vim.cmd.cclose()
     vim.cmd.lclose()
     local tree_wins = {}

@@ -5,18 +5,17 @@ lvim.plugins = {
   { "HiPhish/rainbow-delimiters.nvim" },
   {
     "gitlazy",
-    dir = get_config_dir() .. "/plugins/gitlazy",
+    dir = get_config_dir() .. "/lua/plugins/gitlazy",
     dependencies = {
       "vimpostor/vim-lumen",
     },
     config = function()
       require("gitlazy").setup()
-      lvim.builtin.which_key.mappings.g.g = { "<CMD>lua require 'gitlazy'.toggle()<CR>", "Lazygit" }
     end,
   },
   {
     "togglesemi",
-    dir = get_config_dir() .. "/plugins/togglesemi",
+    dir = get_config_dir() .. "/lua/plugins/togglesemi",
     config = function()
       require("togglesemi").setup()
     end,
@@ -31,6 +30,10 @@ lvim.plugins = {
           lvim.builtin.which_key.mappings.s.n =
             { "<CMD>lua require('telescope').extensions.notify.notify()<CR>", "Open Notifies" }
         end,
+        dependencies = {
+          "nvim-telescope/telescope.nvim",
+          priority = 500,
+        },
       },
     },
     config = function()
