@@ -26,42 +26,32 @@ lvim.lsp.buffer_mappings.insert_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all
 
 lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
-  "tsserver",
-  "lua_ls",
+  "cssls",
+  "emmet_language_server",
+  "gopls",
   "html",
   "intelephense",
-  "gopls",
   "jsonls",
-  "emmet_language_server",
+  "lua_ls",
   "taplo",
+  "tsserver",
   "vimls",
 }
 
 -- require("lvim.lsp.null-ls.formatters")
 -- require("lvim.lsp.null-ls.services")
 
-require("lvim.lsp.manager").setup "vimls"
+require("lvim.lsp.manager").setup "cssls"
+require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "gopls"
 require("lvim.lsp.manager").setup "jsonls"
-require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "vale-ls"
+require("lvim.lsp.manager").setup "vimls"
 
 require("lvim.lsp.manager").setup("bashls", {
   cmd = { "bash-language-server", "start" },
   filetypes = { "sh", "bash", "zsh" },
-})
-
-require("lvim.lsp.manager").setup("tsserver", {
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-})
-
-require("lvim.lsp.manager").setup("lua_ls", {
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
 })
 
 require("lvim.lsp.manager").setup("html", {
@@ -74,6 +64,18 @@ require("lvim.lsp.manager").setup("intelephense", {
   init_options = {
     globalStoragePath = os.getenv "HOME" .. "/.intelephense",
   },
+  on_attach = function(client, _)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
+
+require("lvim.lsp.manager").setup("lua_ls", {
+  on_attach = function(client, _)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
+
+require("lvim.lsp.manager").setup("tsserver", {
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false
   end,

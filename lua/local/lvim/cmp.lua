@@ -59,7 +59,7 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
 
     if entry.source.name == "nvim_lsp" then
       if entry.source:get_debug_name() == "nvim_lsp:emmet_language_server" then
-        vim_item.kind = lvim.icons.kind.Operator
+        vim_item.kind = ""
         vim_item.menu = " 󱢍 EMM"
       end
 

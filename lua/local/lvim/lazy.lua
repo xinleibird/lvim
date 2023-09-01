@@ -167,11 +167,7 @@ lvim.plugins = {
           types = {},
           operators = {},
         },
-        color_overrides = {
-          frappe = {
-            base = "#313445",
-          },
-        },
+        color_overrides = {},
         custom_highlights = {},
         integrations = {
           alpha = true,
