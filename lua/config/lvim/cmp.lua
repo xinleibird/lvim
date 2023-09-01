@@ -8,17 +8,17 @@ lvim.builtin.cmp.completion.keyword_length = 1
 
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
-  nvim_lsp = " 󰅭 LSP",
-  emoji = " 󰇷 Emo",
-  path = "  Dir",
+  buffer = "  Buf",
   calc = " 󰪚 Cal",
   cmp_tabnine = " 󰲰 Tab",
-  vsnip = " 󰆘 Snp",
-  luasnip = " 󰆘 Snp",
-  buffer = "  Buf",
-  tmux = " 󰐯 Tmx",
   copilot = "  Cop",
+  emoji = " 󰇷 Emo",
+  luasnip = " 󰆘 Snp",
+  nvim_lsp = " 󰅭 LSP",
+  path = "  Dir",
+  tmux = " 󰐯 Tmx",
   treesitter = " 󰺔 Tre",
+  vsnip = " 󰆘 Snp",
 }
 
 lvim.builtin.cmp.formatting.format = function(entry, vim_item)
