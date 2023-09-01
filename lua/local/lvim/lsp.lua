@@ -24,6 +24,29 @@
 lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
 lvim.lsp.buffer_mappings.insert_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
 
+lvim.lsp.installer.setup.ensure_installed = {
+  "bashls",
+  "tsserver",
+  "lua_ls",
+  "html",
+  "intelephense",
+  "gopls",
+  "jsonls",
+  "emmet_language_server",
+  "taplo",
+  "vimls",
+}
+
+-- require("lvim.lsp.null-ls.formatters")
+-- require("lvim.lsp.null-ls.services")
+
+require("lvim.lsp.manager").setup "vimls"
+require("lvim.lsp.manager").setup "gopls"
+require("lvim.lsp.manager").setup "jsonls"
+require("lvim.lsp.manager").setup "emmet_language_server"
+require("lvim.lsp.manager").setup "taplo"
+require("lvim.lsp.manager").setup "vale-ls"
+
 require("lvim.lsp.manager").setup("bashls", {
   cmd = { "bash-language-server", "start" },
   filetypes = { "sh", "bash", "zsh" },
@@ -55,10 +78,3 @@ require("lvim.lsp.manager").setup("intelephense", {
     client.server_capabilities.documentFormattingProvider = false
   end,
 })
-
-require("lvim.lsp.manager").setup "gopls"
-require("lvim.lsp.manager").setup "jsonls"
-require("lvim.lsp.manager").setup "emmet_language_server"
-require("lvim.lsp.manager").setup "taplo"
-require("lvim.lsp.manager").setup "vale-ls"
-require("lvim.lsp.manager").setup "intelephense"
