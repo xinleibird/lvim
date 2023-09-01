@@ -2,4 +2,7 @@
 lvim.builtin.bufferline.active = true
 lvim.builtin.bufferline.options.always_show_bufferline = true
 
-lvim.builtin.bufferline.highlights = require("catppuccin.groups.integrations.bufferline").get()
+local ok, catppuccin_bufferline = pcall(require, "catppuccin.groups.integrations.bufferline")
+if ok then
+  lvim.builtin.bufferline.highlights = catppuccin_bufferline.get()
+end

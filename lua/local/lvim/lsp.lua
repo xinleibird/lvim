@@ -38,9 +38,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "vimls",
 }
 
--- require("lvim.lsp.null-ls.formatters")
--- require("lvim.lsp.null-ls.services")
-
 require("lvim.lsp.manager").setup "cssls"
 require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "gopls"

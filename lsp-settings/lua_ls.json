@@ -1,3 +1,4 @@
 {
-  "Lua.completion.showWord": "Disable"
+  "Lua.completion.showWord": "Disable",
+  "Lua.diagnostics.globals": ["vim", "lvim"]
 }
