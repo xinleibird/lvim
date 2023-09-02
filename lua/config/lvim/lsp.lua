@@ -61,9 +61,6 @@ require("lvim.lsp.manager").setup("intelephense", {
   init_options = {
     globalStoragePath = os.getenv "HOME" .. "/.intelephense",
   },
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
 })
 
 require("lvim.lsp.manager").setup("lua_ls", {
