@@ -215,7 +215,7 @@ lvim.plugins = {
     end,
     event = "InsertEnter",
   },
-  { "rafamadriz/friendly-snippets", lazy = true },
+  { "rafamadriz/friendly-snippets", lazy = true, dependencies = "L3MON4D3/LuaSnip" },
   {
     "tiagovla/scope.nvim",
     config = function()

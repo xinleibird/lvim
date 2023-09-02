@@ -43,7 +43,6 @@ require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "gopls"
 require("lvim.lsp.manager").setup "jsonls"
 require("lvim.lsp.manager").setup "taplo"
-require("lvim.lsp.manager").setup "vale-ls"
 require("lvim.lsp.manager").setup "vimls"
 
 require("lvim.lsp.manager").setup("bashls", {
