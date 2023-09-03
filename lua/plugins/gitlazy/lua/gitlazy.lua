@@ -38,13 +38,12 @@ M.setup = function(opt)
 end
 
 M.toggle = function()
-  local columns = vim.o.columns
-  local lines = vim.o.lines
-
-  local color_dir = get_config_dir() .. "/repository/lazygitcolors/"
-
   local ok, term = pcall(require, "toggleterm.terminal")
   if ok then
+    local columns = vim.o.columns
+    local lines = vim.o.lines
+    local color_dir = get_config_dir() .. "/repository/lazygitcolors/"
+
     local Terminal = term.Terminal
     local lazygit = Terminal:new {
       cmd = "lazygit -ucf " .. color_dir .. vim.g.gitlazy_color_mode .. ".yml",
