@@ -8,17 +8,17 @@ lvim.builtin.cmp.completion.keyword_length = 1
 
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
-  buffer = "  Buf",
-  calc = " 󰪚 Cal",
-  cmp_tabnine = " 󰲰 Tab",
-  copilot = "  Cop",
-  emoji = " 󰇷 Emo",
-  luasnip = " 󰆘 Snp",
-  nvim_lsp = " 󰅭 LSP",
-  path = "  Dir",
-  tmux = " 󰐯 Tmx",
-  treesitter = " 󰺔 Tre",
-  vsnip = " 󰆘 Snp",
+  buffer = "  Buff",
+  calc = " 󰪚 Calc",
+  cmp_tabnine = " 󰲰 TabN",
+  copilot = "  Copi",
+  emoji = " 󰇷 Emoj",
+  luasnip = " 󰆘 Snip",
+  nvim_lsp = " 󰅭  LSP",
+  path = "   Dir",
+  tmux = " 󰐯 Tmux",
+  treesitter = " 󰺔 Tree",
+  vsnip = " 󰆘 Snip",
 }
 
 lvim.builtin.cmp.formatting.format = function(entry, vim_item)
@@ -60,31 +60,43 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
     if entry.source.name == "nvim_lsp" then
       if entry.source:get_debug_name() == "nvim_lsp:emmet_language_server" then
         vim_item.kind = ""
-        vim_item.menu = " 󱢍 EMM"
+        vim_item.menu = " 󱢍  EMM"
       end
 
       if entry.source:get_debug_name() == "nvim_lsp:tsserver" then
-        vim_item.menu = "  TSS"
+        vim_item.menu = "   TSS"
       end
 
       if entry.source:get_debug_name() == "nvim_lsp:html" then
-        vim_item.menu = "  HTM"
+        vim_item.menu = "   HTM"
       end
 
       if entry.source:get_debug_name() == "nvim_lsp:cssls" then
-        vim_item.menu = "  CSS"
+        vim_item.menu = "   CSS"
       end
 
       if entry.source:get_debug_name() == "nvim_lsp:lua_ls" then
-        vim_item.menu = "  LUA"
+        vim_item.menu = "   LUA"
       end
 
       if entry.source:get_debug_name() == "nvim_lsp:intelephense" then
-        vim_item.menu = "  PHP"
+        vim_item.menu = "   PHP"
       end
 
       if entry.source:get_debug_name() == "nvim_lsp:vimls" then
-        vim_item.menu = "  VIM"
+        vim_item.menu = "   VIM"
+      end
+
+      if entry.source:get_debug_name() == "nvim_lsp:rust_analyzer" then
+        vim_item.menu = " 󱘗 RUST"
+      end
+
+      if entry.source:get_debug_name() == "nvim_lsp:gopls" then
+        vim_item.menu = "    GO"
+      end
+
+      if entry.source:get_debug_name() == "nvim_lsp:null-ls" then
+        vim_item.menu = " 󰟢 NULL"
       end
     end
   end
