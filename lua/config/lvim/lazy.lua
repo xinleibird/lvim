@@ -171,7 +171,11 @@ lvim.plugins = {
           operators = {},
         },
         color_overrides = {},
-        custom_highlights = {},
+        custom_highlights = function(colors)
+          return {
+            CmpItemMenu = { fg = colors.teal },
+          }
+        end,
         integrations = {
           alpha = true,
           cmp = true,
