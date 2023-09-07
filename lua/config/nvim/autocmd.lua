@@ -12,10 +12,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("QuitPre", {
   pattern = "*",
   callback = function()
-    local ok, dapui = pcall(require, "dapui")
-    if ok then
-      dapui.close() -- Close DAP first
-    end
+    require("dapui").close()
+
     vim.cmd.cclose()
     vim.cmd.lclose()
     local tree_wins = {}

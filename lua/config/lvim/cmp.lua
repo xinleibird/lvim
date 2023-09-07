@@ -2,10 +2,6 @@
 lvim.builtin.cmp.completion.completeopt = "menu,menuone"
 lvim.builtin.cmp.completion.keyword_length = 1
 
--- Disable cmp completion border
--- lvim.builtin.cmp.window.completion.border = nil
--- lvim.builtin.cmp.window.documentation.border = nil
-
 -- Init cmp-emmet
 lvim.builtin.cmp.formatting.source_names = {
   buffer = "  Buff",
@@ -21,6 +17,7 @@ lvim.builtin.cmp.formatting.source_names = {
   vsnip = " 󰆘 Snip",
 }
 
+-- Cmp format method
 lvim.builtin.cmp.formatting.format = function(entry, vim_item)
   vim_item.menu = lvim.builtin.cmp.formatting.source_names[entry.source.name]
 

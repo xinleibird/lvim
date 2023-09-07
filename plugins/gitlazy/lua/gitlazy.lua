@@ -37,12 +37,17 @@ M.setup = function(opt)
   lvim.builtin.which_key.mappings.g.g = { "<CMD>lua require 'gitlazy'.toggle()<CR>", "Lazygit" }
 end
 
+local function get_script_path()
+  local str = debug.getinfo(2, "S").source:sub(2)
+  return str:match "(.*/)"
+end
+
 M.toggle = function()
   local ok, term = pcall(require, "toggleterm.terminal")
   if ok then
     local columns = vim.o.columns
     local lines = vim.o.lines
-    local color_dir = get_config_dir() .. "/repository/lazygitcolors/"
+    local color_dir = get_script_path() .. "/colors/"
 
     local Terminal = term.Terminal
     local lazygit = Terminal:new {
