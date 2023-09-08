@@ -1,9 +1,4 @@
-local plugins = {
-  { "tpope/vim-surround" },
-  { "tpope/vim-repeat" },
-  { "vimpostor/vim-lumen" },
-  { "HiPhish/rainbow-delimiters.nvim" },
-}
+local plugins = {}
 
 -- Read optional config
 for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath "config" .. "/lua/lazy", [[v:val =~ '\.lua$']])) do
