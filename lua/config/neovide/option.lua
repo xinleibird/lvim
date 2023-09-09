@@ -82,9 +82,6 @@ if vim.g.neovide then
   -- Remember window size
   vim.g.neovide_remember_window_size = true
 
-  -- Fullscreen toggle for neovide
-  lvim.keys.normal_mode["<D-C-f>"] = "<CMD>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen<CR>"
-
   -- 'profiler' is a indentifier to show FPS in window etc
   vim.g.neovide_profiler = false
 

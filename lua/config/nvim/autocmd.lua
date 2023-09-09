@@ -10,7 +10,6 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("QuitPre", {
-  pattern = "*",
   callback = function()
     require("dapui").close()
 
@@ -24,12 +23,6 @@ vim.api.nvim_create_autocmd("QuitPre", {
       local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
       if bufname:match "NvimTree_" ~= nil or bufname:match "OUTLINE" ~= nil then
         table.insert(tree_wins, w)
-      end
-      if bufname:match "qf" ~= nil then
-        local ok, outline = pcall(require, "symbols-outline")
-        if ok then
-          outline.close_outline()
-        end
       end
       if vim.api.nvim_win_get_config(w).relative ~= "" then
         table.insert(floating_wins, w)
