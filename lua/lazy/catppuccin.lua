@@ -8,6 +8,7 @@ local M = {
       lvim.builtin.bufferline.highlights = catppuccin_bufferline.get()
 
       require("catppuccin").setup {
+        compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
         -- flavour = "mocha", -- latte, frappe, macchiato, mocha
         background = {
           light = "latte",
@@ -15,7 +16,7 @@ local M = {
         },
         transparent_background = false,
         show_end_of_buffer = false, -- show the '~' characters after the end of buffers
-        term_colors = true,
+        term_colors = false,
         dim_inactive = {
           enabled = false,
           shade = "dark",
@@ -41,6 +42,10 @@ local M = {
         custom_highlights = function(colors)
           return {
             CmpItemMenu = { fg = colors.teal },
+            IlluminatedWordText = { bg = colors.crust },
+            IlluminatedWordRead = { bg = colors.crust },
+            IlluminatedWordWrite = { bg = colors.crust },
+            NvimTreeNormal = { fg = colors.none },
           }
         end,
         integrations = {
@@ -53,6 +58,10 @@ local M = {
           },
           gitsigns = true,
           hop = false,
+          illuminate = {
+            enabled = true,
+            lsp = true,
+          },
           indent_blankline = {
             enabled = true,
             colored_indent_levels = false,
@@ -60,6 +69,24 @@ local M = {
           markdown = true,
           mason = true,
           mini = true, -- https://github.com/catppuccin/nvim#integrations,
+          native_lsp = {
+            enabled = true,
+            virtual_text = {
+              errors = { "italic" },
+              hints = { "italic" },
+              warnings = { "italic" },
+              information = { "italic" },
+            },
+            underlines = {
+              errors = { "undercurl" },
+              hints = { "undercurl" },
+              warnings = { "undercurl" },
+              information = { "undercurl" },
+            },
+            inlay_hints = {
+              background = true,
+            },
+          },
           noice = true,
           notify = true,
           nvimtree = true,

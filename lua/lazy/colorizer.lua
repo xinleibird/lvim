@@ -2,7 +2,7 @@ local M = {
   {
     "norcalli/nvim-colorizer.lua",
     config = function()
-      require("colorizer").setup({ "css", "scss", "html", "javascript", "vim" }, {
+      require("colorizer").setup({ "css", "scss", "html", "javascript", "vim", "lua" }, {
         RGB = true, -- #RGB hex codes
         RRGGBB = true, -- #RRGGBB hex codes
         RRGGBBAA = true, -- #RRGGBBAA hex codes
