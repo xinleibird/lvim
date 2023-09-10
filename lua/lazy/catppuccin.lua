@@ -47,12 +47,23 @@ local M = {
           alpha = true,
           cmp = true,
           dashboard = true,
+          dap = {
+            enabled = true,
+            enable_ui = true, -- enable nvim-dap-ui
+          },
           gitsigns = true,
+          hop = false,
+          indent_blankline = {
+            enabled = true,
+            colored_indent_levels = false,
+          },
+          markdown = true,
           mason = true,
           mini = true, -- https://github.com/catppuccin/nvim#integrations,
           noice = true,
           notify = true,
           nvimtree = true,
+          rainbow_delimiters = true,
           symbols_outline = true,
           telescope = {
             enabled = true,
