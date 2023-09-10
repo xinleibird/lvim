@@ -23,24 +23,25 @@ end
 
 -- Formatters
 require("lvim.lsp.null-ls.formatters").setup {
+  { name = "goimports" },
+  { name = "prettierd", timeout_ms = 5000 },
   {
     name = "shfmt",
     filetypes = { "sh", "bash", "zsh" },
   },
   { name = "stylua" },
-  { name = "prettierd", timeout_ms = 5000 },
-  { name = "goimports" },
 }
 
 -- Linters
 require("lvim.lsp.null-ls.linters").setup {
+  { name = "eslint_d" },
   { name = "jsonlint" },
   { name = "shellcheck", args = { "--severity", "warning" } },
-  { name = "eslint_d" },
+  { name = "vint" },
 }
 
 -- Actions e.g. fix issues
 require("lvim.lsp.null-ls.code_actions").setup {
-  { name = "shellcheck" },
   { name = "eslint_d" },
+  { name = "shellcheck" },
 }

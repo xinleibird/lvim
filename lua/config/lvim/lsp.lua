@@ -36,11 +36,11 @@ lvim.lsp.installer.setup.ensure_installed = {
   "taplo",
   "tsserver",
   "vimls",
+  "volar",
 }
 
 require("lvim.lsp.manager").setup "cssls"
 require("lvim.lsp.manager").setup "emmet_language_server"
-require("lvim.lsp.manager").setup "gopls"
 require("lvim.lsp.manager").setup "jsonls"
 require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "vimls"
@@ -48,6 +48,12 @@ require("lvim.lsp.manager").setup "vimls"
 require("lvim.lsp.manager").setup("bashls", {
   cmd = { "bash-language-server", "start" },
   filetypes = { "sh", "bash", "zsh" },
+})
+
+require("lvim.lsp.manager").setup("gopls", {
+  on_attach = function(client, _)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
 })
 
 require("lvim.lsp.manager").setup("html", {
@@ -69,6 +75,12 @@ require("lvim.lsp.manager").setup("lua_ls", {
 })
 
 require("lvim.lsp.manager").setup("tsserver", {
+  on_attach = function(client, _)
+    client.server_capabilities.documentFormattingProvider = false
+  end,
+})
+
+require("lvim.lsp.manager").setup("volar", {
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false
   end,
