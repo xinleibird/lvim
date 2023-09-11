@@ -21,6 +21,17 @@ if ok then
   }
 end
 
+lvim.lsp.null_ls.setup.ensure_installed = {
+  "eslint_d",
+  "goimports",
+  "jsonlint",
+  "prettierd",
+  "shellcheck",
+  "shfmt",
+  "stylua",
+  "vint",
+}
+
 -- Formatters
 require("lvim.lsp.null-ls.formatters").setup {
   { name = "goimports" },
