@@ -11,7 +11,7 @@ lvim.lsp.null_ls.setup.ensure_installed = {
 -- Formatters
 require("lvim.lsp.null-ls.formatters").setup {
   { name = "goimports" },
-  { name = "prettierd", timeout_ms = 5000 },
+  { name = "prettierd" },
   {
     name = "shfmt",
     filetypes = { "sh", "bash", "zsh" },

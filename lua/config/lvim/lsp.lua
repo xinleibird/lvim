@@ -32,56 +32,42 @@ lvim.lsp.installer.setup.ensure_installed = {
   "html",
   "intelephense",
   "jsonls",
+  "lemminx",
   "lua_ls",
+  "tailwindcss",
   "taplo",
   "tsserver",
+  "vale_ls",
   "vimls",
   "volar",
+  "yamlls",
 }
 
 require("lvim.lsp.manager").setup "cssls"
 require("lvim.lsp.manager").setup "emmet_language_server"
+require("lvim.lsp.manager").setup "gopls"
+require("lvim.lsp.manager").setup "html"
 require("lvim.lsp.manager").setup "jsonls"
+require("lvim.lsp.manager").setup "lemminx"
+require("lvim.lsp.manager").setup "lua_ls"
+require("lvim.lsp.manager").setup "tailwindcss"
 require("lvim.lsp.manager").setup "taplo"
+require("lvim.lsp.manager").setup "tsserver"
+require("lvim.lsp.manager").setup "vale_ls"
 require("lvim.lsp.manager").setup "vimls"
+require("lvim.lsp.manager").setup "volar"
+require("lvim.lsp.manager").setup "yamlls"
 
 require("lvim.lsp.manager").setup("bashls", {
   cmd = { "bash-language-server", "start" },
   filetypes = { "sh", "bash", "zsh" },
 })
 
-require("lvim.lsp.manager").setup("gopls", {
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-})
-
-require("lvim.lsp.manager").setup("html", {
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-})
-
 require("lvim.lsp.manager").setup("intelephense", {
   init_options = {
     globalStoragePath = os.getenv "HOME" .. "/.intelephense",
   },
-})
-
-require("lvim.lsp.manager").setup("lua_ls", {
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-})
-
-require("lvim.lsp.manager").setup("tsserver", {
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
-})
-
-require("lvim.lsp.manager").setup("volar", {
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
-  end,
+  -- on_attach = function(client, _)
+  --   client.server_capabilities.documentFormattingProvider = false
+  -- end,
 })

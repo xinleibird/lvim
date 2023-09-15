@@ -11,7 +11,7 @@ if OS == "Darwin" then
     "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>",
     { noremap = true, silent = true }
   )
-  vim.api.nvim_set_keymap("c", "<D-v>", "<C-r>+", { noremap = true, silent = true })
+  -- vim.api.nvim_set_keymap("c", "<D-v>", "<C-r>+", { noremap = true, silent = true })
 else
   vim.api.nvim_set_keymap(
     "i",
@@ -19,8 +19,8 @@ else
     "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>",
     { noremap = true, silent = true }
   )
-  vim.api.nvim_set_keymap("c", "<C-v>", "<C-r>+", { noremap = true, silent = true })
+  -- vim.api.nvim_set_keymap("c", "<C-v>", "<C-r>+", { noremap = true, silent = true })
 end
 
 -- Command mode move cursor to line head
-vim.api.nvim_set_keymap("c", "<C-a>", "<C-b>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("c", "<C-a>", "<C-b>", { noremap = true, silent = true })
