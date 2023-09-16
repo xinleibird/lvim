@@ -33,8 +33,6 @@ M.setup = function(opt)
       vim.g.gitlazy_color_mode = light_theme
     end,
   })
-
-  lvim.builtin.which_key.mappings.g.g = { "<CMD>lua require 'gitlazy'.toggle()<CR>", "Lazygit" }
 end
 
 local function get_script_path()

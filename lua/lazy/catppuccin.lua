@@ -89,6 +89,9 @@ local M = {
           },
           noice = true,
           notify = true,
+          navic = {
+            enabled = true,
+          },
           nvimtree = true,
           rainbow_delimiters = true,
           symbols_outline = true,

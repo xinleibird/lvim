@@ -17,8 +17,11 @@ local M = {
     end,
     event = "InsertEnter",
   },
-
-  { "rafamadriz/friendly-snippets", lazy = true, dependencies = "L3MON4D3/LuaSnip" },
+  {
+    "rafamadriz/friendly-snippets",
+    lazy = true,
+    dependencies = "L3MON4D3/LuaSnip",
+  },
 }
 
 return M
