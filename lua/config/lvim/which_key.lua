@@ -4,6 +4,9 @@ lvim.builtin.which_key.mappings["W"] = { "<CMD>noautocmd w<CR>", "Save without f
 -- Terminiate session
 lvim.builtin.which_key.mappings.d.T = { "<CMD>DapTerminate<CR>", "Terminiate current Dap session" }
 
+lvim.builtin.which_key.mappings.d.r =
+  { "<CMD>:lua require('dap').repl.toggle({ height = 7 }, 'aboveleft split')<CR>", "Toggle Repl" }
+
 -- Switch sp sP
 lvim.builtin.which_key.mappings.s.P = { "<CMD>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings.s.p = { "<CMD>Telescope find_files<CR>", "Find Files" }
