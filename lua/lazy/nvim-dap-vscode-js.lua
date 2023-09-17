@@ -21,51 +21,29 @@ local M = {
         adapters = { "pwa-node", "node-terminal", "pwa-chrome", "pwa-msedge" },
       }
 
-      dap.configurations.javascript = {
-        {
-          type = "pwa-node",
-          request = "launch",
-          name = "Launch file with Node",
-          program = "${file}",
-          cwd = "${workspaceFolder}",
-        },
-        {
-          name = "Launch Chrome",
-          type = "pwa-chrome",
-          request = "launch",
-          reAttach = true,
-          url = "http://localhost:8080",
-          webRoot = "${workspaceFolder}",
-        },
-      }
-
-      dap.configurations.typescript = {
-        {
-          type = "pwa-node",
-          request = "launch",
-          name = "Launch file with Deno",
-          runtimeExecutable = "deno",
-          runtimeArgs = {
-            "run",
-            "--inspect-wait",
-            "--allow-all",
-          },
-          program = "${file}",
-          cwd = "${workspaceFolder}",
-          attachSimplePort = 9229,
-        },
-        {
-          name = "Launch Chrome",
-          type = "pwa-chrome",
-          request = "launch",
-          reAttach = true,
-          url = "http://localhost:8080",
-          webRoot = "${workspaceFolder}",
-        },
-      }
-
-      for _, lang in pairs { "javascriptreact", "typescriptreact" } do
+      for _, lang in pairs { "javascript", "typescript", "javascriptreact", "typescriptreact" } do
         dap.configurations[lang] = {
+          {
+            type = "pwa-node",
+            request = "launch",
+            name = "Launch file with Node",
+            program = "${file}",
+            cwd = "${workspaceFolder}",
+          },
+          {
+            type = "pwa-node",
+            request = "launch",
+            name = "Launch file with Deno",
+            runtimeExecutable = "deno",
+            runtimeArgs = {
+              "run",
+              "--inspect-wait",
+              "--allow-all",
+            },
+            program = "${file}",
+            cwd = "${workspaceFolder}",
+            attachSimplePort = 9229,
+          },
           {
             name = "Launch Chrome",
             type = "pwa-chrome",
