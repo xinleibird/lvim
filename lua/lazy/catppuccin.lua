@@ -56,6 +56,7 @@ local M = {
             enabled = true,
             enable_ui = true, -- enable nvim-dap-ui
           },
+          fidget = true,
           gitsigns = true,
           hop = false,
           illuminate = {
