@@ -8,7 +8,14 @@ local M = {
       -- "ibhagwan/fzf-lua", -- optional
     },
     config = function()
-      require("neogit").setup()
+      require("neogit").setup {
+        signs = {
+          -- { CLOSED, OPENED }
+          hunk = { "", "" },
+          item = { "", "" },
+          section = { "", "" },
+        },
+      }
       lvim.builtin.which_key.mappings.g.g = { "<CMD>Neogit<CR>", "Neogit" }
     end,
   },
