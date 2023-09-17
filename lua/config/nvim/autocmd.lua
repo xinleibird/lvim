@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("QuitPre", {
   callback = function()
+    require("dap").repl.close()
     require("dapui").close()
 
     vim.cmd.cclose()
