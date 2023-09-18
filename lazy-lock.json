@@ -61,6 +61,7 @@
   "trouble.nvim": { "branch": "main", "commit": "3f85d8ed30e97ceeddbbcf80224245d347053711" },
   "vim-illuminate": { "branch": "master", "commit": "76f28e858f1caae87bfa45fb4fd09e4b053fc45b" },
   "vim-lumen": { "branch": "master", "commit": "847814713ca6a44c06c6a325101cefb2b3fff2c5" },
+  "virt-column.nvim": { "branch": "master", "commit": "1917bfb519729dea7b4f5d13aa9c810c9579b0ea" },
   "vscode-js-debug": { "branch": "main", "commit": "65f087c4681f7ac3043938d83f8ef79a107c8034" },
   "which-key.nvim": { "branch": "main", "commit": "7ccf476ebe0445a741b64e36c78a682c1c6118b7" }
 }
