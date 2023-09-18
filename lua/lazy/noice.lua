@@ -3,45 +3,52 @@ local M = {
   --   "folke/noice.nvim",
   --   dependencies = {
   --     "MunifTanjim/nui.nvim",
-  --     -- {
-  --     --   "rcarriga/nvim-notify",
-  --     --   config = function()
-  --     --     lvim.builtin.which_key.mappings.s.n =
-  --     --       { "<CMD>lua require('telescope').extensions.notify.notify()<CR>", "Open Notifies" }
-  --     --     -- Basis columns set notify position
-  --     --     vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
-  --     --       callback = function()
-  --     --         local columns = vim.o.columns
-  --     --         if columns < 83 then
-  --     --           require("notify").setup {
-  --     --             render = "default",
-  --     --             timeout = 1000,
-  --     --             stages = "static",
-  --     --             top_down = false,
-  --     --           }
-  --     --         else
-  --     --           require("notify").setup {
-  --     --             render = "default",
-  --     --             timeout = 1000,
-  --     --             stages = "static",
-  --     --             top_down = true,
-  --     --           }
-  --     --         end
-  --     --       end,
-  --     --     })
-  --     --   end,
-  --     --   dependencies = {
-  --     --     "nvim-telescope/telescope.nvim",
-  --     --     priority = 500,
-  --     --   },
-  --     -- },
+  --     {
+  --       "rcarriga/nvim-notify",
+  --       config = function()
+  --         lvim.builtin.which_key.mappings.s.n =
+  --           { "<CMD>lua require('telescope').extensions.notify.notify()<CR>", "Open Notifies" }
+  --         -- Basis columns set notify position
+  --         vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
+  --           callback = function()
+  --             local columns = vim.o.columns
+  --             if columns < 83 then
+  --               require("notify").setup {
+  --                 render = "default",
+  --                 timeout = 1000,
+  --                 stages = "static",
+  --                 top_down = false,
+  --               }
+  --             else
+  --               require("notify").setup {
+  --                 render = "default",
+  --                 timeout = 1000,
+  --                 stages = "static",
+  --                 top_down = true,
+  --               }
+  --             end
+  --           end,
+  --         })
+  --       end,
+  --       dependencies = {
+  --         "nvim-telescope/telescope.nvim",
+  --         priority = 500,
+  --       },
+  --     },
   --   },
   --   config = function()
   --     require("noice").setup {
   --       routes = {
+  --         {
+  --           filter = {
+  --             event = "notify",
+  --             min_height = 15,
+  --           },
+  --           view = "split",
+  --         },
   --         -- {
-  --         --   view = "split",
   --         --   filter = { min_width = 500 },
+  --         --   view = "split",
   --         -- },
   --         -- {
   --         --   filter = { event = "msg_show", kind = "search_count" },
@@ -85,13 +92,11 @@ local M = {
   --       messages = {
   --         -- Messages shown by lsp servers
   --         enabled = true, -- enables the Noice messages UI
-  --         view = "cmdline", -- default view for messages
+  --         view = "notify", -- default view for messages
   --         view_error = "notify", -- view for errors
   --         view_warn = "notify", -- view for warnings
   --         view_history = "messages", -- view for :messages
   --         view_search = "virtualtext",
-  --         -- view = "notify",
-  --         -- opts = {},
   --       },
   --       -- you can enable a preset for easier configuration
   --       presets = {
