@@ -12,8 +12,8 @@ local M = {
         signs = {
           -- { CLOSED, OPENED }
           hunk = { "", "" },
-          item = { "", "" },
-          section = { "", "" },
+          item = { "", "" },
+          section = { "", "" },
         },
       }
       lvim.builtin.which_key.mappings.g.g = { "<CMD>Neogit<CR>", "Neogit" }

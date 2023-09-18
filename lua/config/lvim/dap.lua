@@ -1,21 +1,22 @@
 lvim.builtin.dap.ui.config.layouts = {
   {
     elements = {
-      { id = "repl", size = 0.5 },
-      { id = "console", size = 0.5 },
-    },
-    size = 7,
-    position = "top",
-  },
-  {
-    elements = {
       { id = "scopes", size = 0.25 },
       { id = "breakpoints", size = 0.25 },
       { id = "stacks", size = 0.25 },
       { id = "watches", size = 0.25 },
     },
-    size = 10,
-    position = "top",
+    size = 0.2,
+    position = "left",
+  },
+  {
+    elements = {
+      { id = "repl", size = 0.5 },
+      { id = "console", size = 0.5 },
+    },
+    size = 0.25,
+    position = "bottom",
   },
 }
+lvim.builtin.dap.ui.config.windows = { indent = 0 }
 lvim.builtin.dap.ui.auto_open = false

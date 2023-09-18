@@ -7,4 +7,7 @@ vim.api.nvim_set_keymap("i", "<D-v>", "<C-o>:set paste<CR><C-r>+<C-o>:set nopast
 vim.api.nvim_set_keymap("c", "<D-v>", "<C-r>+", { noremap = true })
 
 -- Command mode move cursor to line head
-vim.api.nvim_set_keymap("c", "<C-a>", "<C-b>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("c", "<C-a>", "<C-b>", { noremap = true, silent = true })
+
+-- Toggle Buffer Quickfix
+vim.api.nvim_set_keymap("n", "<C-q>", ":lua vim.diagnostic.setloclist()<CR>", { noremap = true, silent = true })
