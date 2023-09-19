@@ -7,7 +7,7 @@ local M = {
     },
     config = function()
       require("gitlazy").setup()
-      -- lvim.builtin.which_key.mappings.g.g = { "<CMD>lua require 'gitlazy'.toggle()<CR>", "Lazygit" }
+      -- lvim.builtin.which_key.mappings.g.g = { "<CMD>lua require 'gitlazy'.open()<CR>", "Lazygit" }
     end,
   },
 }

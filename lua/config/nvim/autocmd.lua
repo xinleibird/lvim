@@ -44,3 +44,11 @@ vim.api.nvim_create_autocmd("VimLeave", {
   pattern = "*",
   command = 'set guicursor= | call chansend(v:stderr, "\x1b[ q")',
 })
+
+-- vim.api.nvim_create_autocmd("DiagnosticChanged", {
+--   callback = function(args)
+--     -- local diagnostics = args.data.diagnostics
+--     -- vim.print(diagnostics)
+--     vim.diagnostic.setloclist { open = false }
+--   end,
+-- })

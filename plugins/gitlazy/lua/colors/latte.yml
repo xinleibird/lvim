@@ -39,8 +39,8 @@ gui:
   showRandomTip: true
   showCommandLog: true
   showBottomLine: true
-  showIcons: false
-  nerdFontsVersion: ""
+  showIcons: true
+  nerdFontsVersion: "3"
   showBranchCommitHash: false
   commandLogSize: 8
   splitDiff: auto

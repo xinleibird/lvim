@@ -8,3 +8,5 @@ if vim.g.neovide then
     lvim.keys.normal_mode["<M-C-f>"] = "<CMD>lua vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen<CR>"
   end
 end
+
+lvim.keys.normal_mode["<C-q>"] = false

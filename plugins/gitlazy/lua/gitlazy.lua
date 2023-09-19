@@ -40,7 +40,7 @@ local function get_script_path()
   return str:match "(.*/)"
 end
 
-M.toggle = function()
+M.open = function()
   local ok, term = pcall(require, "toggleterm.terminal")
   if ok then
     local columns = vim.o.columns
