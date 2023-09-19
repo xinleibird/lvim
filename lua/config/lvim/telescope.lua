@@ -28,6 +28,7 @@ lvim.builtin.telescope.defaults.file_ignore_patterns = {
   "^Library/",
   "^Movies/",
   "^Music/",
+  "^node_modules/",
   "^Public/",
   "lock%.json",
 }

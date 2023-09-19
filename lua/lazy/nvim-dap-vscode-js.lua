@@ -24,6 +24,14 @@ local M = {
       for _, lang in pairs { "javascript", "typescript", "javascriptreact", "typescriptreact" } do
         dap.configurations[lang] = {
           {
+            name = "Launch Chrome",
+            type = "pwa-chrome",
+            request = "launch",
+            reAttach = true,
+            url = "http://localhost:8080",
+            webRoot = "${workspaceFolder}",
+          },
+          {
             type = "pwa-node",
             request = "launch",
             name = "Launch file with Node",
@@ -43,14 +51,6 @@ local M = {
             program = "${file}",
             cwd = "${workspaceFolder}",
             attachSimplePort = 9229,
-          },
-          {
-            name = "Launch Chrome",
-            type = "pwa-chrome",
-            request = "launch",
-            reAttach = true,
-            url = "http://localhost:8080",
-            webRoot = "${workspaceFolder}",
           },
         }
       end

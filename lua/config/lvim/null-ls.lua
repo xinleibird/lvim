@@ -1,8 +1,8 @@
 lvim.lsp.null_ls.setup.ensure_installed = {
-  "eslint_d",
+  "eslint",
   "goimports",
   "jsonlint",
-  "prettierd",
+  "prettier",
   "shellcheck",
   "shfmt",
   "stylua",
@@ -11,7 +11,7 @@ lvim.lsp.null_ls.setup.ensure_installed = {
 -- Formatters
 require("lvim.lsp.null-ls.formatters").setup {
   { name = "goimports" },
-  { name = "prettierd" },
+  { name = "prettier" },
   {
     name = "shfmt",
     filetypes = { "sh", "bash", "zsh" },
@@ -21,13 +21,13 @@ require("lvim.lsp.null-ls.formatters").setup {
 
 -- Linters
 require("lvim.lsp.null-ls.linters").setup {
-  { name = "eslint_d" },
+  { name = "eslint" },
   { name = "jsonlint" },
   { name = "shellcheck", args = { "--severity", "warning" } },
 }
 
 -- Actions e.g. fix issues
 require("lvim.lsp.null-ls.code_actions").setup {
-  { name = "eslint_d" },
+  { name = "eslint" },
   { name = "shellcheck" },
 }

@@ -8,10 +8,3 @@ vim.api.nvim_set_keymap("c", "<D-v>", "<C-r>+", { noremap = true })
 
 -- Command mode move cursor to line head
 vim.api.nvim_set_keymap("c", "<C-a>", "<C-b>", { noremap = true })
-
--- vim.api.nvim_set_keymap(
---   "n",
---   "<C-q>",
---   '<CMD>if &buftype != "quickfix"|:lua vim.diagnostic.setloclist({ open = false })<CR>:rightb lopen<CR>|endif<CR>',
---   { noremap = true, silent = true }
--- )

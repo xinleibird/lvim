@@ -16,11 +16,12 @@ local M = {
       require("luasnip.loaders.from_snipmate").lazy_load()
     end,
     event = "InsertEnter",
-  },
-  {
-    "rafamadriz/friendly-snippets",
-    lazy = true,
-    dependencies = "L3MON4D3/LuaSnip",
+    dependencies = {
+      {
+        "rafamadriz/friendly-snippets",
+        lazy = true,
+      },
+    },
   },
 }
 
