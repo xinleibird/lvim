@@ -16,20 +16,18 @@ end
 
 M.setup = function()
   -- Toggle end of line semi and coma
-  vim.api.nvim_set_keymap("n", "<C-,>", ":lua require('togglesemi').toggle(',')<CR>", { noremap = true, silent = true })
-  vim.api.nvim_set_keymap("n", "<C-;>", ":lua require('togglesemi').toggle(';')<CR>", { noremap = true, silent = true })
-  vim.api.nvim_set_keymap(
-    "i",
-    "<C-,>",
-    "<Esc>:lua require('togglesemi').toggle(',')<CR>a",
-    { noremap = true, silent = true }
-  )
-  vim.api.nvim_set_keymap(
-    "i",
-    "<C-;>",
-    "<Esc>:lua require('togglesemi').toggle(';')<CR>a",
-    { noremap = true, silent = true }
-  )
+  vim.keymap.set("n", "<C-,>", function()
+    require("togglesemi").toggle ","
+  end, { noremap = true, silent = true })
+  vim.keymap.set("n", "<C-;>", function()
+    require("togglesemi").toggle ";"
+  end, { noremap = true, silent = true })
+  vim.keymap.set("i", "<C-,>", function()
+    require("togglesemi").toggle ","
+  end, { noremap = true, silent = true })
+  vim.keymap.set("i", "<C-;>", function()
+    require("togglesemi").toggle ";"
+  end, { noremap = true, silent = true })
 end
 
 return M

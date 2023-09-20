@@ -1,9 +1,11 @@
 local M = {
   {
     "lukas-reineke/virt-column.nvim",
-    tag = "v1.5.6",
     config = function()
-      require("virt-column").setup { char = "▏" }
+      require("virt-column").setup {
+        char = "▏",
+        highlight = "VirtColumn",
+      }
 
       vim.api.nvim_create_autocmd({ "BufRead", "FileType" }, {
         pattern = {
@@ -19,7 +21,9 @@ local M = {
           "css",
         },
         callback = function()
-          require("virt-column").setup_buffer { virtcolumn = "80,110" }
+          require("virt-column").setup_buffer(0, {
+            virtcolumn = "80,110",
+          })
         end,
       })
     end,

@@ -2,6 +2,7 @@ local M = {
   {
     "gitlazy",
     dir = get_config_dir() .. "/plugins/gitlazy",
+    event = "VeryLazy",
     dependencies = {
       "vimpostor/vim-lumen",
     },

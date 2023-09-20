@@ -44,3 +44,9 @@ vim.api.nvim_create_autocmd("VimLeave", {
   pattern = "*",
   command = 'set guicursor= | call chansend(v:stderr, "\x1b[ q")',
 })
+
+-- Close buffer use <esc> and q
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "dap-repl", "lazy", "NvimTree" },
+  command = "nnoremap <buffer><silent> <Esc> <cmd>close!<CR>|nnoremap <buffer><silent> q <cmd>close!<CR>",
+})

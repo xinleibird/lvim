@@ -18,5 +18,7 @@ lvim.builtin.dap.ui.config.layouts = {
     position = "bottom",
   },
 }
-lvim.builtin.dap.ui.config.windows = { indent = 0 }
+
 lvim.builtin.dap.ui.auto_open = false
+
+lvim.builtin.dap.ui.config.controls.enabled = false

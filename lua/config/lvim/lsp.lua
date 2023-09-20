@@ -25,6 +25,7 @@ lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all
 lvim.lsp.buffer_mappings.insert_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
 
 lvim.lsp.installer.setup.ensure_installed = {
+  "angularls",
   "bashls",
   "cssls",
   "emmet_language_server",
@@ -43,6 +44,7 @@ lvim.lsp.installer.setup.ensure_installed = {
   "yamlls",
 }
 
+require("lvim.lsp.manager").setup "angularls"
 require("lvim.lsp.manager").setup "cssls"
 require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "gopls"

@@ -45,7 +45,6 @@ local M = {
             IlluminatedWordText = { bg = colors.crust },
             IlluminatedWordRead = { bg = colors.crust },
             IlluminatedWordWrite = { bg = colors.crust },
-            NvimTreeNormal = { fg = colors.none },
             VirtColumn = { fg = colors.surface0 },
           }
         end,
