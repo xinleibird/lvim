@@ -48,5 +48,11 @@ vim.api.nvim_create_autocmd("VimLeave", {
 -- Close buffer use <esc> and q
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "dap-repl", "lazy", "NvimTree" },
-  command = "nnoremap <buffer><silent> <Esc> <cmd>close!<CR>|nnoremap <buffer><silent> q <cmd>close!<CR>",
+  command = "nnoremap <buffer><silent> <Esc> <CMD>close!<CR>|nnoremap <buffer><silent> q <CMD>close!<CR>",
+})
+
+-- Fixed qf win height
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "dap-repl", "qf" },
+  command = "setlocal winfixheight|setlocal nonumber",
 })

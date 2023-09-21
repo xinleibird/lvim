@@ -35,3 +35,6 @@ lvim.builtin.telescope.defaults.file_ignore_patterns = {
 
 -- Set <C-u>
 lvim.builtin.telescope.defaults.mappings.i["<C-u>"] = false
+
+lvim.builtin.telescope.defaults.prompt_prefix = "🔭"
+lvim.builtin.telescope.defaults.selection_caret = "👉"

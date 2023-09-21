@@ -7,4 +7,5 @@ vim.keymap.set("i", "<D-v>", "<C-o>:set paste<CR><C-r>+<C-o>:set nopaste<CR>", {
 vim.keymap.set("c", "<D-v>", "<C-r>+", { noremap = true })
 
 -- Command mode move cursor to line head
+
 vim.keymap.set("c", "<C-a>", "<C-b>", { noremap = true })

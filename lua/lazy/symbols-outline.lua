@@ -5,7 +5,9 @@ local M = {
       -- Outline Toggle
       lvim.builtin.which_key.mappings.o = { ":SymbolsOutline<CR>", "Outline" }
       require("symbols-outline").setup {
-        width = 20,
+        position = "left",
+        relative_width = false,
+        width = 30,
         auto_close = false,
         symbols = {
           File = { icon = lvim.icons.kind.File, hl = "@text.uri" },
@@ -36,6 +38,10 @@ local M = {
           TypeParameter = { icon = lvim.icons.kind.TypeParameter, hl = "@parameter" },
           Component = { icon = lvim.icons.kind.Component, hl = "@function" },
           Fragment = { icon = lvim.icons.kind.Fragment, hl = "@constant" },
+        },
+        keymaps = { -- These keymaps can be a string or a table for multiple keys
+          hover_symbol = "K",
+          toggle_preview = "<C-space>",
         },
       }
     end,

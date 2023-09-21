@@ -5,8 +5,7 @@ lvim.builtin.which_key.mappings["W"] = { "<CMD>noautocmd w<CR>", "Save without f
 lvim.builtin.which_key.mappings.d.T = { "<CMD>DapTerminate<CR>", "Terminiate current Dap session" }
 
 lvim.builtin.which_key.mappings.d.r =
-  { "<CMD>lua require('dap').repl.toggle({ height = 7 }, 'aboveleft split')<CR>", "Toggle Repl" }
-
+  { "<CMD>lua require('dap').repl.toggle({ height = 7 }, 'lefta split')<CR>", "Toggle Repl" }
 -- Switch sp sP
 lvim.builtin.which_key.mappings.s.P = { "<CMD>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings.s.p = { "<CMD>Telescope find_files<CR>", "Find Files" }
@@ -17,3 +16,9 @@ lvim.builtin.which_key.mappings.s.b = { "<CMD>Telescope scope buffers<CR>", "Sho
 
 -- Disable builtin lazygit keymap
 lvim.builtin.which_key.mappings.g.g = nil
+
+-- Lsp show References
+lvim.builtin.which_key.mappings.l.r =
+  { "<CMD>lua require('telescope.builtin').lsp_references()<CR>", "Show References" }
+
+lvim.builtin.which_key.mappings.l.R = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Show References" }

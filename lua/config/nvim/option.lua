@@ -14,3 +14,7 @@ vim.opt.formatoptions:remove { "c", "r" }
 -- Use treesitter folding
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr   = "nvim_treesitter#foldexpr()"
+
+-- Set copen default rightb
+-- vim.cmd "cnoreabbrev copen leftabove copen"
+vim.cmd "cabbrev copen leftabove<bar>copen"
