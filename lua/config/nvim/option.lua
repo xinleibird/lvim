@@ -17,4 +17,7 @@ vim.opt.formatoptions:remove { "c", "r" }
 
 -- Set copen default rightb
 -- vim.cmd "cnoreabbrev copen leftabove copen"
-vim.cmd "cabbrev copen leftabove<bar>copen"
+
+vim.opt.splitkeep = "cursor"
+vim.opt.splitbelow = false
+vim.opt.splitright = true

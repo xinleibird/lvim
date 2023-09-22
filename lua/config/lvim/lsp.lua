@@ -22,10 +22,13 @@
 
 -- Add new Map to <f2>
 lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
-lvim.lsp.buffer_mappings.normal_mode["gR"] = { vim.lsp.buf.rename, "Rename all references" }
 lvim.lsp.buffer_mappings.insert_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
+lvim.lsp.buffer_mappings.normal_mode["gR"] = { vim.lsp.buf.rename, "Rename all references" }
 
-lvim.lsp.buffer_mappings.normal_mode["gr"] = { require("telescope.builtin").lsp_references, "Show References" }
+lvim.lsp.buffer_mappings.normal_mode["gd"] = { "<cmd>Telescope lsp_definitions<cr>", "Goto definition" }
+lvim.lsp.buffer_mappings.normal_mode["gD"] = { "<cmd>Telescope lsp_type_definitions<cr>", "Goto Declaration" }
+lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<cr>", "Goto references" }
+lvim.lsp.buffer_mappings.normal_mode["gI"] = { "<cmd>Telescope lsp_implementations<cr>", "Goto Implementation" }
 
 lvim.lsp.installer.setup.ensure_installed = {
   "angularls",
