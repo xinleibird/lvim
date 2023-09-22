@@ -24,7 +24,7 @@ lvim.builtin.lualine.sections.lualine_a = {
     fmt = function()
       return "󰊠"
     end,
-    separator = { left = "", right = "" },
+    separator = { left = " ", right = "" },
     padding = { left = 0, right = 0 },
   },
 }
@@ -32,7 +32,7 @@ lvim.builtin.lualine.sections.lualine_a = {
 lvim.builtin.lualine.sections.lualine_z = {
   {
     selectionCount,
-    separator = { left = "", right = "" },
+    separator = { left = "", right = " " },
     padding = { left = 1, right = 1 },
   },
 }

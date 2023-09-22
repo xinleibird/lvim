@@ -47,7 +47,7 @@ vim.api.nvim_create_autocmd("VimLeave", {
 
 -- Close buffer use <esc> and q
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "dap-repl", "lazy", "NvimTree" },
+  pattern = { "dap-repl", "lazy", "NvimTree", "Trouble" },
   command = "nnoremap <buffer><silent> <Esc> <CMD>close!<CR>|nnoremap <buffer><silent> q <CMD>close!<CR>",
 })
 

@@ -8,11 +8,11 @@ M.generate = function(name)
   local datetime = os.date " %Y-%m-%d  %H:%M:%S"
   local hour = tableTime.hour
   local greetingsTable = {
-    [1] = "   Nice 󰒲 Dreamin!",
-    [2] = "󰖨  Good   Morning!",
-    [3] = "󰖨 Good 󰶟 Afternoon!",
-    [4] = "󰖨   Good 󱀄 Evening!",
-    [5] = "󰖔 It's 󱌌 Showtimes!",
+    [1] = " Nice Dreamin!! 󰒲 ",
+    [2] = "󰖨 Good Morning!!  ",
+    [3] = "󰖨 Good Afternoon 󰶟 ",
+    [4] = "󰖔 Good Evening!! 󰍰 ",
+    [5] = "󰖔 It's Showtimes 󱌌 ",
   }
   local greetingIndex = 0
   if hour == 23 or hour < 7 then

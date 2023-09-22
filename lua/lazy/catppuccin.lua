@@ -58,7 +58,7 @@ local M = {
           },
           fidget = true,
           gitsigns = true,
-          hop = false,
+          hop = true,
           illuminate = {
             enabled = true,
             lsp = true,
@@ -88,11 +88,13 @@ local M = {
               background = true,
             },
           },
-          noice = true,
-          notify = true,
           navic = {
             enabled = true,
+            custom_bg = "NONE", -- "lualine" will set background to mantle
           },
+          neogit = true,
+          noice = true,
+          notify = true,
           nvimtree = true,
           rainbow_delimiters = true,
           symbols_outline = true,
