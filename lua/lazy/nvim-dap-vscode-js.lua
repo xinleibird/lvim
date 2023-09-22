@@ -18,7 +18,6 @@ local M = {
       require("dap-vscode-js").setup {
         node_path = "node",
         debugger_path = vscode_js_debug_path,
-        -- debugger_cmd = { "vscode-js-debug" }, -- Command to use to launch the debug server. Takes precedence over `node_path` and `debugger_path`.
         adapters = {
           "chrome",
           "node",
