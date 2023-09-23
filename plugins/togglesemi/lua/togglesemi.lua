@@ -1,6 +1,15 @@
 local M = {}
 
 M.toggle = function(character)
+  local buf = vim.api.nvim_win_get_buf(0)
+
+  if not vim.bo[buf].modifiable then
+    -- vim.notify("Buffer is not modifiable.", vim.log.levels.WARN, {
+    --   title = "Readonly!",
+    -- })
+    return
+  end
+
   local delimiters = { ",", ";" }
   local line = vim.api.nvim_get_current_line()
   local last_char = line:sub(-1)

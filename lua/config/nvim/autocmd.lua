@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd("QuitPre", {
   callback = function()
     require("dap").repl.close()
     require("dapui").close()
+    require("aerial").close_all()
 
     vim.cmd.cclose()
     vim.cmd.lclose()
@@ -22,9 +23,10 @@ vim.api.nvim_create_autocmd("QuitPre", {
 
     for _, w in ipairs(wins) do
       local bufname = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(w))
-      if bufname:match "NvimTree_" ~= nil or bufname:match "OUTLINE" ~= nil then
+      if bufname:match "NvimTree_" ~= nil then
         table.insert(tree_wins, w)
       end
+
       if vim.api.nvim_win_get_config(w).relative ~= "" then
         table.insert(floating_wins, w)
       end
