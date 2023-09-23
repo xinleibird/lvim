@@ -1,6 +1,7 @@
 local M = {
   {
     "enddeadroyal/symbols-outline.nvim",
+    enabled = false,
     branch = "bugfix/symbol-hover-misplacement",
     config = function()
       -- Outline Toggle
