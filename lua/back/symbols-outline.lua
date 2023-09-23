@@ -1,13 +1,15 @@
 local M = {
   {
-    "simrat39/symbols-outline.nvim",
+    "enddeadroyal/symbols-outline.nvim",
+    branch = "bugfix/symbol-hover-misplacement",
     config = function()
       -- Outline Toggle
       lvim.builtin.which_key.mappings.o = { ":SymbolsOutline<CR>", "Outline" }
       require("symbols-outline").setup {
-        position = "left",
+        position = "right",
         relative_width = false,
         width = 30,
+        preview_bg_highlight = "None",
         auto_close = false,
         symbols = {
           File = { icon = lvim.icons.kind.File, hl = "@text.uri" },

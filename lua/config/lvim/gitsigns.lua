@@ -1,0 +1,1 @@
+-- lvim.builtin.gitsigns.active = false
