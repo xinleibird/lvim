@@ -9,6 +9,26 @@ local M = {
         config = function()
           lvim.builtin.which_key.mappings.s.n =
             { "<CMD>lua require('telescope').extensions.notify.notify()<CR>", "Open Notifies" }
+          vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
+            callback = function()
+              local columns = vim.o.columns
+              if columns < 83 then
+                require("notify").setup {
+                  render = "default",
+                  timeout = 1000,
+                  stages = "static",
+                  top_down = false,
+                }
+              else
+                require("notify").setup {
+                  render = "default",
+                  timeout = 1000,
+                  stages = "static",
+                  top_down = true,
+                }
+              end
+            end,
+          })
         end,
         dependencies = {
           "nvim-telescope/telescope.nvim",
@@ -18,26 +38,6 @@ local M = {
     },
     config = function()
       -- Basis columns set notify position
-      vim.api.nvim_create_autocmd({ "VimEnter", "VimResized" }, {
-        callback = function()
-          local columns = vim.o.columns
-          if columns < 83 then
-            require("notify").setup {
-              render = "default",
-              timeout = 1000,
-              stages = "static",
-              top_down = false,
-            }
-          else
-            require("notify").setup {
-              render = "default",
-              timeout = 1000,
-              stages = "static",
-              top_down = true,
-            }
-          end
-        end,
-      })
 
       require("noice").setup {
         -- routes = {
@@ -86,7 +86,7 @@ local M = {
           command_palette = true, -- position the cmdline and popupmenu together
           long_message_to_split = true, -- long messages will be sent to a split
           inc_rename = false, -- enables an input dialog for inc-rename.nvim
-          lsp_doc_border = true, -- add a border to hover docs and signature help
+          lsp_doc_border = false, -- add a border to hover docs and signature help
         },
       }
     end,

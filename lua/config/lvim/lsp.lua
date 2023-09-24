@@ -31,6 +31,9 @@ lvim.lsp.buffer_mappings.normal_mode["gr"] = { "<cmd>Telescope lsp_references<cr
 lvim.lsp.buffer_mappings.normal_mode["gI"] =
   { "<cmd>Telescope lsp_implementations<cr>", "Goto Implementation" }
 
+lvim.lsp.buffer_mappings.normal_mode["gs"] = { vim.lsp.buf.signature_help, "Show signature help" }
+lvim.lsp.buffer_mappings.insert_mode["<C-s>"] = { vim.lsp.buf.signature_help, "Show signature help" }
+
 lvim.lsp.installer.setup.ensure_installed = {
   "angularls",
   "bashls",

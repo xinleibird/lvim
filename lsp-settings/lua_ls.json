@@ -1,5 +1,6 @@
 {
   "Lua.completion.showWord": "Disable",
+  "Lua.completion.workspaceWord": false,
   "Lua.diagnostics.globals": [
     "vim",
     "lvim",

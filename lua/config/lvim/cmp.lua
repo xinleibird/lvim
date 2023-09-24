@@ -93,7 +93,7 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
       end
 
       if entry.source:get_debug_name() == "nvim_lsp:null-ls" then
-        vim_item.menu = " 󰟢 NULL"
+        vim_item.menu = " 󰬕 NULS"
       end
     end
   end
