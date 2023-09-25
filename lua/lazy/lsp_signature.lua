@@ -1,7 +1,6 @@
 local M = {
   {
     "ray-x/lsp_signature.nvim",
-    enabled = true,
     event = "VeryLazy",
     opts = {
       hint_enable = false,

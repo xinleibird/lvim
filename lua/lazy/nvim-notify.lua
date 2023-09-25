@@ -7,7 +7,6 @@ local M = {
         timeout = 1000,
         stages = "static",
         top_down = true,
-        max_width = 80,
       }
       vim.notify = require "notify"
     end,
