@@ -20,6 +20,20 @@
 --   return server ~= "emmet_ls"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
+lvim.lsp.nlsp_settings.setup = {
+  config_home = join_paths(get_config_dir(), "nlsp-settings"),
+  local_settings_dir = ".nlsp-settings",
+  local_settings_root_markers_fallback = { ".git" },
+  -- set to false to overwrite schemastore.nvim
+  append_default_schemas = true,
+  ignored_servers = {},
+  loader = "json",
+}
+
+require("neoconf").setup {
+  -- override any of the default settings here
+}
+
 -- Add new Map to <f2>
 lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
 lvim.lsp.buffer_mappings.insert_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
@@ -38,13 +52,16 @@ lvim.lsp.installer.setup.ensure_installed = {
   "angularls",
   "bashls",
   "cssls",
+  "dockerls",
   "emmet_language_server",
+  "eslint",
   "gopls",
   "html",
   "intelephense",
   "jsonls",
   "lemminx",
   "lua_ls",
+  "rust_analyzer",
   "tailwindcss",
   "taplo",
   "tsserver",
@@ -56,12 +73,15 @@ lvim.lsp.installer.setup.ensure_installed = {
 
 require("lvim.lsp.manager").setup "angularls"
 require("lvim.lsp.manager").setup "cssls"
+require("lvim.lsp.manager").setup "dockerls"
 require("lvim.lsp.manager").setup "emmet_language_server"
+require("lvim.lsp.manager").setup "eslint"
 require("lvim.lsp.manager").setup "gopls"
 require("lvim.lsp.manager").setup "html"
 require("lvim.lsp.manager").setup "jsonls"
 require("lvim.lsp.manager").setup "lemminx"
 require("lvim.lsp.manager").setup "lua_ls"
+require("lvim.lsp.manager").setup "rust_analyzer"
 require("lvim.lsp.manager").setup "tailwindcss"
 require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "tsserver"

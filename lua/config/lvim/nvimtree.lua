@@ -12,6 +12,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.glyphs.git = {
   unstaged = "󰎂",
   untracked = "󰛐",
 }
+
 lvim.builtin.nvimtree.setup.git.ignore = true
 lvim.builtin.nvimtree.setup.update_cwd = true
 lvim.builtin.nvimtree.setup.sync_root_with_cwd = true

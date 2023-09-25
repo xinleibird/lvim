@@ -1,28 +1,22 @@
-local ok, null_ls = pcall(require, "null-ls")
-if ok then
-  local helpers = require "null-ls.helpers"
-  local FORMATTING = require("null-ls.methods").internal.FORMATTING
+-- Format on save
+lvim.format_on_save.enabled = true
+lvim.format_on_save.timeout = 500
 
-  null_ls.register {
-    --your custom sources go here
-    helpers.make_builtin {
-      name = "stopnoise",
-      meta = {
-        url = "https://github.com/jose-elias-alvarez/null-ls.nvim",
-        description = "Stop [NO formatter] notify noise.",
-      },
-      method = FORMATTING,
-      filetypes = { "vim", "NeogitCommitMessage" },
-      generator_opts = {
-        -- do nothing……
-      },
-      factory = helpers.formatter_factory,
-    },
-  }
-end
+lvim.format_on_save.pattern = {
+  "*.{css,scss,sass}",
+  "*.{Dockerfile,dockerfile}",
+  "*.{go}",
+  "*.{htm,html,xml}",
+  "*.{js,jsx,ts,tsx,ejs,vue}",
+  "*.{json,yaml,yml,toml,{.,}prettierrc,{.,}eslintrc,{.,}stylelintrc}",
+  "*.{lua}",
+  "*.{md,markdown}",
+  "*.{php}",
+  "*.{rs}",
+  "*.{sh,bash,zsh}",
+}
 
 lvim.lsp.null_ls.setup.ensure_installed = {
-  "eslint",
   "goimports",
   "jsonlint",
   "prettier",
