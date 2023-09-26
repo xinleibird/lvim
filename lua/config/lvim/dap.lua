@@ -7,7 +7,7 @@ lvim.builtin.dap.ui.config.layouts = {
       { id = "watches", size = 0.23 },
       { id = "console", size = 0.08 },
     },
-    size = 0.2,
+    size = 0.25,
     position = "left",
   },
   -- {
@@ -21,5 +21,4 @@ lvim.builtin.dap.ui.config.layouts = {
 }
 
 lvim.builtin.dap.ui.auto_open = false
-
 lvim.builtin.dap.ui.config.controls.enabled = false
