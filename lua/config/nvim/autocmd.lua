@@ -1,6 +1,7 @@
 -- Let treesitter use bash highlight for zsh files as well
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "zsh",
+  group = vim.api.nvim_create_augroup("user_zsh_highlight", { clear = true }),
   callback = function()
     local ok, highlight = pcall(require, "nvim-treesitter.highlight")
     if ok then
@@ -10,6 +11,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("QuitPre", {
+  group = vim.api.nvim_create_augroup("user_quit_before_close_windows", { clear = true }),
   callback = function()
     require("dap").repl.close()
     require("dapui").close()
@@ -50,11 +52,13 @@ vim.api.nvim_create_autocmd("VimLeave", {
 -- Close buffer use <esc> and q
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "dap-repl", "lazy", "NvimTree", "Trouble" },
+  group = vim.api.nvim_create_augroup("user_add_quit_hotkey", { clear = true }),
   command = "nnoremap <buffer><silent> <Esc> <CMD>close!<CR>|nnoremap <buffer><silent> q <CMD>close!<CR>",
 })
 
 -- Fixed qf win height
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "dap-repl", "qf" },
+  group = vim.api.nvim_create_augroup("user_set_qf_repl_window", { clear = true }),
   command = "setlocal winfixheight|setlocal nonumber",
 })

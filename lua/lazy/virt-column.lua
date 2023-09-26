@@ -20,6 +20,7 @@ local M = {
           "html",
           "css",
         },
+        group = vim.api.nvim_create_augroup("user_virt_column_filetype", { clear = true }),
         callback = function()
           require("virt-column").setup_buffer(0, {
             virtcolumn = "80,110",

@@ -8,6 +8,7 @@ if vim.g.neovide then
     else
       vim.api.nvim_create_autocmd({ "UIEnter" }, {
         pattern = "*",
+        group = vim.api.nvim_create_augroup("user_enter_neovide", { clear = true }),
         command = "chdir $HOME",
       })
     end

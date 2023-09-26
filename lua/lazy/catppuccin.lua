@@ -46,19 +46,12 @@ local M = {
             IlluminatedWordRead = { bg = colors.crust },
             IlluminatedWordWrite = { bg = colors.crust },
             VirtColumn = { fg = colors.surface0 },
-            -- SymbolsOutlineConnector = { fg = colors.surface1 },
             AerialGuide = { fg = colors.mantle },
           }
         end,
         integrations = {
           aerial = true,
           alpha = true,
-          barbecue = {
-            dim_dirname = true, -- directory name is dimmed by default
-            bold_basename = true,
-            dim_context = false,
-            alt_background = false,
-          },
           cmp = true,
           dashboard = true,
           dap = {
@@ -76,10 +69,8 @@ local M = {
             enabled = true,
             colored_indent_levels = false,
           },
-          lsp_saga = true,
           markdown = true,
           mason = true,
-          mini = true, -- https://github.com/catppuccin/nvim#integrations,
           native_lsp = {
             enabled = true,
             virtual_text = {
@@ -99,15 +90,13 @@ local M = {
             },
           },
           navic = {
-            enabled = true,
+            enabled = false,
             custom_bg = "NONE", -- "lualine" will set background to mantle
           },
           neogit = true,
-          noice = true,
           notify = true,
           nvimtree = true,
           rainbow_delimiters = true,
-          symbols_outline = true,
           telescope = {
             enabled = true,
             -- style = "nvchad",

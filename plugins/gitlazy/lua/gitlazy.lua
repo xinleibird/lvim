@@ -20,15 +20,17 @@ M.setup = function(opt)
     vim.g.gitlazy_color_mode = light_theme
   end
 
+  local user_lumen_group = vim.api.nvim_create_augroup("user_lumen_group", { clear })
   vim.api.nvim_create_autocmd("User", {
     pattern = "LumenDark",
+    group = user_lumen_group,
     callback = function()
       vim.g.gitlazy_color_mode = dark_theme
     end,
   })
-
   vim.api.nvim_create_autocmd("User", {
     pattern = "LumenLight",
+    group = user_lumen_group,
     callback = function()
       vim.g.gitlazy_color_mode = light_theme
     end,
