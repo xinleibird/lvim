@@ -15,6 +15,7 @@ local M = {
           item = { "", "" },
           section = { "", "" },
         },
+        kind = "replace",
       }
       lvim.builtin.which_key.mappings.g.g = { "<CMD>Neogit<CR>", "Neogit" }
     end,
