@@ -30,9 +30,8 @@ lvim.lsp.nlsp_settings.setup = {
   loader = "json",
 }
 
-require("neoconf").setup {
-  -- override any of the default settings here
-}
+-- Should setup neoconf before lspconfig
+require("neoconf").setup {}
 
 -- Add new Map to <f2>
 lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }

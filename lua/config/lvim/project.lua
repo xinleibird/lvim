@@ -2,7 +2,7 @@
 lvim.builtin.project.manual_mode = true
 
 -- Add .prettierrc to Project patterns
-local added = {
+local custom_patterns = {
   ".prettierrc",
   ".prettierrc.*",
   "build",
@@ -11,4 +11,4 @@ local added = {
   "Cargo.toml",
   "Cargo.lock",
 }
-vim.list_extend(lvim.builtin.project.patterns, added)
+vim.list_extend(lvim.builtin.project.patterns, custom_patterns)
