@@ -1,5 +1,8 @@
 local M = {
-  { "HiPhish/rainbow-delimiters.nvim" },
+  {
+    "HiPhish/rainbow-delimiters.nvim",
+    event = "BufRead",
+  },
 }
 
 return M

@@ -13,20 +13,6 @@ local function isVisualMode()
   return mode == "V" or mode == "v" or mode == "CTRL-V" or mode == "\22"
 end
 
-local function selectionCount()
-  local isVisual = isVisualMode()
-  if isVisual then
-    local starts = vim.fn.line "v"
-    local ends = vim.fn.line "."
-    local lines = starts <= ends and ends - starts + 1 or starts - ends + 1
-    return string.format("%03d", tostring(lines))
-      .. " 󰼂 "
-      .. string.format("%04d", tostring(vim.fn.wordcount().visual_chars))
-  end
-
-  return "%P 󰼁 %04L"
-end
-
 lvim.builtin.lualine.sections.lualine_a = {
   {
     "mode",
@@ -44,7 +30,21 @@ lvim.builtin.lualine.sections.lualine_a = {
 
 lvim.builtin.lualine.sections.lualine_z = {
   {
-    selectionCount,
+    "progress",
+    fmt = function()
+      local isVisual = isVisualMode()
+      if isVisual then
+        local starts = vim.fn.line "v"
+        local ends = vim.fn.line "."
+        local lines = starts <= ends and ends - starts + 1 or starts - ends + 1
+        return string.format("%03d", tostring(lines))
+          .. " 󰼂 "
+          .. string.format("%04d", tostring(vim.fn.wordcount().visual_chars))
+      end
+
+      return "%P 󰼁 %04L"
+    end,
+    -- selectionCount,
     separator = { left = "", right = " " },
     padding = { left = 1, right = 1 },
   },

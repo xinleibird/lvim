@@ -1,5 +1,9 @@
 local M = {
-  { "tpope/vim-repeat" },
+  {
+    "tpope/vim-repeat",
+    event = "BufRead",
+    lazy = true,
+  },
 }
 
 return M

@@ -1,6 +1,7 @@
 local M = {
   {
     "L3MON4D3/LuaSnip",
+    event = "InsertEnter",
     config = function()
       local utils = require "lvim.utils"
       local paths = {}
@@ -15,7 +16,6 @@ local M = {
       }
       require("luasnip.loaders.from_snipmate").lazy_load()
     end,
-    event = "InsertEnter",
     dependencies = {
       {
         "rafamadriz/friendly-snippets",

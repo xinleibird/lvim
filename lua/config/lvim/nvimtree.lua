@@ -3,15 +3,6 @@
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.renderer.icons.git_placement = "after"
-lvim.builtin.nvimtree.setup.renderer.icons.glyphs.git = {
-  deleted = "󰅖",
-  ignored = "󰛑",
-  renamed = "󱞩",
-  staged = "󰄬",
-  unmerged = "󰃸",
-  unstaged = "󰎂",
-  untracked = "󰛐",
-}
 
 lvim.builtin.nvimtree.setup.git.ignore = true
 lvim.builtin.nvimtree.setup.update_cwd = true
@@ -22,7 +13,6 @@ lvim.builtin.nvimtree.setup.update_focused_file = {
   update_root = false,
 }
 lvim.builtin.nvimtree.setup.filters.custom = {
-  "^Icon[^M]",
   "^Network Trash Folder",
   "^Temporary Items",
   "^\\.AppleDB",

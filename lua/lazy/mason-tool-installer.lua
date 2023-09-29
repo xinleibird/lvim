@@ -1,6 +1,7 @@
 local M = {
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
+    priority = 1000,
     dependencies = {
       "mason.nvim",
       "mason-lspconfig.nvim",

@@ -1,6 +1,7 @@
 local M = {
   {
     "rcarriga/nvim-notify",
+    priority = 1000,
     config = function()
       require("notify").setup {
         render = "default",

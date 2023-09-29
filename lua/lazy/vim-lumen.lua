@@ -1,5 +1,8 @@
 local M = {
-  { "vimpostor/vim-lumen" },
+  {
+    "vimpostor/vim-lumen",
+    priority = 1000,
+  },
 }
 
 return M

@@ -1,6 +1,7 @@
 local M = {
   {
     "lukas-reineke/virt-column.nvim",
+    event = "BufRead",
     config = function()
       require("virt-column").setup {
         char = "▏",

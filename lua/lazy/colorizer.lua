@@ -1,6 +1,7 @@
 local M = {
   {
     "norcalli/nvim-colorizer.lua",
+    event = "BufRead",
     config = function()
       require("colorizer").setup({ "css", "scss", "html", "javascript", "vim", "lua" }, {
         RGB = true, -- #RGB hex codes
