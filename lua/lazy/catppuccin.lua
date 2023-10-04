@@ -47,6 +47,8 @@ local M = {
             IlluminatedWordWrite = { bg = colors.crust },
             VirtColumn = { fg = colors.surface0 },
             AerialGuide = { fg = colors.mantle },
+            -- DiagnosticUnnecessary = { link = "DiagnosticUnderlineError" },
+            -- DiagnosticDeprecated = { link = "DiagnosticUnderlineError" },
           }
         end,
         integrations = {

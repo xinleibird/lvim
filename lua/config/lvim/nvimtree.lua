@@ -13,6 +13,7 @@ lvim.builtin.nvimtree.setup.update_focused_file = {
   update_root = false,
 }
 lvim.builtin.nvimtree.setup.filters.custom = {
+  "^Icon[\r\r]$",
   "^Network Trash Folder",
   "^Temporary Items",
   "^\\.AppleDB",
