@@ -48,7 +48,6 @@ lvim.lsp.buffer_mappings.normal_mode["gs"] = { vim.lsp.buf.signature_help, "Show
 lvim.lsp.buffer_mappings.insert_mode["<C-s>"] = { vim.lsp.buf.signature_help, "Show signature help" }
 
 lvim.lsp.installer.setup.ensure_installed = {
-  "angularls",
   "bashls",
   "cssls",
   "dockerls",
@@ -70,7 +69,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "yamlls",
 }
 
-require("lvim.lsp.manager").setup "angularls"
 require("lvim.lsp.manager").setup "cssls"
 require("lvim.lsp.manager").setup "dockerls"
 require("lvim.lsp.manager").setup "emmet_language_server"
