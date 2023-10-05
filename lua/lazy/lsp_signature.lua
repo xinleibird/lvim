@@ -3,7 +3,7 @@ local M = {
     "ray-x/lsp_signature.nvim",
     event = "VeryLazy",
     opts = {
-      hint_enable = true,
+      hint_enable = false,
       hint_prefix = "👾 ", -- Panda for parameter, NOTE: for the terminal not support emoji, might crash
       hint_inline = function()
         return vim.fn.has "nvim_0.10" == 1
