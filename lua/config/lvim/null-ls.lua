@@ -1,6 +1,6 @@
 -- Format on save
 lvim.format_on_save.enabled = true
-lvim.format_on_save.timeout = 500
+lvim.format_on_save.timeout = 5000
 
 lvim.format_on_save.pattern = {
   "*.{css,scss,sass}",
