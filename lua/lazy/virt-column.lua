@@ -9,6 +9,7 @@ local M = {
 
       vim.api.nvim_create_autocmd({ "BufReadPre" }, {
         pattern = lvim.format_on_save.pattern or {},
+        group = vim.api.nvim_create_augroup("user_virt_column_group", { clear = true }),
         callback = function()
           require("virt-column").setup_buffer(0, {
             virtcolumn = "80,110",
