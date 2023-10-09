@@ -1,7 +1,8 @@
 local M = {
   {
     "ray-x/lsp_signature.nvim",
-    event = "VeryLazy",
+    enabled = false,
+    event = "BufRead",
     opts = {
       hint_enable = false,
       hint_prefix = "👾 ", -- Panda for parameter, NOTE: for the terminal not support emoji, might crash
@@ -13,7 +14,11 @@ local M = {
     },
     config = function(_, opts)
       require("lsp_signature").setup(opts)
+      require("lsp_signature").on_attach()
     end,
+    -- config = function(_, opts)
+    --   require("lsp_signature").setup(opts)
+    -- end,
   },
 }
 

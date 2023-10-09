@@ -5,7 +5,6 @@ local M = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
       "sindrets/diffview.nvim",
-      "ibhagwan/fzf-lua",
     },
     config = function()
       require("neogit").setup {
@@ -28,7 +27,7 @@ local M = {
           "NeogitFetchComplete",
         },
         group = vim.api.nvim_create_augroup("user_geogit_auto_refresh_nvimtree", { clear = true }),
-        command = "NvimTreeRefresh",
+        command = 'if exists(":NvimTreeRefresh") | exe "NvimTreeRefresh" | endif',
       })
     end,
   },
