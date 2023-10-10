@@ -45,7 +45,16 @@ lvim.lsp.buffer_mappings.normal_mode["gI"] =
   { "<cmd>Telescope lsp_implementations<cr>", "Goto Implementation" }
 
 lvim.lsp.buffer_mappings.normal_mode["gs"] = { vim.lsp.buf.signature_help, "Show signature help" }
-lvim.lsp.buffer_mappings.insert_mode["<C-s>"] = { vim.lsp.buf.signature_help, "Show signature help" }
+
+lvim.lsp.buffer_mappings.insert_mode["<C-s>"] = {
+  function()
+    if vim.fn.pumvisible() then
+      vim.api.nvim_input "<C-e>"
+    end
+    vim.lsp.buf.signature_help()
+  end,
+  "Show signature help",
+}
 
 lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
