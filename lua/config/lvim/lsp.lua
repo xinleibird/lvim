@@ -74,7 +74,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "tsserver",
   "vale_ls",
   "vimls",
-  "volar",
   "yamlls",
 }
 
@@ -93,7 +92,6 @@ require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "tsserver"
 require("lvim.lsp.manager").setup "vale_ls"
 require("lvim.lsp.manager").setup "vimls"
-require("lvim.lsp.manager").setup "volar"
 require("lvim.lsp.manager").setup "yamlls"
 
 require("lvim.lsp.manager").setup("bashls", {
