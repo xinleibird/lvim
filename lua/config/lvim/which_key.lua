@@ -21,4 +21,4 @@ lvim.builtin.which_key.mappings.g.g = nil
 lvim.builtin.which_key.mappings.l.r =
   { "<CMD>lua require('telescope.builtin').lsp_references()<CR>", "Show References" }
 
-lvim.builtin.which_key.mappings.l.R = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Show References" }
+lvim.builtin.which_key.mappings.l.R = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename all references" }
