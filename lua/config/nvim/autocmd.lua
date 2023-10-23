@@ -53,7 +53,8 @@ vim.api.nvim_create_autocmd("VimLeave", {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "dap-repl", "lazy", "NvimTree", "Trouble" },
   group = vim.api.nvim_create_augroup("user_add_quit_hotkey", { clear = true }),
-  command = "nnoremap <buffer><silent> <Esc> <CMD>close!<CR>|nnoremap <buffer><silent> q <CMD>close!<CR>",
+  -- command = "nnoremap <buffer><silent> <Esc> <CMD>close!<CR>|nnoremap <buffer><silent> q <CMD>close!<CR>",
+  command = "nnoremap <buffer><silent> q <CMD>close!<CR>",
 })
 
 -- Fixed qf win height
