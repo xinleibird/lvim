@@ -39,40 +39,40 @@ local M = {
       for _, lang in pairs(langs) do
         require("dap").configurations[lang] = {
           {
-            type = "pwa-node",
-            request = "launch",
-            name = "Launch with Node",
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-          },
-          {
             name = "Launch Chrome",
-            type = "pwa-chrome",
-            request = "launch",
             reAttach = true,
+            request = "launch",
+            type = "pwa-chrome",
             url = "http://localhost:8080",
             webRoot = "${workspaceFolder}",
           },
           {
+            cwd = "${workspaceFolder}",
+            name = "Launch with Node",
+            program = "${file}",
+            request = "launch",
+            type = "pwa-node",
+          },
+          {
+            attachSimplePort = 9229,
+            cwd = "${workspaceFolder}",
+            name = "Launch with Deno",
+            program = "${file}",
             type = "pwa-node",
             request = "launch",
-            name = "Launch with Deno",
             runtimeExecutable = "deno",
             runtimeArgs = {
               "run",
               "--inspect-wait",
               "--allow-all",
             },
-            program = "${file}",
-            cwd = "${workspaceFolder}",
-            attachSimplePort = 9229,
           },
           {
-            type = "pwa-node",
-            request = "attach",
+            cwd = "${workspaceFolder}",
             name = "Attach into Node",
             processId = require("dap.utils").pick_process,
-            cwd = "${workspaceFolder}",
+            request = "attach",
+            type = "pwa-node",
           },
         }
       end

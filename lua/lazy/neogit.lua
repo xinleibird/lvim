@@ -6,7 +6,6 @@ local M = {
       "nvim-telescope/telescope.nvim",
       "sindrets/diffview.nvim",
     },
-    lazy = true,
     config = function()
       require("neogit").setup {
         signs = {
