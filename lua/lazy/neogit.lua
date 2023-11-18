@@ -6,6 +6,7 @@ local M = {
       "nvim-telescope/telescope.nvim",
       "sindrets/diffview.nvim",
     },
+    lazy = true,
     config = function()
       require("neogit").setup {
         signs = {
@@ -16,6 +17,7 @@ local M = {
         },
         kind = "auto",
       }
+
       lvim.builtin.which_key.mappings.g.g = { "<CMD>Neogit<CR>", "Neogit" }
 
       vim.api.nvim_create_autocmd("User", {
