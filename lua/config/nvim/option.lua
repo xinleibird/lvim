@@ -8,9 +8,6 @@ vim.opt.clipboard = ""
 vim.opt.guicursor = "n-v-sm:block,c-i-ci-ve:ver25,r-cr-o:hor25"
 -- vim.opt.wrap = true
 
--- Remove paste pattern for comment
-vim.opt.formatoptions:remove { "c", "r" }
-
 -- Use treesitter folding
 -- vim.opt.foldmethod = "expr"
 -- vim.opt.foldexpr   = "nvim_treesitter#foldexpr()"

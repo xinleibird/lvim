@@ -63,3 +63,10 @@ vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("user_set_qf_repl_window", { clear = true }),
   command = "setlocal winfixheight|setlocal nonumber",
 })
+
+-- Set formatoptions
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  group = vim.api.nvim_create_augroup("user_set_formatoptions", { clear = true }),
+  command = "autocmd FileType * set formatoptions-=o",
+})
