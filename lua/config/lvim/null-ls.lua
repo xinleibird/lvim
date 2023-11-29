@@ -16,15 +16,6 @@ lvim.format_on_save.pattern = {
   "*.{sh,bash,zsh}",
 }
 
-lvim.lsp.null_ls.setup.ensure_installed = {
-  "goimports",
-  "jsonlint",
-  "prettier",
-  "shellcheck",
-  "shfmt",
-  "stylua",
-}
-
 -- Formatters
 require("lvim.lsp.null-ls.formatters").setup {
   { name = "goimports" },

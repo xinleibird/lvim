@@ -22,3 +22,78 @@ lvim.builtin.dap.ui.config.layouts = {
 
 lvim.builtin.dap.ui.auto_open = false
 lvim.builtin.dap.ui.config.controls.enabled = false
+
+local dap = require "dap"
+-- local dapui = require("dapui")
+-- local telescope = require("telescope").extensions.dap
+-- local utils = require("utils")
+
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    -- command = "node",
+    -- -- 💀 Make sure to update this path to point to your installation
+    -- args = { "/path/to/js-debug/src/dapDebugServer.js", "${port}" },
+    command = "js-debug-adapter",
+    args = { "${port}" },
+  },
+}
+
+dap.adapters["pwa-chrome"] = {
+  type = "server",
+  host = "localhost",
+  port = "${port}",
+  executable = {
+    -- command = "node",
+    -- -- 💀 Make sure to update this path to point to your installation
+    -- args = { "/path/to/js-debug/src/dapDebugServer.js", "${port}" },
+    command = "js-debug-adapter",
+    args = { "${port}" },
+  },
+}
+
+for _, lans in ipairs { "typescript", "javascript", "typescriptreact", "javascriptreact" } do
+  dap.configurations[lans] = {
+    {
+      name = "Launch Chrome",
+      reAttach = true,
+      request = "launch",
+      type = "pwa-chrome",
+      url = "http://localhost:8080",
+      webRoot = "${workspaceFolder}",
+    },
+    {
+      attachSimplePort = 9229,
+      cwd = "${workspaceFolder}",
+      name = "Launch with Deno",
+      program = "${file}",
+      request = "launch",
+      type = "pwa-node",
+      runtimeArgs = {
+        "run",
+        "--inspect-wait",
+        "--allow-all",
+      },
+      runtimeExecutable = "deno",
+    },
+    {
+      cwd = "${workspaceFolder}",
+      name = "Launch with Node",
+      program = "${file}",
+      request = "launch",
+      type = "pwa-node",
+      runtimeArgs = {
+        "--inspect-brk",
+      },
+    },
+    {
+      cwd = "${workspaceFolder}",
+      name = "Attach into Node",
+      processId = require("dap.utils").pick_process,
+      request = "attach",
+      type = "pwa-node",
+    },
+  }
+end

@@ -8,7 +8,7 @@ local M = {
     },
     config = function()
       require("mason-tool-installer").setup {
-        ensure_installed = lvim.lsp.null_ls.setup.ensure_installed,
+        ensure_installed = lvim.builtin.mason.ensure_installed,
         auto_update = false,
         run_on_start = true,
         start_delay = 3000, -- 3 second delay
