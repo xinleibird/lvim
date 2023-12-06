@@ -42,20 +42,31 @@ dap.adapters["pwa-node"] = {
 }
 
 dap.adapters["pwa-chrome"] = {
-  type = "server",
-  host = "localhost",
-  port = "${port}",
   executable = {
-    -- command = "node",
-    -- -- 💀 Make sure to update this path to point to your installation
-    -- args = { "/path/to/js-debug/src/dapDebugServer.js", "${port}" },
     command = "js-debug-adapter",
     args = { "${port}" },
   },
+  host = "localhost",
+  port = "${port}",
+  type = "server",
+}
+
+dap.adapters.firefox = {
+  command = "firefox-debug-adapter",
+  type = "executable",
 }
 
 for _, lans in ipairs { "typescript", "javascript", "typescriptreact", "javascriptreact" } do
   dap.configurations[lans] = {
+    {
+      firefoxExecutable = "/opt/homebrew/bin/firefox",
+      name = "Lanuch Firefox",
+      reAttach = true,
+      request = "launch",
+      type = "firefox",
+      url = "http://localhost:8080",
+      webRoot = "${workspaceFolder}",
+    },
     {
       name = "Launch Chrome",
       reAttach = true,
