@@ -21,4 +21,8 @@ lvim.builtin.which_key.mappings.g.g = nil
 lvim.builtin.which_key.mappings.l.r =
   { "<CMD>lua require('telescope.builtin').lsp_references()<CR>", "Show References" }
 
+-- Lsp rename
 lvim.builtin.which_key.mappings.l.R = { "<CMD>lua vim.lsp.buf.rename()<CR>", "Rename all references" }
+
+-- Close all other buffers
+lvim.builtin.which_key.mappings.b.W = { "<CMD>BufferLineCloseOthers<CR>", "Close all other buffers" }

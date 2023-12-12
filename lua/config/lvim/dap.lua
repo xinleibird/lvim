@@ -59,19 +59,19 @@ dap.adapters.firefox = {
 for _, lans in ipairs { "typescript", "javascript", "typescriptreact", "javascriptreact" } do
   dap.configurations[lans] = {
     {
+      name = "Launch Chrome",
+      reAttach = true,
+      request = "launch",
+      type = "pwa-chrome",
+      url = "http://localhost:8080",
+      webRoot = "${workspaceFolder}",
+    },
+    {
       firefoxExecutable = "/opt/homebrew/bin/firefox",
       name = "Lanuch Firefox",
       reAttach = true,
       request = "launch",
       type = "firefox",
-      url = "http://localhost:8080",
-      webRoot = "${workspaceFolder}",
-    },
-    {
-      name = "Launch Chrome",
-      reAttach = true,
-      request = "launch",
-      type = "pwa-chrome",
       url = "http://localhost:8080",
       webRoot = "${workspaceFolder}",
     },
