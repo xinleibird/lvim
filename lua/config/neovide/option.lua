@@ -70,14 +70,26 @@ if vim.g.neovide then
   vim.g.neovide_floating_blur_amount_x = 2.0
   vim.g.neovide_floating_blur_amount_y = 2.0
 
-  -- Scrool animation duration
+  -- Floating Window shadow
+  vim.g.neovide_floating_shadow = false
+  vim.g.neovide_floating_z_height = 10
+  vim.g.neovide_light_angle_degrees = 45
+  vim.g.neovide_light_radius = 5
+
+  -- Scroll animation duration
   vim.g.neovide_scroll_animation_length = 0.3
+
+  -- Scroll animation if far than
+  vim.g.neovide_scroll_animation_far_lines = 1
 
   -- Hide mouse when typing
   vim.g.neovide_hide_mouse_when_typing = true
 
   -- Scaling 'underline' character automatic
-  vim.g.neovide_underline_automatic_scaling = false
+  vim.g.neovide_underline_stroke_scale = 1.0
+
+  -- Fix border and winbar scrolling glitches
+  vim.g.neovide_unlink_border_highlights = true
 
   -- Refresh rate when vide Foreground or Background
   vim.g.neovide_refresh_rate = 60
@@ -100,7 +112,6 @@ if vim.g.neovide then
 
   --+<INPUT>+--
   -- Keyboard Super Command Option key, macOs default true
-  vim.g.neovide_input_use_logo = true -- true on macOS
   vim.g.neovide_input_macos_alt_is_meta = true
 
   -- Touchpad
