@@ -80,7 +80,7 @@ if vim.g.neovide then
   vim.g.neovide_scroll_animation_length = 0.3
 
   -- Scroll animation if far than
-  vim.g.neovide_scroll_animation_far_lines = 1
+  vim.g.neovide_scroll_animation_far_lines = 20
 
   -- Hide mouse when typing
   vim.g.neovide_hide_mouse_when_typing = true
