@@ -77,10 +77,10 @@ if vim.g.neovide then
   vim.g.neovide_light_radius = 5
 
   -- Scroll animation duration
-  vim.g.neovide_scroll_animation_length = 0.3
+  vim.g.neovide_scroll_animation_length = 0.2
 
   -- Scroll animation if far than
-  vim.g.neovide_scroll_animation_far_lines = 20
+  vim.g.neovide_scroll_animation_far_lines = 9999
 
   -- Hide mouse when typing
   vim.g.neovide_hide_mouse_when_typing = true
