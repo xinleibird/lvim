@@ -60,7 +60,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
   "cssls",
   "dockerls",
-  "emmet_language_server",
   "eslint",
   "gopls",
   "html",
@@ -79,7 +78,6 @@ lvim.lsp.installer.setup.ensure_installed = {
 
 require("lvim.lsp.manager").setup "cssls"
 require("lvim.lsp.manager").setup "dockerls"
-require("lvim.lsp.manager").setup "emmet_language_server"
 require("lvim.lsp.manager").setup "eslint"
 require("lvim.lsp.manager").setup "gopls"
 require("lvim.lsp.manager").setup "html"

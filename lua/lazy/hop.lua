@@ -1,7 +1,6 @@
 local M = {
   {
     "phaazon/hop.nvim",
-    event = "BufRead",
     config = function()
       require("hop").setup()
       vim.keymap.set("", "s", function()
