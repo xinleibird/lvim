@@ -1,3 +1,4 @@
-if g:format_on_save_enabled == 1
+augroup VimLAutoFormat
+  autocmd!
   autocmd BufWritePre <buffer> call FormatFile()
-endif
+augroup END

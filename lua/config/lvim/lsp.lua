@@ -71,7 +71,6 @@ lvim.lsp.installer.setup.ensure_installed = {
   "tailwindcss",
   "taplo",
   "tsserver",
-  "vale_ls",
   "vimls",
   "yamlls",
 }
@@ -88,7 +87,6 @@ require("lvim.lsp.manager").setup "rust_analyzer"
 require("lvim.lsp.manager").setup "tailwindcss"
 require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "tsserver"
-require("lvim.lsp.manager").setup "vale_ls"
 require("lvim.lsp.manager").setup "vimls"
 require("lvim.lsp.manager").setup "yamlls"
 
