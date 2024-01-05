@@ -54,45 +54,53 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
       vim_item.kind_hl_group = "CmpItemKindEmoji"
     end
 
+    if entry.source.name == "nvim_lsp_signature_help" then
+      vim_item.kind = "󰷼"
+      vim_item.kind_hl_group = "CmpItemKindEmoji"
+      vim_item.menu = " 󰬚 SIG"
+    end
+
     if entry.source.name == "nvim_lsp" then
-      if entry.source:get_debug_name() == "nvim_lsp:emmet_language_server" then
+      local debug_name = entry.source:get_debug_name()
+
+      if debug_name == "nvim_lsp:emmet_language_server" then
         vim_item.kind = ""
         vim_item.menu = " 󱢍 EMM"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:tsserver" then
+      if debug_name == "nvim_lsp:tsserver" then
         vim_item.menu = "  TSS"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:html" then
+      if debug_name == "nvim_lsp:html" then
         vim_item.menu = "  HTM"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:cssls" then
+      if debug_name == "nvim_lsp:cssls" then
         vim_item.menu = "  CSS"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:lua_ls" then
+      if debug_name == "nvim_lsp:lua_ls" then
         vim_item.menu = "  LUA"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:intelephense" then
+      if debug_name == "nvim_lsp:intelephense" then
         vim_item.menu = "  PHP"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:vimls" then
+      if debug_name == "nvim_lsp:vimls" then
         vim_item.menu = "  VIM"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:rust_analyzer" then
+      if debug_name == "nvim_lsp:rust_analyzer" then
         vim_item.menu = " 󱘗 RUS"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:gopls" then
+      if debug_name == "nvim_lsp:gopls" then
         vim_item.menu = "   GO"
       end
 
-      if entry.source:get_debug_name() == "nvim_lsp:null-ls" then
+      if debug_name == "nvim_lsp:null-ls" then
         vim_item.menu = " 󰬕 NUL"
       end
     end
