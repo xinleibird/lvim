@@ -15,6 +15,7 @@ lvim.builtin.cmp.formatting.source_names = {
   tmux = " 󰐯 Tmu",
   treesitter = " 󰺔 Tre",
   vsnip = " 󰆘 Sni",
+  nvim_lsp_signature_help = " 󰬚 Sig",
 }
 
 -- Cmp format method
@@ -55,9 +56,8 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
     end
 
     if entry.source.name == "nvim_lsp_signature_help" then
-      vim_item.kind = "󰷼"
-      vim_item.kind_hl_group = "CmpItemKindEmoji"
-      vim_item.menu = " 󰬚 SIG"
+      vim_item.kind = lvim.icons.kind.Reference
+      vim_item.kind_hl_group = "CmpItemKindReference"
     end
 
     if entry.source.name == "nvim_lsp" then
