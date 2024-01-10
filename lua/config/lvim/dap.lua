@@ -24,32 +24,21 @@ lvim.builtin.dap.ui.auto_open = false
 lvim.builtin.dap.ui.config.controls.enabled = false
 
 local dap = require "dap"
--- local dapui = require("dapui")
--- local telescope = require("telescope").extensions.dap
--- local utils = require("utils")
 
-dap.adapters["pwa-node"] = {
-  type = "server",
-  host = "localhost",
-  port = "${port}",
-  executable = {
-    -- command = "node",
-    -- -- 💀 Make sure to update this path to point to your installation
-    -- args = { "/path/to/js-debug/src/dapDebugServer.js", "${port}" },
-    command = "js-debug-adapter",
-    args = { "${port}" },
-  },
-}
-
-dap.adapters["pwa-chrome"] = {
-  executable = {
-    command = "js-debug-adapter",
-    args = { "${port}" },
-  },
-  host = "localhost",
-  port = "${port}",
-  type = "server",
-}
+for _, type in ipairs { "pwa-extensionHost", "node-terminal", "pwa-node", "pwa-chrome", "pwa-msedge" } do
+  dap.adapters[type] = {
+    executable = {
+      -- command = "node",
+      -- -- 💀 Make sure to update this path to point to your installation
+      -- args = { "/path/to/js-debug/src/dapDebugServer.js", "${port}" },
+      command = "js-debug-adapter",
+      args = { "${port}" },
+    },
+    host = "localhost",
+    port = "${port}",
+    type = "server",
+  }
+end
 
 dap.adapters.firefox = {
   command = "firefox-debug-adapter",
