@@ -1,18 +1,20 @@
 {
-  "html doc": {
-    "isFileTemplate": true,
+  "html5": {
+    "prefix": "html5",
     "body": [
-      "<!DOCTYPE html>",
-      "<html>",
-      "<head>",
-      "\t<meta charset=\"UTF-8\" />",
-      "\t<title>${1:title}</title>",
-      "</head>",
-      "<body>",
+      "<!doctype html>",
+      "<html lang=\"${1:en}\">",
+      "\t<head>",
+      "\t\t<meta charset=\"UTF-8\" />",
+      "\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />",
+      "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+      "\t\t<title>${2:title}</title>",
+      "\t</head>",
+      "\t<body>",
       "\t$0",
-      "</body>",
+      "\t</body>",
       "</html>"
     ],
-    "description": "HTML Document"
+    "description": "HTML - Defines a template for a html5 document"
   }
 }
