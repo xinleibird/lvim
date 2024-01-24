@@ -29,7 +29,6 @@ require("lvim.lsp.null-ls.formatters").setup {
 
 -- Linters
 require("lvim.lsp.null-ls.linters").setup {
-  { name = "jsonlint" },
   { name = "shellcheck", args = { "--severity", "warning" } },
 }
 
