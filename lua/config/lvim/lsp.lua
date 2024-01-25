@@ -20,6 +20,9 @@
 --   return server ~= "emmet_ls"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
+-- Should setup neoconf **BEFORE** lspconfig
+require("neoconf").setup {}
+
 lvim.lsp.nlsp_settings.setup = {
   config_home = join_paths(get_config_dir(), "nlsp-settings"),
   local_settings_dir = ".nlsp-settings",
@@ -29,9 +32,6 @@ lvim.lsp.nlsp_settings.setup = {
   ignored_servers = {},
   loader = "json",
 }
-
--- Should setup neoconf before lspconfig
-require("neoconf").setup {}
 
 -- Add new Map to <f2>
 lvim.lsp.buffer_mappings.normal_mode["<f2>"] = { vim.lsp.buf.rename, "Rename all references" }
