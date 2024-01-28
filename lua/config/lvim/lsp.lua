@@ -59,6 +59,7 @@ lvim.lsp.buffer_mappings.insert_mode["<C-s>"] = {
 lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
   "cssls",
+  "cssmodules_ls",
   "dockerls",
   "eslint",
   "gopls",
@@ -76,6 +77,7 @@ lvim.lsp.installer.setup.ensure_installed = {
 }
 
 require("lvim.lsp.manager").setup "cssls"
+require("lvim.lsp.manager").setup "cssmodules_ls"
 require("lvim.lsp.manager").setup "dockerls"
 require("lvim.lsp.manager").setup "eslint"
 require("lvim.lsp.manager").setup "gopls"
