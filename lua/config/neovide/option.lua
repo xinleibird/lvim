@@ -55,6 +55,7 @@ if vim.g.neovide then
   -- vim.g.neovide_transparency = 0.9
   -- vim.g.neovide_transparency_point = 0.9
   -- vim.g.neovide_background_color = "#1b1b25" .. alpha()
+  -- vim.g.neovide_window_blurred = true
 
   vim.g.neovide_theme = ""
   -- --+Auto dark mode just for neovide+--
@@ -96,7 +97,7 @@ if vim.g.neovide then
   vim.g.neovide_refresh_rate_idle = 5
 
   -- Force stop idle: always 60 fps
-  vim.g.neovide_no_idle = false
+  vim.g.neovide_no_idle = true
 
   -- Quite confirm, but no effect now
   vim.g.neovide_confirm_quit = true
