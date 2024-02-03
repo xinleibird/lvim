@@ -21,6 +21,13 @@
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- Should setup neoconf **BEFORE** lspconfig
+ lvim.plugins = {
+   {
+     "folke/neoconf.nvim",
+   },
+ }
+-- require("lazy").install { wait = true }
+
 require("neoconf").setup {}
 
 lvim.lsp.nlsp_settings.setup = {
