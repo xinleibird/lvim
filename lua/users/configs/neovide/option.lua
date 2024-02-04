@@ -34,7 +34,7 @@ if vim.g.neovide then
   vim.opt.guifont = "JetBrains_Mono,JetBrainsMono_Nerd_Font_Mono:h13:#e-antialias:#h-none"
 
   -- Linespace
-  vim.opt.linespace = 0
+  vim.opt.linespace = -1
 
   -- Scaling font without font size vim.g.neovide_scale_factor = 1.0
   vim.g.neovide_scale_factor = 1.0
