@@ -47,6 +47,7 @@ local M = {
             IlluminatedWordWrite = { bg = colors.crust },
             VirtColumn = { fg = colors.surface0 },
             AerialGuide = { fg = colors.mantle },
+            OutlineGuides = { fg = colors.mantle },
             -- DiagnosticUnnecessary = { link = "DiagnosticUnderlineError" },
             -- DiagnosticDeprecated = { link = "DiagnosticUnderlineError" },
           }
@@ -98,6 +99,7 @@ local M = {
           neogit = true,
           notify = true,
           nvimtree = true,
+          symbols_outline = true,
           rainbow_delimiters = true,
           telescope = {
             enabled = true,
