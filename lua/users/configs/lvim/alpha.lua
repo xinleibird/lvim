@@ -40,8 +40,7 @@ lvim.builtin.alpha.dashboard.section.header.val = {
   [[     █  █     ]],
   [[                 ]],
   [[                 ]],
-  [[  N E O  V I M   ]],
-  [[                 ]],
+  [[N  E  O   V  I  M]],
   [[                 ]],
   [[                 ]],
   [[                 ]],
@@ -63,6 +62,15 @@ lvim.builtin.alpha.dashboard.section.header.opts.hl = {
   { { "", 0, 0 } },
   { { "", 0, 0 } },
   { { "NeovimDashboardLogo3", 0, 8 }, { "NeovimDashboardLogo4", 9, 17 } },
+}
+
+lvim.builtin.alpha.dashboard.section.buttons.entries = {
+  { "<Leader>sp", lvim.icons.ui.FindFile .. "  Find File", "<CMD>Telescope find_files<CR>" },
+  { "<Leader>n ", lvim.icons.ui.NewFile .. "  New File", "<CMD>ene!<CR>" },
+  { "<Leader>sP", lvim.icons.ui.Project .. "  Projects ", "<CMD>Telescope projects<CR>" },
+  { "<Leader>sr", lvim.icons.ui.History .. "  Recent files", ":Telescope oldfiles <CR>" },
+  { "<Leader>st", lvim.icons.ui.FindText .. "  Find Text", "<CMD>Telescope live_grep<CR>" },
+  { "<Leader>q ", lvim.icons.ui.Close .. "  Quit", "<CMD>quit<CR>" },
 }
 
 lvim.builtin.alpha.dashboard.section.footer.val = require("lvim.interface.text").align_center(
