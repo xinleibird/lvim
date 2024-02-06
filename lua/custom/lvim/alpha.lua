@@ -28,7 +28,7 @@ local version = " Neovim ver "
   .. " LunarVim"
   .. " "
 
--- lvim.builtin.alpha.dashboard.section.header.val = require("users.libs.banner").generate()
+-- lvim.builtin.alpha.dashboard.section.header.val = require("libs.banner").generate()
 lvim.builtin.alpha.dashboard.section.header.val = {
   [[                 ]],
   [[                 ]],

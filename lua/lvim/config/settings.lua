@@ -55,6 +55,7 @@ M.load_default_options = function()
   }
 
   ---  SETTINGS  ---
+  ---@diagnostic disable: param-type-mismatch
   vim.opt.spelllang:append "cjk" -- disable spellchecking for asian characters (VIM algorithm does not support it)
   vim.opt.shortmess:append "c" -- don't show redundant messages from ins-completion-menu
   vim.opt.shortmess:append "I" -- don't show the default intro message
