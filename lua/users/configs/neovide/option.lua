@@ -131,8 +131,8 @@ if vim.g.neovide then
   -- Cursor vfx mode: "railgun", "torpedo","pixiedust", "sonicboom", "wireframe", "ripple", default is blank: ""
   -- vim.g.neovide_cursor_vfx_mode = "sonicboom"
   vim.g.neovide_cursor_vfx_mode = "railgun"
-  vim.g.neovide_cursor_vfx_opacity = 200.0
-  vim.g.neovide_cursor_vfx_particle_lifetime = 1.2
+  vim.g.neovide_cursor_vfx_opacity = 40.0
+  vim.g.neovide_cursor_vfx_particle_lifetime = 1.0
   vim.g.neovide_cursor_vfx_particle_density = 7.0
   vim.g.neovide_cursor_vfx_particle_speed = 10.0
   -- vim.g.neovide_cursor_vfx_particle_phase      = 1.5 -- just for railgun
