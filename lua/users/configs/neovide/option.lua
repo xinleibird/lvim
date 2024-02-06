@@ -129,7 +129,8 @@ if vim.g.neovide then
   vim.g.neovide_cursor_unfocused_outline_width = 0.125
 
   -- Cursor vfx mode: "railgun", "torpedo","pixiedust", "sonicboom", "wireframe", "ripple", default is blank: ""
-  vim.g.neovide_cursor_vfx_mode = "sonicboom"
+  -- vim.g.neovide_cursor_vfx_mode = "sonicboom"
+  vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_cursor_vfx_opacity = 200.0
   vim.g.neovide_cursor_vfx_particle_lifetime = 1.2
   vim.g.neovide_cursor_vfx_particle_density = 7.0
