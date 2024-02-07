@@ -30,10 +30,11 @@ return {
     String = "",
     Struct = "",
     Text = "",
-    TypeParameter = "󰛨",
+    TypeParameter = "",
     Unit = "",
     Value = "",
     Variable = "",
+    Signature = "",
   },
   git = {
     LineAdded = "",
