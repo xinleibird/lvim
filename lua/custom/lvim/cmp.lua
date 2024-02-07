@@ -58,7 +58,7 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
 
     if entry.source.name == "nvim_lsp_signature_help" then
       vim_item.kind = lvim.icons.kind.TypeParameter
-      vim_item.kind_hl_group = "CmpItemKindDefault"
+      vim_item.kind_hl_group = "CmpItemKindTabnine"
     end
 
     if entry.source.name == "sass-variables" then

@@ -30,9 +30,9 @@ return {
     String = "",
     Struct = "",
     Text = "",
-    TypeParameter = "",
+    TypeParameter = "󰛨",
     Unit = "",
-    Value = "󱀍",
+    Value = "",
     Variable = "",
   },
   git = {
