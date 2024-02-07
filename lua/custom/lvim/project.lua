@@ -11,4 +11,5 @@ local custom_patterns = {
   "Cargo.toml",
   "Cargo.lock",
 }
+
 vim.list_extend(lvim.builtin.project.patterns, custom_patterns)

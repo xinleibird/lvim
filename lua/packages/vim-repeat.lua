@@ -1,7 +1,5 @@
 local M = {
-  {
-    "tpope/vim-repeat",
-  },
+  "tpope/vim-repeat",
 }
 
 return M

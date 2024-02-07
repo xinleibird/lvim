@@ -1,7 +1,5 @@
 local M = {
-  {
-    "folke/neoconf.nvim",
-  },
+  "folke/neoconf.nvim",
 }
 
 return M

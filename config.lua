@@ -17,8 +17,8 @@ local function load_lazy_packages()
 
   -- Read optional config
   for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath "config" .. "/lua/packages", [[v:val =~ '\.lua$']])) do
-    local t = require("packages." .. file:gsub("%.lua$", ""))
-    vim.list_extend(plugins, t)
+    local lazy_package = require("packages." .. file:gsub("%.lua$", ""))
+    table.insert(plugins, lazy_package)
   end
 
   lvim.plugins = plugins
