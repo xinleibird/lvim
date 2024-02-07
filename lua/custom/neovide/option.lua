@@ -97,7 +97,7 @@ if vim.g.neovide then
   vim.g.neovide_refresh_rate_idle = 5
 
   -- Force stop idle: always 60 fps
-  vim.g.neovide_no_idle = true
+  vim.g.neovide_no_idle = false
 
   -- Quite confirm, but no effect now
   vim.g.neovide_confirm_quit = true
