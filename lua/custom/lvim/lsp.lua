@@ -21,13 +21,10 @@
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
 
 -- Should setup neoconf **BEFORE** lspconfig
-lvim.plugins = {
-  {
-    "folke/neoconf.nvim",
-  },
-}
-
-require("neoconf").setup {}
+local ok, neoconf = pcall(require, "neoconf")
+if ok then
+  neoconf.setup()
+end
 
 lvim.lsp.nlsp_settings.setup = {
   config_home = join_paths(get_config_dir(), "nlsp-settings"),

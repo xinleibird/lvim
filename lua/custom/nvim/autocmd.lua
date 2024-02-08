@@ -15,8 +15,11 @@ vim.api.nvim_create_autocmd("QuitPre", {
   callback = function()
     require("dap").repl.close()
     require("dapui").close()
-    require("outline").close()
-    -- require("aerial").close_all()
+
+    local outline_ok, outline = pcall(require, "outline")
+    if outline_ok then
+      outline.close()
+    end
 
     vim.cmd.cclose()
     vim.cmd.lclose()
