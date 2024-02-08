@@ -24,19 +24,19 @@ M.toggle = function(character)
 end
 
 M.setup = function()
-  -- Toggle end of line semi and coma
+  -- Toggle end of line semi and comma
   vim.keymap.set("n", "<C-,>", function()
     require("togglesemi").toggle ","
-  end, { noremap = true, silent = true })
+  end, { noremap = true, silent = true, desc = "Toggle end of line semi" })
   vim.keymap.set("n", "<C-;>", function()
     require("togglesemi").toggle ";"
-  end, { noremap = true, silent = true })
+  end, { noremap = true, silent = true, desc = "Toggle end of line semi" })
   vim.keymap.set("i", "<C-,>", function()
     require("togglesemi").toggle ","
-  end, { noremap = true, silent = true })
+  end, { noremap = true, silent = true, desc = "Toggle end of line comma" })
   vim.keymap.set("i", "<C-;>", function()
     require("togglesemi").toggle ";"
-  end, { noremap = true, silent = true })
+  end, { noremap = true, silent = true, desc = "Toggle end of line comma" })
 end
 
 return M
