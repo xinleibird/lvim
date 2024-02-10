@@ -9,9 +9,9 @@ lvim.builtin.bufferline.options.custom_areas = {
 
     if ok then
       if api.tree.is_visible() then
-        table.insert(result, { text = " ◧ ", link = "@label" })
+        table.insert(result, { text = "  ", link = "@label" })
       else
-        table.insert(result, { text = " ◫ ", link = "@label" })
+        table.insert(result, { text = "  ", link = "@label" })
       end
     end
     return result

@@ -1,6 +1,7 @@
 local M = {
   "echasnovski/mini.indentscope",
   version = false,
+  event = "BufRead",
   enable = not lvim.builtin.indentlines.active,
   config = function()
     require("mini.indentscope").setup {

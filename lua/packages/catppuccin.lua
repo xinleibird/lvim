@@ -6,13 +6,15 @@ local M = {
     local catppuccin_bufferline = require "catppuccin.groups.integrations.bufferline"
     lvim.builtin.bufferline.highlights = catppuccin_bufferline.get()
 
+    lvim.builtin.lualine.options.theme = "catppuccin"
+
     require("catppuccin").setup {
-      compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
       -- flavour = "mocha", -- latte, frappe, macchiato, mocha
       background = {
         light = "latte",
         dark = "frappe",
       },
+      compile_path = vim.fn.stdpath "cache" .. "/catppuccin",
       transparent_background = false,
       show_end_of_buffer = false, -- show the '~' characters after the end of buffers
       term_colors = true,
@@ -23,12 +25,13 @@ local M = {
       },
       no_italic = false, -- Force no italic
       no_bold = false, -- Force no bold
+      no_underline = false,
       styles = {
         comments = { "italic" },
         conditionals = { "italic" },
         loops = {},
         functions = {},
-        keywords = { "italic" },
+        keywords = { "italic", "bold" },
         strings = {},
         variables = {},
         numbers = {},
@@ -38,6 +41,7 @@ local M = {
         operators = {},
       },
       color_overrides = {},
+      highlight_overrides = {},
       custom_highlights = function(colors)
         return {
           CmpItemMenu = { fg = colors.teal },
@@ -47,6 +51,9 @@ local M = {
           VirtColumn = { fg = colors.surface0 },
           AerialGuide = { fg = colors.mantle },
           OutlineGuides = { fg = colors.mantle },
+          ["@tag.attribute"] = { fg = colors.yellow, style = { "italic" } },
+          EyelinerPrimary = { fg = colors.peach, style = { "bold", "underline" } },
+          EyelinerSecondary = { fg = colors.sky, style = { "bold" } },
           -- DiagnosticUnnecessary = { link = "DiagnosticUnderlineError" },
           -- DiagnosticDeprecated = { link = "DiagnosticUnderlineError" },
         }
@@ -55,11 +62,9 @@ local M = {
         aerial = true,
         alpha = true,
         cmp = true,
+        dap = true,
+        dap_ui = true,
         dashboard = true,
-        dap = {
-          enabled = true,
-          enable_ui = true, -- enable nvim-dap-ui
-        },
         fidget = true,
         gitsigns = true,
         hop = true,
@@ -104,10 +109,12 @@ local M = {
         nvimtree = true,
         symbols_outline = true,
         rainbow_delimiters = true,
+        semantic_tokens = true,
         telescope = {
           enabled = true,
           -- style = "nvchad",
         },
+        treesitter_context = true,
         treesitter = true,
         which_key = true,
       },

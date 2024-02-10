@@ -1,7 +1,7 @@
 local M = {
   "togglesemi",
   dir = get_config_dir() .. "/plugins/togglesemi",
-  event = "VeryLazy",
+  event = "BufRead",
   config = function()
     require("togglesemi").setup()
   end,

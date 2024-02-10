@@ -2,4 +2,4 @@
 lvim.log.level = "info"
 
 -- Change theme
-lvim.colorscheme = "catppuccin" -- tokyonight | kanagawa | catppuccin
+lvim.colorscheme = "catppuccin"
