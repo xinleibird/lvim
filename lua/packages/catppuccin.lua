@@ -49,7 +49,6 @@ local M = {
           IlluminatedWordRead = { bg = colors.crust },
           IlluminatedWordWrite = { bg = colors.crust },
           VirtColumn = { fg = colors.surface0 },
-          AerialGuide = { fg = colors.mantle },
           OutlineGuides = { fg = colors.mantle },
           ["@tag.attribute"] = { fg = colors.yellow, style = { "italic" } },
           EyelinerPrimary = { fg = colors.peach, style = { "bold", "underline" } },
@@ -59,7 +58,6 @@ local M = {
         }
       end,
       integrations = {
-        aerial = true,
         alpha = true,
         cmp = true,
         dap = true,

@@ -2,7 +2,12 @@ local M = {
   "hedyhli/outline.nvim",
   event = "BufRead",
   init = function()
-    lvim.builtin.which_key.mappings.o = { "<CMD>Outline<CR>", "Outline" }
+    lvim.builtin.which_key.mappings.o = {
+      function()
+        require("outline").toggle { focus_outline = false }
+      end,
+      "Outline",
+    }
   end,
   config = function()
     -- Example mapping to toggle outline
