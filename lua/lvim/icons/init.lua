@@ -19,7 +19,7 @@ return {
     Method = "",
     Module = "",
     Namespace = "",
-    Null = "󰟢",
+    Null = "",
     Number = "",
     Object = "",
     Operator = "",

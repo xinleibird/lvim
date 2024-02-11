@@ -11,6 +11,7 @@ local M = {
       group = vim.api.nvim_create_augroup("user_virt_column_group", { clear = true }),
       callback = function()
         require("virt-column").setup_buffer(0, {
+          char = "",
           virtcolumn = "80,110",
         })
       end,
