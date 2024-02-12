@@ -3,14 +3,7 @@ local M = {
   version = false,
   event = "BufRead",
   enable = not lvim.builtin.indentlines.active,
-  config = function()
-    require("mini.indentscope").setup {
-      draw = {
-        delay = 100,
-      },
-      symbol = "▏",
-    }
-
+  init = function()
     vim.api.nvim_create_autocmd({ "FileType" }, {
       pattern = {
         "alpha",
@@ -39,6 +32,14 @@ local M = {
         end)
       end,
     })
+  end,
+  config = function()
+    require("mini.indentscope").setup {
+      draw = {
+        delay = 100,
+      },
+      symbol = "▏",
+    }
   end,
 }
 

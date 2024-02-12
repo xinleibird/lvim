@@ -79,12 +79,26 @@ lvim.lsp.installer.setup.ensure_installed = {
   "yamlls",
 }
 
+require("lvim.lsp.manager").setup("bashls", {
+  cmd = { "bash-language-server", "start" },
+  filetypes = { "sh", "bash", "zsh" },
+})
 require("lvim.lsp.manager").setup "cssls"
-require("lvim.lsp.manager").setup "cssmodules_ls"
+require("lvim.lsp.manager").setup("cssmodules_ls", {
+  filetypes = { "javascriptreact", "typescriptreact" },
+})
 require("lvim.lsp.manager").setup "dockerls"
 require("lvim.lsp.manager").setup "eslint"
 require("lvim.lsp.manager").setup "gopls"
 require("lvim.lsp.manager").setup "html"
+require("lvim.lsp.manager").setup("intelephense", {
+  init_options = {
+    globalStoragePath = os.getenv "HOME" .. "/.intelephense",
+  },
+  -- on_attach = function(client, _)
+  --   client.server_capabilities.documentFormattingProvider = false
+  -- end,
+})
 require("lvim.lsp.manager").setup "jsonls"
 require("lvim.lsp.manager").setup "lemminx"
 require("lvim.lsp.manager").setup "lua_ls"
@@ -94,17 +108,3 @@ require("lvim.lsp.manager").setup "taplo"
 require("lvim.lsp.manager").setup "tsserver"
 require("lvim.lsp.manager").setup "vimls"
 require("lvim.lsp.manager").setup "yamlls"
-
-require("lvim.lsp.manager").setup("bashls", {
-  cmd = { "bash-language-server", "start" },
-  filetypes = { "sh", "bash", "zsh" },
-})
-
-require("lvim.lsp.manager").setup("intelephense", {
-  init_options = {
-    globalStoragePath = os.getenv "HOME" .. "/.intelephense",
-  },
-  -- on_attach = function(client, _)
-  --   client.server_capabilities.documentFormattingProvider = false
-  -- end,
-})
