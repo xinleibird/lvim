@@ -2,7 +2,7 @@ local M = {}
 
 M.generate = function()
   math.randomseed(os.time())
-  local headers = {
+  local banners = {
     {
       [[                                                            ]],
       [[                          ███████████                       ]],
@@ -123,7 +123,7 @@ M.generate = function()
       [[                                                            ]],
     },
   }
-  return headers[math.random(1, #headers)]
+  return banners[math.random(1, #banners)]
 end
 
 return M

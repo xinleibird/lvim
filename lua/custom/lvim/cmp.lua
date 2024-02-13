@@ -57,7 +57,7 @@ lvim.builtin.cmp.formatting.format = function(entry, vim_item)
     end
 
     if entry.source.name == "nvim_lsp_signature_help" then
-      vim_item.kind = lvim.icons.kind.Signature
+      vim_item.kind = lvim.icons.diagnostics.Hint
       vim_item.kind_hl_group = "CmpItemKindTabnine"
     end
 

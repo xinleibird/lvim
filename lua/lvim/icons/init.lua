@@ -34,7 +34,6 @@ return {
     Unit = "",
     Value = "",
     Variable = "",
-    Signature = "",
   },
   git = {
     LineAdded = "",

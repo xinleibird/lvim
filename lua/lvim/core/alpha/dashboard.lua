@@ -16,6 +16,7 @@ function M.get_sections()
     [[                 ]],
     [[                 ]],
     [[                 ]],
+    [[                 ]],
   }
 
   local header = {
@@ -75,12 +76,14 @@ function M.get_sections()
       spacing = 1,
     },
     entries = {
-      { "󰊠 <Leader>sp ", "󰺯" .. "  Find File", "<CMD>Telescope find_files<CR>" },
-      { "󰼂 <Leader>n  ", "" .. "  New File", "<CMD>ene!<CR>" },
-      { "󰮭 <Leader>sP ", "󱜤" .. "  Projects ", "<CMD>Telescope projects<CR>" },
-      { "󱃋 <Leader>sr ", "󰋚" .. "  Recent files", "<CMD>Telescope oldfiles <CR>" },
-      { "󰮯 <Leader>st ", "󱄽" .. "  Find Text", "<CMD>Telescope live_grep<CR>" },
-      { "󱙝 <Leader>q  ", "󰿅" .. "  Quit", "<CMD>quit<CR>" },
+      -- stylua: ignore start
+      { " SPC s p", "󰱽  " .. "Find File                              󰊠", "<CMD>Telescope find_files<CR>" },
+      { " SPC n  ", "  " .. "New File                               󰼂", "<CMD>ene!<CR>" },
+      { " SPC s P", "󱜤  " .. "Projects                               󰮭", "<CMD>Telescope projects<CR>" },
+      { " SPC s r", "󰋚  " .. "Recent files                           󱃋", "<CMD>Telescope oldfiles <CR>" },
+      { " SPC s t", "󱎸  " .. "Find Text                              󰮯", "<CMD>Telescope live_grep<CR>" },
+      { " SPC q  ", "  " .. "Quit                                   󱙝", "<CMD>quit<CR>" },
+      -- stylua: ignore end
     },
   }
 
