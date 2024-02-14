@@ -104,7 +104,7 @@ local function rest_colors()
 end
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-  group = vim.api.nvim_create_augroup("neovim_alpha", {}),
+  group = vim.api.nvim_create_augroup("neovim_alpha", { clear = true }),
   callback = function()
     rest_colors()
   end,

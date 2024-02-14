@@ -29,7 +29,7 @@ end
 lvim.lsp.nlsp_settings.setup = {
   config_home = join_paths(get_config_dir(), "nlsp-settings"),
   local_settings_dir = ".nlsp-settings",
-  local_settings_root_markers_fallback = { ".git" },
+  local_settings_root_markers_fallback = { ".git", ".vscode", "node_modules" },
   -- set to false to overwrite schemastore.nvim
   append_default_schemas = true,
   ignored_servers = {},
