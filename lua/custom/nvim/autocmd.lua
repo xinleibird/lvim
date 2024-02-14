@@ -53,14 +53,6 @@ vim.api.nvim_create_autocmd("VimLeave", {
   command = 'set guicursor= | call chansend(v:stderr, "\x1b[ q")',
 })
 
--- Close lazy buffer use <esc> and q
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "lazy" },
-  group = vim.api.nvim_create_augroup("user_add_quit_hotkey", { clear = true }),
-  -- command = "nnoremap <buffer><silent> <Esc> <CMD>close!<CR>|nnoremap <buffer><silent> q <CMD>close!<CR>",
-  command = "nnoremap <buffer><silent> <Esc> <CMD>close!<CR>",
-})
-
 -- Fixed qf win height
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "dap-repl", "qf" },
@@ -72,5 +64,5 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   group = vim.api.nvim_create_augroup("user_set_formatoptions", { clear = true }),
-  command = "autocmd FileType * set formatoptions-=o",
+  command = "setlocal formatoptions-=o",
 })
