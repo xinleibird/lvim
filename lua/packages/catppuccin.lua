@@ -9,7 +9,7 @@ local M = {
     lvim.builtin.lualine.options.theme = "catppuccin"
 
     require("catppuccin").setup {
-      -- flavour = "mocha", -- latte, frappe, macchiato, mocha
+      -- flavour = "frappe", -- latte, frappe, macchiato, mocha
       background = {
         light = "latte",
         dark = "frappe",
