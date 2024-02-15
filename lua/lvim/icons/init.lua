@@ -41,7 +41,7 @@ return {
     LineRemoved = "",
     FileDeleted = "󰅖",
     FileIgnored = "󰛐",
-    FileRenamed = "󰑎",
+    FileRenamed = "",
     FileStaged = "󰄬",
     FileUnmerged = "󰒝",
     FileUnstaged = "󰎂",

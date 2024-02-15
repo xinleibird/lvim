@@ -235,3 +235,6 @@ customCommands: []
 services: {}
 notARepository: prompt
 promptToReturnFromSubprocess: true
+os:
+  editPreset: "nvim" # see 'Configuring File Editing' section
+  # editCommandTemplate: 'nvim --server /tmp/nvim-server.pipe --remote-tab "$(pwd)/{{filename}}"'

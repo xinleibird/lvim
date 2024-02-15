@@ -36,5 +36,9 @@ lvim.builtin.telescope.defaults.file_ignore_patterns = {
 -- Set <C-u>
 lvim.builtin.telescope.defaults.mappings.i["<C-u>"] = false
 
+-- Set q to close
+local actions = require "telescope.actions"
+lvim.builtin.telescope.defaults.mappings.n["q"] = actions.close
+
 lvim.builtin.telescope.defaults.prompt_prefix = "󰊠 "
 lvim.builtin.telescope.defaults.selection_caret = "󰮯 "
