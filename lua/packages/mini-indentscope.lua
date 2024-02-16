@@ -1,4 +1,4 @@
-local M = {
+return {
   "echasnovski/mini.indentscope",
   version = false,
   event = "BufRead",
@@ -42,5 +42,3 @@ local M = {
     }
   end,
 }
-
-return M

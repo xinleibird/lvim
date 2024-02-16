@@ -1,4 +1,4 @@
-local M = {
+return {
   "nacro90/numb.nvim",
   event = "BufRead",
   config = function()
@@ -8,5 +8,3 @@ local M = {
     }
   end,
 }
-
-return M

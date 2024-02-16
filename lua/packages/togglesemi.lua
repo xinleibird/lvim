@@ -1,4 +1,4 @@
-local M = {
+return {
   "togglesemi",
   dir = get_config_dir() .. "/plugins/togglesemi",
   event = "BufRead",
@@ -6,5 +6,3 @@ local M = {
     require("togglesemi").setup()
   end,
 }
-
-return M

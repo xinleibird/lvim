@@ -1,5 +1,3 @@
-local M = {
+return {
   "vimpostor/vim-lumen",
 }
-
-return M

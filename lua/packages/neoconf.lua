@@ -1,5 +1,3 @@
-local M = {
+return {
   "folke/neoconf.nvim",
 }
-
-return M

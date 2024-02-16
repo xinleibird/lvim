@@ -1,4 +1,4 @@
-local M = {
+return {
   "stevearc/dressing.nvim",
   priority = 1000,
   opts = {},
@@ -18,5 +18,3 @@ local M = {
     })
   end,
 }
-
-return M

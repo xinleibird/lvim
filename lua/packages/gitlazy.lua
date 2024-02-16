@@ -1,4 +1,4 @@
-local M = {
+return {
   "gitlazy",
   dir = get_config_dir() .. "/plugins/gitlazy",
   event = "VimEnter",
@@ -15,5 +15,3 @@ local M = {
     }
   end,
 }
-
-return M

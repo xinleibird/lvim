@@ -1,4 +1,4 @@
-local M = {
+return {
   "rcarriga/nvim-notify",
   priority = 1000,
   config = function()
@@ -11,5 +11,3 @@ local M = {
     vim.notify = require "notify"
   end,
 }
-
-return M

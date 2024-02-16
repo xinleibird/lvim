@@ -1,4 +1,4 @@
-local M = {
+return {
   "catppuccin/nvim",
   name = "catppuccin",
   priority = 1000,
@@ -7,6 +7,13 @@ local M = {
     lvim.builtin.bufferline.highlights = catppuccin_bufferline.get()
 
     lvim.builtin.lualine.options.theme = "catppuccin"
+
+    require("nvim-treesitter.configs").setup {
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
+    }
 
     require("catppuccin").setup {
       -- flavour = "frappe", -- latte, frappe, macchiato, mocha
@@ -44,15 +51,18 @@ local M = {
       highlight_overrides = {},
       custom_highlights = function(colors)
         return {
+          ActionHintsDefinition = { fg = colors.yellow },
+          ActionHintsReferences = { fg = colors.blue },
           CmpItemMenu = { fg = colors.teal },
-          IlluminatedWordText = { bg = colors.crust },
-          IlluminatedWordRead = { bg = colors.crust },
-          IlluminatedWordWrite = { bg = colors.crust },
-          VirtColumn = { fg = colors.surface0 },
-          OutlineGuides = { fg = colors.mantle },
-          ["@tag.attribute"] = { fg = colors.yellow, style = { "italic" } },
           EyelinerPrimary = { fg = colors.peach, style = { "bold", "underline" } },
           EyelinerSecondary = { fg = colors.sky, style = { "bold" } },
+          IlluminatedWordRead = { bg = colors.crust },
+          IlluminatedWordText = { bg = colors.crust },
+          IlluminatedWordWrite = { bg = colors.crust },
+          VirtColumn = { fg = colors.surface0 },
+          OutlineDetails = { link = "Comment" },
+          OutlineGuides = { fg = colors.mantle },
+          ["@tag.attribute"] = { fg = colors.yellow, style = { "italic" } },
           -- DiagnosticUnnecessary = { link = "DiagnosticUnderlineError" },
           -- DiagnosticDeprecated = { link = "DiagnosticUnderlineError" },
         }
@@ -119,5 +129,3 @@ local M = {
     }
   end,
 }
-
-return M

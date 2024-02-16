@@ -1,4 +1,4 @@
-local M = {
+return {
   "rebelot/kanagawa.nvim",
   priority = 1000,
   config = function()
@@ -30,5 +30,3 @@ local M = {
     }
   end,
 }
-
-return M

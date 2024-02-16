@@ -1,4 +1,4 @@
-local M = {
+return {
   "L3MON4D3/LuaSnip",
   event = "InsertEnter",
   config = function()
@@ -22,5 +22,3 @@ local M = {
     },
   },
 }
-
-return M

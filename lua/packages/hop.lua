@@ -1,4 +1,4 @@
-local M = {
+return {
   "phaazon/hop.nvim",
   event = "VimEnter",
   config = function()
@@ -16,5 +16,3 @@ local M = {
     })
   end,
 }
-
-return M

@@ -1,4 +1,4 @@
-local M = {
+return {
   "j-hui/fidget.nvim",
   tag = "legacy",
   event = "LspAttach",
@@ -53,5 +53,3 @@ local M = {
     },
   },
 }
-
-return M

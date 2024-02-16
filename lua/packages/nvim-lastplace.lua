@@ -1,4 +1,4 @@
-local M = {
+return {
   "ethanholz/nvim-lastplace",
   config = function()
     require("nvim-lastplace").setup {
@@ -8,5 +8,3 @@ local M = {
     }
   end,
 }
-
-return M

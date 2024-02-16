@@ -1,4 +1,4 @@
-local M = {
+return {
   "pontusk/cmp-sass-variables",
   event = "BufRead",
   config = function()
@@ -6,5 +6,3 @@ local M = {
     table.insert(lvim.builtin.cmp.sources, { name = "sass-variables" })
   end,
 }
-
-return M

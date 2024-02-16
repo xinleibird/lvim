@@ -1,4 +1,4 @@
-local M = {
+return {
   "lukas-reineke/virt-column.nvim",
   config = function()
     require("virt-column").setup {
@@ -17,5 +17,3 @@ local M = {
     })
   end,
 }
-
-return M
