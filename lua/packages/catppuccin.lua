@@ -112,17 +112,14 @@ return {
           enabled = false,
           custom_bg = "NONE", -- "lualine" will set background to mantle
         },
-        neogit = true,
         notify = true,
         nvimtree = true,
         symbols_outline = true,
-        rainbow_delimiters = true,
         semantic_tokens = true,
         telescope = {
           enabled = true,
           -- style = "nvchad",
         },
-        treesitter_context = true,
         treesitter = true,
         which_key = true,
       },

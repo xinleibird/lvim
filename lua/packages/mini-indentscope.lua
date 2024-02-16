@@ -7,8 +7,8 @@ return {
     vim.api.nvim_create_autocmd({ "FileType" }, {
       pattern = {
         "alpha",
-        "dashboard",
         "dap-repl",
+        "dashboard",
         "fzf",
         "help",
         "lazy",
@@ -16,6 +16,7 @@ return {
         "mason",
         "notify",
         "NvimTree",
+        "Outline",
         "qf",
         "TelescopePrompt",
         "toggleterm",
